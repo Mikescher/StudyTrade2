@@ -15,6 +15,9 @@ import com.vaadin.ui.VerticalLayout;
 @SuppressWarnings("serial")
 @Theme("studytrade2")
 public class Studytrade2UI extends UI {
+	public StudyTradeView view = new StudyTradeView();
+	public StudyTradeModel model = new StudyTradeModel();
+	public StudyTradePresenter presenter = new StudyTradePresenter(model, view);
 
 	@WebServlet(value = "/*", asyncSupported = true)
 	@VaadinServletConfiguration(productionMode = false, ui = Studytrade2UI.class)
@@ -25,15 +28,9 @@ public class Studytrade2UI extends UI {
 	protected void init(VaadinRequest request) {
 		final VerticalLayout layout = new VerticalLayout();
 		layout.setMargin(true);
-		setContent(layout);
-
-		Button button = new Button("Click Me");
-		button.addClickListener(new Button.ClickListener() {
-			public void buttonClick(ClickEvent event) {
-				layout.addComponent(new Label("Thank you for clicking"));
-			}
-		});
-		layout.addComponent(button);
+		setContent(view);
+		presenter.armin();
+		
 	}
 
 }
