@@ -1,0 +1,15 @@
+ToDo:
+
+-> Oberfläche einbinden
+	-> Es gibt ne Hauptseite zu beginn un einer danach
+	-> Klassen für jede Ansicht erstellen
+		-> Andere Ansicht bei eingeloggt und nicht eingeloggt
+	
+-> Login Methoden schreiben
+-> Registrierung einbinden
+-> 
+
+
+
+#########################################
+Done:
