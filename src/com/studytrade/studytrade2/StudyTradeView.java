@@ -1,7 +1,6 @@
 package com.studytrade.studytrade2;
 
-import com.studytrade.studytrade2.pages.LoginPage;
-import com.studytrade.studytrade2.pages.RegisterPage;
+
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 

@@ -3,11 +3,14 @@ ToDo:
 -> Oberfläche einbinden
 	-> Es gibt ne Hauptseite zu beginn un einer danach
 	-> Klassen für jede Ansicht erstellen
-		-> Andere Ansicht bei eingeloggt und nicht eingeloggt
+		-> Klasse StartPage bearbeiten 					-----> damit wird sich Armin beschäftigen
+		-> Klasse CommonPage festlegen
+			-> Klasse LoginPage bearbeiten
+			-> Klasse RegisterPage bearbeiten
+			-> Klasse SearchResultPage bearbeiten
 	
 -> Login Methoden schreiben
 -> Registrierung einbinden
--> 
 
 
 
