@@ -1,0 +1,10 @@
+@CHARSET "US-ASCII";
+<!-- Dies ist das Stylesheet für eigene CSS-Definitionen -->
+<!-- Diese werden mit element.setStyleName(name) eingebunden -->
+
+.landingpage_absolutelayout_bottom{
+	background-color: green;
+}
+.landingpage_absolutelayout_top{
+	background-color: red;
+}
