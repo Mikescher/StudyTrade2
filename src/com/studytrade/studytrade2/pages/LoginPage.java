@@ -7,9 +7,6 @@ public class LoginPage extends CommonPage {
 	private static final long serialVersionUID = 1L;
 
 	public LoginPage() {
-		VerticalLayout layout = new VerticalLayout();
-		Button b = new Button("LOGIN PANEL");
-		layout.addComponent(b);
-		setCompositionRoot(layout);
+	
 	}
 }

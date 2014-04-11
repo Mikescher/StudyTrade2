@@ -1,9 +1,14 @@
 package com.studytrade.studytrade2;
 
+import java.sql.SQLException;
+
 import javax.servlet.annotation.WebServlet;
 
 import com.studytrade.studytrade2.pages.CommonPage;
 import com.studytrade.studytrade2.pages.LandingPage;
+import com.studytrade.studytrade2.pages.LoginPage;
+import com.studytrade.studytrade2.pages.RegisterPage;
+import com.studytrade.studytrade2.pages.SearchResultPage;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -37,14 +42,22 @@ public class Studytrade2UI extends UI {
 		 */
 		
 		String pathInfo = request.getPathInfo();
-		if("/dev".equals(pathInfo)){
+		if("/search".equals(pathInfo)){
 			//CommonPage common = new CommonPage();
+			SearchResultPage search;
+			try {
+				search = new SearchResultPage();
+				setContent(search);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
-			LandingPage landpage = new LandingPage();
-			
-			setContent(landpage);
+		if("/dev".equals(pathInfo)){
+			//DO STH
+		}
 		}else{
-			/*Startpage von Armin*/
+			
 		setContent(view);
 		presenter.Init();
 		}
