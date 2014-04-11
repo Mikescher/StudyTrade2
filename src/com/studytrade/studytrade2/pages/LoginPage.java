@@ -10,6 +10,6 @@ public class LoginPage extends CommonPage {
 		VerticalLayout layout = new VerticalLayout();
 		Button b = new Button("LOGIN PANEL");
 		layout.addComponent(b);
-		setContent(layout);
+		setCompositionRoot(layout);
 	}
 }

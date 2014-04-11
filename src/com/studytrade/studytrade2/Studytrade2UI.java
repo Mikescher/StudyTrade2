@@ -2,6 +2,7 @@ package com.studytrade.studytrade2;
 
 import javax.servlet.annotation.WebServlet;
 
+import com.studytrade.studytrade2.pages.CommonPage;
 import com.studytrade.studytrade2.pages.LandingPage;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
@@ -37,8 +38,9 @@ public class Studytrade2UI extends UI {
 		
 		String pathInfo = request.getPathInfo();
 		if("/dev".equals(pathInfo)){
+			CommonPage common = new CommonPage();
 			/*Landing page von timo*/
-			setContent(landing);
+			setContent(common);
 		}else{
 			/*Startpage von Armin*/
 		setContent(view);

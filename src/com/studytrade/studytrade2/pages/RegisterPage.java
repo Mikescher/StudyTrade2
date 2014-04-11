@@ -10,6 +10,7 @@ public class RegisterPage extends CommonPage {
 		VerticalLayout layout = new VerticalLayout();
 		Button b = new Button("REGISTER PANEL");
 		layout.addComponent(b);
-		setContent(layout);
+		setCompositionRoot(layout);
+		
 	}
 }

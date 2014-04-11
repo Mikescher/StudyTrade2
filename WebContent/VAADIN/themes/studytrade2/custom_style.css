@@ -8,3 +8,26 @@
 .landingpage_absolutelayout_top{
 	background-color: red;
 }
+
+.commonpage_main_layout{
+	background-color: grey;
+}
+.commonpage_user_bar_top{
+	background-color: blue;
+}
+.commonpage_searchbar_top{
+	background-color: green;
+}
+.commonpage_categories_left{
+	background-color: red;
+}
+.commonpage_criteria_left{
+	background-color: orange;
+}
+.commonpage_ads_left{
+	background-color: silver;
+}
+.commonpage_layout_right{
+	background-color: yellow;
+}
+	
