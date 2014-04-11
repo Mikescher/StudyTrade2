@@ -65,13 +65,12 @@ public class LandingPage extends CustomComponent {
 		// embedded_1
 		embedded_1 = new Embedded();
 		embedded_1.setImmediate(false);
-		embedded_1.setWidth("780px");
+		embedded_1.setWidth("100.0%");
 		embedded_1.setHeight("80px");
-		embedded_1.setSource(new ThemeResource(
-				"img/component/StudyTrade.png"));
+		embedded_1.setSource(new ThemeResource("img/component/StudyTrade.png"));
 		embedded_1.setType(1);
 		embedded_1.setMimeType("image/png");
-		mainLayout.addComponent(embedded_1, "top:0.0px;left:0.0px;");
+		mainLayout.addComponent(embedded_1, "top:5.0%;right:10.0%;left:10.0%;");
 		
 		return mainLayout;
 	}
@@ -91,7 +90,7 @@ public class LandingPage extends CustomComponent {
 		absoluteLayout_3.setWidth("100.0%");
 		absoluteLayout_3.setHeight("100.0%");
 		absoluteLayout_2.addComponent(absoluteLayout_3,
-				"top:0.0px;right:0.0px;bottom:10.0%;left:0.0px;");
+				"top:80.0px;right:-78.0px;bottom:-7.3913045%;left:78.0px;");
 		
 		// absoluteLayout_4
 		absoluteLayout_4 = buildAbsoluteLayout_4();

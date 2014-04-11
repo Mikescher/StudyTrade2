@@ -38,9 +38,11 @@ public class Studytrade2UI extends UI {
 		
 		String pathInfo = request.getPathInfo();
 		if("/dev".equals(pathInfo)){
-			CommonPage common = new CommonPage();
-			/*Landing page von timo*/
-			setContent(common);
+			//CommonPage common = new CommonPage();
+			
+			LandingPage landpage = new LandingPage();
+			
+			setContent(landpage);
 		}else{
 			/*Startpage von Armin*/
 		setContent(view);

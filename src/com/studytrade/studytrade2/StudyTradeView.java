@@ -28,7 +28,7 @@ public class StudyTradeView extends Panel {
 		setCurrentPanel(pnlLandingPage);
 	}
 	
-	public void setCurrentPanel(LandingPage pnLandingPage) {
+	public void setCurrentPanel(LandingPage pnlLandingPage) {
 		pnlRegister.setVisible(false);
 		pnlLogin.setVisible(false);
 		pnlLandingPage.setVisible(true);
