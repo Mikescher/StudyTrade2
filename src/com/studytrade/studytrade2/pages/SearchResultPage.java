@@ -25,7 +25,7 @@ public class SearchResultPage extends CommonPage {
 			layout.addComponent(article);
 		}
 
-		commonpage_content_middle.addComponent(layout);
+		//commonpage_content_middle.addComponent(layout);
 	}
 
 }

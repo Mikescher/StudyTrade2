@@ -1,38 +1,49 @@
 @CHARSET "US-ASCII";
-<!-- Dies ist das Stylesheet für eigene CSS-Definitionen -->
-<!-- Diese werden mit element.setStyleName(name) eingebunden -->
 
-.landingpage_absolutelayout_bottom{
+.landingpage_absolutelayout_bottom {
 	background-color: green;
 }
-.landingpage_absolutelayout_top{
+
+.landingpage_absolutelayout_top {
 	background-color: red;
 }
 
-.commonpage_main_layout{
+.commonpage_main_layout {
 	background-color: grey;
 }
-.commonpage_user_bar_top{
+
+.commonpage_user_bar_top {
 	background-color: blue;
 }
-.commonpage_searchbar_top{
+
+.commonpage_searchbar_top {
 	background-color: green;
 }
-.commonpage_categories_left{
+
+.commonpage_categories_left {
 	background-color: red;
 }
-.commonpage_criteria_left{
+
+.commonpage_criteria_left {
 	background-color: orange;
 }
-.commonpage_ads_left{
+
+.commonpage_ads_left {
 	background-color: silver;
 }
-.commonpage_layout_right{
+
+.commonpage_layout_right {
 	background-color: yellow;
 }
-.commonpage_content_middle{
+
+.commonpage_content_middle {
 	background-color: navy;
 }
-.article_object_main_layout{
-	background-color: black;
+
+.commonpage_top_small_fields {
+	height: 17px;
+}
+
+.article_object_main_layout {
+	background-color: green;
 }
