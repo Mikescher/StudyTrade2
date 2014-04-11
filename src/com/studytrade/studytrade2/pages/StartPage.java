@@ -6,6 +6,7 @@ import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Link;
@@ -56,20 +57,20 @@ public class StartPage extends Panel {
 		  	auf der einen Seite die zu letzt eingestellte und auf der rechten Seite
 		  	Suchfeld und ggb News oder anderes...	*/
 		 
-		HorizontalSplitPanel horSplitlayout1 = new HorizontalSplitPanel();
-		vertlayout1.addComponent(horSplitlayout1);
+		HorizontalLayout horLayout1 = new HorizontalLayout();
+		vertlayout1.addComponent(horLayout1);
 		
 		 
 		VerticalLayout leftlayout1 = new VerticalLayout();
 		// hier kommt erstmal das zeugs für die Linkeseite hin.....
 
 		
-		horSplitlayout1.addComponent(leftlayout1);
+		horLayout1.addComponent(leftlayout1);
 		
 		leftlayout1.addComponent(newThingsList);
 		 
 		VerticalLayout rightlayout1 = new VerticalLayout();
-		horSplitlayout1.addComponent(rightlayout1);
+		horLayout1.addComponent(rightlayout1);
 		
 
 		rightlayout1.addComponent(searchField);
