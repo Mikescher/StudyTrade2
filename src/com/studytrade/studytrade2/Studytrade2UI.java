@@ -4,10 +4,9 @@ import java.sql.SQLException;
 
 import javax.servlet.annotation.WebServlet;
 
-import com.studytrade.studytrade2.pages.CommonPage;
+import logging.STLog;
+
 import com.studytrade.studytrade2.pages.LandingPage;
-import com.studytrade.studytrade2.pages.LoginPage;
-import com.studytrade.studytrade2.pages.RegisterPage;
 import com.studytrade.studytrade2.pages.SearchResultPage;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
@@ -49,8 +48,7 @@ public class Studytrade2UI extends UI {
 				search = new SearchResultPage();
 				setContent(search);
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				STLog.log(e);
 			}
 			
 		if("/dev".equals(pathInfo)){

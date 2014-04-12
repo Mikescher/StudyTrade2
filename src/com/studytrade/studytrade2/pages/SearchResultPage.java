@@ -3,7 +3,6 @@ package com.studytrade.studytrade2.pages;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.studytrade.studytrade2.model.ArticleManagement;
 import com.studytrade.studytrade2.presenter.Searching;
 import com.vaadin.ui.VerticalLayout;
 

@@ -7,8 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ArticleManagement {
-	public ResultSet ArticleSearch(String search, String name,
-			String condition, String colour, String price) {
+	public ResultSet ArticleSearch(String search, String name, String condition, String colour, String price) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -28,16 +27,12 @@ public class ArticleManagement {
 
 	}
 
-	public boolean ArticleSafe(String name, double price, int condition,
-			String place, int seller_id, String picture, String description)
-			throws SQLException {
+	public boolean ArticleSafe(String name, double price, int condition, String place, int seller_id, String picture, String description) throws SQLException {
 		Connection con = null;
 		PreparedStatement ps = null;
 		GetDatabaseConnection databasecon = new GetDatabaseConnection();
 		con = databasecon.getConnection();
-		String query = "insert into article ('','', etc) VALUES (default,?,?,?,?,?,?,?,?,?)";// TODO
-																								// values
-																								// eintragen
+		String query = "insert into article ('','', etc) VALUES (default,?,?,?,?,?,?,?,?,?)";// TODO values eintragen
 		ps = con.prepareStatement(query);
 		ps.setString(1, name);
 		ps.setString(2, String.valueOf(price).toString());

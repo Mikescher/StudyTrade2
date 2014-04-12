@@ -1,13 +1,10 @@
 package com.studytrade.studytrade2;
 
-
 import com.studytrade.studytrade2.pages.LandingPage;
 import com.studytrade.studytrade2.pages.LoginPage;
 import com.studytrade.studytrade2.pages.RegisterPage;
-import com.studytrade.studytrade2.pages.StartPage;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
-
 
 public class StudyTradeView extends Panel {
 	private static final long serialVersionUID = 1L;
