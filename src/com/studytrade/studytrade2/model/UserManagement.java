@@ -20,7 +20,7 @@ public class UserManagement {
 		ResultSet rs = null;
 
 		try {
-			GetDatabaseConnection databasecon = new GetDatabaseConnection();
+			MyDatabaseConnection databasecon = new MyDatabaseConnection();
 			con = databasecon.getConnection();
 			stmt = con.createStatement();
 			String query = "select count(*) as CNT from table_user where nickname='"
@@ -52,7 +52,7 @@ public class UserManagement {
 
 		if (!CheckIfUserAlreadyExists(nickname, mail)) {
 			try {
-				GetDatabaseConnection databasecon = new GetDatabaseConnection();
+				MyDatabaseConnection databasecon = new MyDatabaseConnection();
 				con = databasecon.getConnection();
 				String query = "insert into table_user (`id`, `forename`,`lastname`,`nickname`,`city`,`university`,`studydirection`,`mail`,`password`,`activated`) VALUES (default,?,?,?,?,?,?,?,?,?)";
 				ps = con.prepareStatement(query);
@@ -86,7 +86,7 @@ public class UserManagement {
 		ResultSet rs = null;
 
 		try {
-			GetDatabaseConnection databasecon = new GetDatabaseConnection();
+			MyDatabaseConnection databasecon = new MyDatabaseConnection();
 			con = databasecon.getConnection();
 			stmt = con.createStatement();
 			String query = "select count(*) as CNT from table_user where  nickname='"

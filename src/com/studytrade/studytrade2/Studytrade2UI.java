@@ -28,7 +28,7 @@ public class Studytrade2UI extends UI {
 	@Override
 	protected void init(VaadinRequest request) {
 		/* Initialisierung des MVP - Models */
-		view = new StudyTradeView(presenter);
+		view = new StudyTradeView();
 		model = new StudyTradeModel();
 		presenter = new StudyTradePresenter(model, view);
 		setContent(view);
@@ -38,19 +38,17 @@ public class Studytrade2UI extends UI {
 		String path = request.getPathInfo();
 		switch (path) {
 		case "/": {
-			
-				try {
-					presenter.InitLanding();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			try {
+				presenter.InitLanding();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 			break;
 		}
 		case "/dev": {
 			CommonPage common = new CommonPage();
 			setContent(common);
-			
+
 			break;
 		}
 		case "/search": {

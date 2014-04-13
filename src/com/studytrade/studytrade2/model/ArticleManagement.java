@@ -11,15 +11,13 @@ public class ArticleManagement {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		GetDatabaseConnection databasecon = new GetDatabaseConnection();
+		MyDatabaseConnection databasecon = new MyDatabaseConnection();
 		con = databasecon.getConnection();
 		try {
 			stmt = con.createStatement();
 			String query = "select * from article";
 			rs = stmt.executeQuery(query);
-
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -30,7 +28,7 @@ public class ArticleManagement {
 	public boolean ArticleSafe(String name, double price, int condition, String place, int seller_id, String picture, String description) throws SQLException {
 		Connection con = null;
 		PreparedStatement ps = null;
-		GetDatabaseConnection databasecon = new GetDatabaseConnection();
+		MyDatabaseConnection databasecon = new MyDatabaseConnection();
 		con = databasecon.getConnection();
 		String query = "insert into article ('','', etc) VALUES (default,?,?,?,?,?,?,?,?,?)";// TODO values eintragen
 		ps = con.prepareStatement(query);

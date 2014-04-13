@@ -15,12 +15,12 @@ public class StudyTradeView extends Panel {
 
 	private StudyTradePresenter presenter;
 	
-	public StudyTradeView(StudyTradePresenter presenter) {
-		this.presenter = presenter;
+	public StudyTradeView() {
+		// no nop
 	}
 
-	public void Init() throws SQLException {
-		/*Hier pages initialisieren*/
+	public void Init(StudyTradePresenter _presenter) {
+		this.presenter = _presenter;
 		
 		pnlLanding = new LandingPage(presenter);
 		pnlLanding.setVisible(false);
