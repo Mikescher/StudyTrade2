@@ -141,9 +141,13 @@ public class CommonPage extends CustomComponent {
 		commonpage_usermenu_top_right.setImmediate(false);
 		commonpage_usermenu_top_right.setWidth("-1px");
 		commonpage_usermenu_top_right.setHeight("100.0%");
+		@SuppressWarnings("unused")
 		com.vaadin.ui.MenuBar.MenuItem menu_messages = commonpage_usermenu_top_right.addItem("Nachrichten", null, null);
+		@SuppressWarnings("unused")
 		com.vaadin.ui.MenuBar.MenuItem menu_history = commonpage_usermenu_top_right.addItem("Verlauf", null, null);
+		@SuppressWarnings("unused")
 		com.vaadin.ui.MenuBar.MenuItem menu_mypage = commonpage_usermenu_top_right.addItem("Meine Seite", null, null);
+		@SuppressWarnings("unused")
 		com.vaadin.ui.MenuBar.MenuItem menu_logout = commonpage_usermenu_top_right.addItem("Logout", null, null);
 		commonpage_user_bar_top.addComponent(commonpage_usermenu_top_right,
 				"top:0.0px;right:0.0px;");	

@@ -4,10 +4,7 @@ import java.sql.SQLException;
 
 import javax.servlet.annotation.WebServlet;
 
-import logging.STLog;
-
-import com.studytrade.studytrade2.pages.LandingPage;
-import com.studytrade.studytrade2.pages.SearchResultPage;
+import com.studytrade.studytrade2.pages.CommonPage;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -17,7 +14,7 @@ import com.vaadin.ui.UI;
 @Theme("studytrade2")
 public class Studytrade2UI extends UI {
 	private static final long serialVersionUID = 1L;
-	
+
 	public StudyTradeView view;
 	public StudyTradeModel model;
 	public StudyTradePresenter presenter;
@@ -30,36 +27,40 @@ public class Studytrade2UI extends UI {
 
 	@Override
 	protected void init(VaadinRequest request) {
-		view = new StudyTradeView();
+		/* Initialisierung des MVP - Models */
+		view = new StudyTradeView(presenter);
 		model = new StudyTradeModel();
 		presenter = new StudyTradePresenter(model, view);
-		LandingPage landing = new LandingPage();
-		
-		/* http://localhost:8080/StudyTrade2/dev
-		 * hier können verschiedene Einsprungpunkte
-		 * erstellt werden !!!
-		 */
-		
-		String pathInfo = request.getPathInfo();
-		if("/search".equals(pathInfo)){
-			//CommonPage common = new CommonPage();
-			SearchResultPage search;
-			try {
-				search = new SearchResultPage();
-				setContent(search);
-			} catch (SQLException e) {
-				STLog.log(e);
-			}
-			
-		if("/dev".equals(pathInfo)){
-			//DO STH
-		}
-		}else{
-			
 		setContent(view);
-		presenter.Init();
+
+		/* Auswertung der aufgerufenen URL */
+		// TODO Überprüfung auf Cookies
+		String path = request.getPathInfo();
+		switch (path) {
+		case "/": {
+			
+				try {
+					presenter.InitLanding();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			break;
 		}
-		
+		case "/dev": {
+			CommonPage common = new CommonPage();
+			setContent(common);
+			
+			break;
+		}
+		case "/search": {
+			break;
+		}
+		default: {
+			break;
+		}
+		}
+
 	}
 
 }

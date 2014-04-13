@@ -3,17 +3,15 @@ package com.studytrade.studytrade2.pages;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.studytrade.studytrade2.presenter.Searching;
 import com.vaadin.ui.VerticalLayout;
 
 public class SearchResultPage extends CommonPage {
 
 	private static final long serialVersionUID = 7390944448735384539L;
 
-	public SearchResultPage() throws SQLException {
+	public SearchResultPage(ResultSet rs) throws SQLException {
 		super();
-		Searching search = new Searching();
-		ResultSet rs = search.SearchTheArticle("Suchwort");
+
 		VerticalLayout layout = new VerticalLayout();
 		while (rs.next()) {
 			ArticleObject article = new ArticleObject();
@@ -24,7 +22,7 @@ public class SearchResultPage extends CommonPage {
 			layout.addComponent(article);
 		}
 
-		//commonpage_content_middle.addComponent(layout);
+		// commonpage_content_middle.addComponent(layout);
 	}
 
 }

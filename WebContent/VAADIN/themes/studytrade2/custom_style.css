@@ -1,10 +1,10 @@
 @CHARSET "US-ASCII";
 
-.landingpage_absolutelayout_bottom {
+.landingpage_absolutLayout_login_bottom {
 	background-color: green;
 }
 
-.landingpage_absolutelayout_top {
+.landingpage_absolutLayout {
 	background-color: red;
 }
 

@@ -1,34 +1,40 @@
 package com.studytrade.studytrade2;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import com.studytrade.studytrade2.pages.LandingPage;
-import com.studytrade.studytrade2.pages.LoginPage;
-import com.studytrade.studytrade2.pages.RegisterPage;
+import com.studytrade.studytrade2.pages.SearchResultPage;
 import com.vaadin.ui.Panel;
-import com.vaadin.ui.VerticalLayout;
 
 public class StudyTradeView extends Panel {
 	private static final long serialVersionUID = 1L;
 
-	private LandingPage pnlLandingPage = new LandingPage();
-	private RegisterPage pnlRegister = new RegisterPage();
-	private LoginPage pnlLogin = new LoginPage();
-	
-	public void Init() {
-		VerticalLayout layout = new VerticalLayout();
-		
-		layout.addComponent(pnlRegister);
-		layout.addComponent(pnlLogin);
-		layout.addComponent(pnlLandingPage);
-		
-		setContent(layout);
-		
-		setCurrentPanel(pnlLandingPage);
-	}
-	
-	public void setCurrentPanel(LandingPage pnlLandingPage) {
-		pnlRegister.setVisible(false);
-		pnlLogin.setVisible(false);
-		pnlLandingPage.setVisible(true);
+	private LandingPage pnlLanding;
+	private SearchResultPage pnlSearchResult;
 
+	private StudyTradePresenter presenter;
+	
+	public StudyTradeView(StudyTradePresenter presenter) {
+		this.presenter = presenter;
 	}
+
+	public void Init() throws SQLException {
+		/*Hier pages initialisieren*/
+		
+		pnlLanding = new LandingPage(presenter);
+		pnlLanding.setVisible(false);
+	}
+
+	/* Methoden für bestimmte Pages */
+	public void Landing() {
+		setContent(pnlLanding);
+		pnlLanding.setVisible(true);
+	}
+	public void SearchResult(ResultSet rs) throws SQLException{
+		pnlSearchResult = new SearchResultPage(rs);
+		pnlLanding.setVisible(false);
+		pnlSearchResult.setVisible(true);
+	}
+
 }
