@@ -2,14 +2,14 @@ package com.studytrade.studytrade2.presenter;
 
 import com.studytrade.studytrade2.Studytrade2UI;
 import com.studytrade.studytrade2.model.StudyTradeModel;
-import com.studytrade.studytrade2.view.interfaces.MainPageView;
-import com.studytrade.studytrade2.view.interfaces.MainPageViewListener;
+import com.studytrade.studytrade2.view.interfaces.SearchResultPageView;
+import com.studytrade.studytrade2.view.interfaces.SearchResultPageViewListener;
 import com.vaadin.ui.Component;
 
-public class MainPagePresenter extends CustomPresenter implements MainPageViewListener {
-    private MainPageView  view;
+public class SearchResultPagePresenter extends CustomPresenter implements SearchResultPageViewListener {
+    private SearchResultPageView  view;
     
-    public MainPagePresenter(Studytrade2UI ui, StudyTradeModel m, MainPageView  v) {
+    public SearchResultPagePresenter(Studytrade2UI ui, StudyTradeModel m, SearchResultPageView v) {
     	super(ui, m);
     	
         this.view  = v;

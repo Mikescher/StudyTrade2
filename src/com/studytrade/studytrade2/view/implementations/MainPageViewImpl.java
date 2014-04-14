@@ -8,18 +8,18 @@ import com.studytrade.studytrade2.view.interfaces.MainPageViewListener;
 import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Layout;
 
 public class MainPageViewImpl extends CustomStudyTradeComponent implements MainPageView {
 	private static final long serialVersionUID = -2103599367448946610L;
 
-	private AbsoluteLayout mainLayout;
 	private Label label_1;
 	private Button button_1;
 	
 	private List<MainPageViewListener> listeners = new ArrayList<>();
 
 	public MainPageViewImpl() {
-		super();
+		Init();
 	}
 	
 	@Override
@@ -28,16 +28,9 @@ public class MainPageViewImpl extends CustomStudyTradeComponent implements MainP
 	}
 
 	@Override
-	protected AbsoluteLayout buildLayout() {
-		// common part: create layout
-		mainLayout = new AbsoluteLayout();
+	protected Layout buildLayout() {
+		AbsoluteLayout mainLayout = new AbsoluteLayout();
 		mainLayout.setImmediate(false);
-		mainLayout.setWidth("100%");
-		mainLayout.setHeight("100%");
-		
-		// top-level component properties
-		setWidth("100.0%");
-		setHeight("100.0%");
 		
 		// button_1
 		button_1 = new Button();
