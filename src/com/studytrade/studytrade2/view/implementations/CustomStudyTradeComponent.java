@@ -1,13 +1,13 @@
 package com.studytrade.studytrade2.view.implementations;
 
-import com.vaadin.ui.AbsoluteLayout;
+import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
 import com.vaadin.ui.NativeSelect;
-import com.vaadin.ui.Panel;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
@@ -32,7 +32,6 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		mainLayout = new VerticalLayout();
 		mainLayout.setStyleName("commonpage_main_layout");
 		mainLayout.setWidth("100%");
-		mainLayout.setHeight("100%");
 
 
 		mainLayout.addComponent(build_user_bar_top());
@@ -41,7 +40,9 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 
 		
 		HorizontalLayout area_center = new HorizontalLayout();
+		area_center.setWidth(100, Unit.PERCENTAGE);
 		mainLayout.addComponent(area_center);
+		
 		
 		area_center.addComponent(build_sidebar_left());
 		area_center.addComponent(buildLayout());
@@ -51,87 +52,110 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 	}
 
 	private Layout build_user_bar_top() {
-		HorizontalLayout user_bar_top;
+		VerticalLayout result_layout = new VerticalLayout();
+		result_layout.setStyleName("commonpage_searchbar_top");
+		result_layout.setWidth("100%");
+		result_layout.setHeight("40px");
 		
-		user_bar_top = new HorizontalLayout();
-		user_bar_top.setStyleName("commonpage_user_bar_top");
-		user_bar_top.setWidth("100.0%");
-		user_bar_top.setHeight("40px");
+		HorizontalLayout inner_right_layout = new HorizontalLayout();
+		
+		inner_right_layout = new HorizontalLayout();
+		inner_right_layout.setHeight("40px");
 
 		username_top = new TextField();
-		username_top.setStyleName("commonpage_top_small_fields");
-		username_top.setSizeUndefined();
-		user_bar_top.addComponent(username_top);
-		user_bar_top.setComponentAlignment(username_top, Alignment.TOP_RIGHT);
+		username_top.setHeight("17px");
+		inner_right_layout.addComponent(username_top);
+		inner_right_layout.setComponentAlignment(username_top, Alignment.MIDDLE_RIGHT);
 
 		password_top = new PasswordField();
-		password_top.setStyleName("commonpage_top_small_fields");
-		password_top.setSizeUndefined();
-		user_bar_top.addComponent(password_top);
-		user_bar_top.setComponentAlignment(password_top, Alignment.TOP_RIGHT);
+		password_top.setHeight("17px");
+		inner_right_layout.addComponent(password_top);
+		inner_right_layout.setComponentAlignment(password_top, Alignment.MIDDLE_RIGHT);
 
 		btnLogin = new Button();
 		btnLogin.setCaption("Button");
-		btnLogin.setSizeUndefined();
-		user_bar_top.addComponent(btnLogin);
-		user_bar_top.setComponentAlignment(btnLogin, Alignment.TOP_RIGHT);
+		inner_right_layout.addComponent(btnLogin);
+		inner_right_layout.setComponentAlignment(btnLogin, Alignment.MIDDLE_RIGHT);
 
-		return user_bar_top;
+		inner_right_layout.setSizeUndefined();
+		
+		
+		result_layout.addComponent(inner_right_layout);
+		result_layout.setComponentAlignment(inner_right_layout, Alignment.MIDDLE_RIGHT);
+		
+		return result_layout;
 	}
 
 	private Layout build_searchbar_top() {
-		HorizontalLayout searchbar_top;
+		VerticalLayout result_layout = new VerticalLayout();
+		result_layout.setStyleName("commonpage_user_bar_top");
+		result_layout.setWidth("100%");
+		result_layout.setHeight("40px");
+		
+		HorizontalLayout inner_right_layout = new HorizontalLayout();
+		
+		inner_right_layout = new HorizontalLayout();
+		inner_right_layout.setHeight("40px");
 
-		searchbar_top = new HorizontalLayout();
-		searchbar_top.setStyleName("commonpage_searchbar_top");
-		searchbar_top.setWidth("100.0%");
-		searchbar_top.setHeight("40px");
+		inner_right_layout.setWidth("100.0%");
+		inner_right_layout.setHeight("40px");
+		inner_right_layout.addComponent(new Label("&nbsp;", ContentMode.HTML));
+		
+		edSearch = new TextField();
+		edSearch.setWidth("200px");
+		password_top.setHeight(17, Unit.PIXELS);
+		inner_right_layout.addComponent(edSearch);
+		inner_right_layout.setComponentAlignment(edSearch, Alignment.MIDDLE_RIGHT);
+
+		cbxSearch = new NativeSelect();
+		inner_right_layout.addComponent(cbxSearch);
+		inner_right_layout.setComponentAlignment(cbxSearch, Alignment.MIDDLE_RIGHT);
 
 		btnSearch = new Button();
 		btnSearch.setCaption("Search");
-		searchbar_top.addComponent(btnSearch);
-		searchbar_top.setComponentAlignment(btnSearch, Alignment.TOP_RIGHT);
+		inner_right_layout.addComponent(btnSearch);
+		inner_right_layout.setComponentAlignment(btnSearch, Alignment.MIDDLE_RIGHT);
 
-		cbxSearch = new NativeSelect();
-		searchbar_top.addComponent(cbxSearch);
-		searchbar_top.setComponentAlignment(cbxSearch, Alignment.TOP_RIGHT);
-
-		edSearch = new TextField();
-		edSearch.setWidth("200px");
-		edSearch.setHeight("100.0%");
-		searchbar_top.addComponent(edSearch);
-		searchbar_top.setComponentAlignment(edSearch, Alignment.TOP_RIGHT);
-
-		return searchbar_top;
+		inner_right_layout.setSizeUndefined();
+		
+		
+		result_layout.addComponent(inner_right_layout);
+		result_layout.setComponentAlignment(inner_right_layout, Alignment.MIDDLE_RIGHT);
+		
+		return result_layout;
 	}
 
 	private Layout build_sidebar_left() {
-		VerticalLayout sidebar_left;
+		VerticalLayout result_layout;
 		
-		sidebar_left = new VerticalLayout();
+		result_layout = new VerticalLayout();
 		
-		Panel pnlCategory = new Panel();
+		Layout pnlCategory = new VerticalLayout();
 		pnlCategory.setStyleName("commonpage_categories_left");
-		sidebar_left.addComponent(pnlCategory);
+		pnlCategory.setHeight("100px");
+		result_layout.addComponent(pnlCategory);
 		
-		Panel pnlCriteria = new Panel();
-		pnlCategory.setStyleName("commonpage_criteria_left");
-		sidebar_left.addComponent(pnlCriteria);
+		Layout pnlCriteria = new VerticalLayout();
+		pnlCriteria.setStyleName("commonpage_criteria_left");
+		pnlCriteria.setHeight("100px");
+		result_layout.addComponent(pnlCriteria);
 		
-		Panel pnlAds = new Panel();
-		pnlCategory.setStyleName("commonpage_ads_left");
-		sidebar_left.addComponent(pnlAds);
+		Layout pnlAds = new VerticalLayout();
+		pnlAds.setStyleName("commonpage_ads_left");
+		pnlAds.setHeight("100px");
+		result_layout.addComponent(pnlAds);
 		
-		return sidebar_left;
+		return result_layout;
 	}
 	
 	private Layout build_sidebar_right() {
-		VerticalLayout sidebar_right;
+		VerticalLayout result_layout;
 		
-		sidebar_right = new VerticalLayout();
-		sidebar_right.setStyleName("commonpage_layout_right");
+		result_layout = new VerticalLayout();
+		result_layout.setStyleName("commonpage_layout_right");
+		result_layout.setHeight("300px");
 		
-		return sidebar_right;
+		return result_layout;
 	}
 	
 	protected abstract Layout buildLayout();
