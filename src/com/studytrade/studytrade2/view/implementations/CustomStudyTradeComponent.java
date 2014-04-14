@@ -27,6 +27,10 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	protected Button btnSearch;
 	
 	public CustomStudyTradeComponent() {
+		// NOP
+	}
+	
+	protected void Init() {
 		setCompositionRoot(buildFullLayout());
 		
 		btnSearch.addClickListener(new ClickListener() {
