@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import javax.servlet.annotation.WebServlet;
 
 import com.studytrade.studytrade2.pages.CommonPage;
+import com.studytrade.studytrade2.pages.LoginPage;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -53,6 +54,11 @@ public class Studytrade2UI extends UI {
 		}
 		case "/search": {
 			break;
+		}
+		case "/login":
+		{
+			LoginPage loginpage = new LoginPage();
+			setContent(loginpage);
 		}
 		default: {
 			break;
