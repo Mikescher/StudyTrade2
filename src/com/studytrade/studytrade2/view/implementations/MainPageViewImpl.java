@@ -57,4 +57,16 @@ public class MainPageViewImpl extends CustomStudyTradeComponent implements MainP
 		
 		return mainLayout;
 	}
+
+	@Override
+	protected void onBtnLoginClicked() {
+		for (MainPageViewListener l : listeners)
+			l.LoginClicked(edUsername.getValue(), edPassword.getValue());
+	}
+
+	@Override
+	protected void onBtnSearchClicked() {
+		for (MainPageViewListener l : listeners)
+			l.SearchClicked(edSearch.getValue());
+	}
 }

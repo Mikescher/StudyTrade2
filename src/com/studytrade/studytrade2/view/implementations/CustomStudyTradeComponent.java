@@ -3,6 +3,8 @@ package com.studytrade.studytrade2.view.implementations;
 import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -12,13 +14,13 @@ import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-public abstract class CustomStudyTradeComponent extends CustomComponent {
+public abstract class CustomStudyTradeComponent extends CustomComponent{
 	private static final long serialVersionUID = -8192711605278107723L;
 
 	protected VerticalLayout mainLayout;
 	
-	protected TextField username_top;
-	protected PasswordField password_top;
+	protected TextField edUsername;
+	protected PasswordField edPassword;
 	protected Button btnLogin;
 	protected TextField edSearch;
 	protected NativeSelect cbxSearch;
@@ -26,6 +28,24 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 	
 	public CustomStudyTradeComponent() {
 		setCompositionRoot(buildFullLayout());
+		
+		btnSearch.addClickListener(new ClickListener() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				onBtnSearchClicked();
+			}
+		});
+		
+		btnLogin.addClickListener(new ClickListener() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				onBtnLoginClicked();
+			}
+		});
 	}
 	
 	private Layout buildFullLayout() {
@@ -62,15 +82,15 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		inner_right_layout = new HorizontalLayout();
 		inner_right_layout.setHeight("40px");
 
-		username_top = new TextField();
-		username_top.setHeight("17px");
-		inner_right_layout.addComponent(username_top);
-		inner_right_layout.setComponentAlignment(username_top, Alignment.MIDDLE_RIGHT);
+		edUsername = new TextField();
+		edUsername.setHeight("17px");
+		inner_right_layout.addComponent(edUsername);
+		inner_right_layout.setComponentAlignment(edUsername, Alignment.MIDDLE_RIGHT);
 
-		password_top = new PasswordField();
-		password_top.setHeight("17px");
-		inner_right_layout.addComponent(password_top);
-		inner_right_layout.setComponentAlignment(password_top, Alignment.MIDDLE_RIGHT);
+		edPassword = new PasswordField();
+		edPassword.setHeight("17px");
+		inner_right_layout.addComponent(edPassword);
+		inner_right_layout.setComponentAlignment(edPassword, Alignment.MIDDLE_RIGHT);
 
 		btnLogin = new Button();
 		btnLogin.setCaption("Button");
@@ -103,7 +123,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		
 		edSearch = new TextField();
 		edSearch.setWidth("200px");
-		password_top.setHeight(17, Unit.PIXELS);
+		edPassword.setHeight(17, Unit.PIXELS);
 		inner_right_layout.addComponent(edSearch);
 		inner_right_layout.setComponentAlignment(edSearch, Alignment.MIDDLE_RIGHT);
 
@@ -159,4 +179,6 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 	}
 	
 	protected abstract Layout buildLayout();
+	protected abstract void onBtnLoginClicked();
+	protected abstract void onBtnSearchClicked();
 }
