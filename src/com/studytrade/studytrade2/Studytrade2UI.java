@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebServlet;
 
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.presenter.MainPagePresenter;
-import com.studytrade.studytrade2.view.CustomStudyTradeComponent;
+import com.studytrade.studytrade2.view.implementations.CustomStudyTradeComponent;
 import com.studytrade.studytrade2.view.implementations.MainPageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.MainPageView;
 import com.vaadin.annotations.Theme;
