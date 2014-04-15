@@ -17,7 +17,7 @@
 }
 
 .commonpage_searchbar_top {
-	background-color: green;
+	background-color: lightgreen;
 }
 
 .commonpage_categories_left {
@@ -38,10 +38,6 @@
 
 .commonpage_content_middle {
 	background-color: navy;
-}
-
-.commonpage_top_small_fields {
-	height: 17px;
 }
 
 .article_object_main_layout {
