@@ -33,21 +33,16 @@ public class MainPageViewImpl extends CustomStudyTradeComponent implements MainP
 	@Override
 	protected Layout buildLayout() {
 		AbsoluteLayout mainLayout = new AbsoluteLayout();
-		mainLayout.setImmediate(false);
+		
+		mainLayout.setWidth("100%");
 		
 		// button_1
 		button_1 = new Button();
 		button_1.setCaption("HELLLOOOOO");
-		button_1.setImmediate(false);
-		button_1.setWidth("-1px");
-		button_1.setHeight("-1px");
 		mainLayout.addComponent(button_1, "top:60.0px;left:95.0px;");
 		
 		// label_1
 		label_1 = new Label();
-		label_1.setImmediate(false);
-		label_1.setWidth("-1px");
-		label_1.setHeight("-1px");
 		label_1.setValue("I am the MainPage");
 		mainLayout.addComponent(label_1, "top:40.0px;left:79.0px;");
 		
