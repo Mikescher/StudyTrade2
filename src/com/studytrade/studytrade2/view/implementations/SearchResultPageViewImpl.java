@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.studytrade.studytrade2.model.StudyTradeArticle;
+import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.SearchResultPageView;
 import com.studytrade.studytrade2.view.interfaces.SearchResultPageViewListener;
-import com.vaadin.client.ui.layout.Margins;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
@@ -22,7 +22,9 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 
 	private List<StudyTradeArticle> Articles;
 	
-	public SearchResultPageViewImpl(List<StudyTradeArticle> articles) {
+	public SearchResultPageViewImpl(StudyTradeUser usr, List<StudyTradeArticle> articles) {
+		super(usr);
+		
 		this.Articles = articles;
 		
 		Init();

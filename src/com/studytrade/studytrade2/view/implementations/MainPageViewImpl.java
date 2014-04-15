@@ -3,6 +3,7 @@ package com.studytrade.studytrade2.view.implementations;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.MainPageView;
 import com.studytrade.studytrade2.view.interfaces.MainPageViewListener;
 import com.vaadin.ui.AbsoluteLayout;
@@ -18,7 +19,9 @@ public class MainPageViewImpl extends CustomStudyTradeComponent implements MainP
 	
 	private List<MainPageViewListener> listeners = new ArrayList<>();
 
-	public MainPageViewImpl() {
+	public MainPageViewImpl(StudyTradeUser usr) {
+		super(usr);
+		
 		Init();
 	}
 	

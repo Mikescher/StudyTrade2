@@ -1,5 +1,6 @@
 package com.studytrade.studytrade2.view.implementations;
 
+import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
@@ -17,6 +18,8 @@ import com.vaadin.ui.VerticalLayout;
 public abstract class CustomStudyTradeComponent extends CustomComponent{
 	private static final long serialVersionUID = -8192711605278107723L;
 
+	private StudyTradeUser User;
+	
 	protected VerticalLayout mainLayout;
 	
 	protected TextField edUsername;
@@ -26,30 +29,12 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	protected NativeSelect cbxSearch;
 	protected Button btnSearch;
 	
-	public CustomStudyTradeComponent() {
-		// NOP
+	public CustomStudyTradeComponent(StudyTradeUser usr) {
+		this.User = usr;
 	}
 	
 	protected void Init() {
 		setCompositionRoot(buildFullLayout());
-		
-		btnSearch.addClickListener(new ClickListener() {
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void buttonClick(ClickEvent event) {
-				onBtnSearchClicked();
-			}
-		});
-		
-		btnLogin.addClickListener(new ClickListener() {
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void buttonClick(ClickEvent event) {
-				onBtnLoginClicked();
-			}
-		});
 	}
 	
 	private Layout buildFullLayout() {
@@ -58,7 +43,15 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		mainLayout.setWidth("100%");
 
 
-		mainLayout.addComponent(build_user_bar_top());
+		if (User == null) { 
+			// Not logged in
+			
+			mainLayout.addComponent(build_user_login_bar_top());
+		} else {
+			// Logged in
+			
+			mainLayout.addComponent(build_user_bar_top());
+		}
 
 		mainLayout.addComponent(build_searchbar_top());
 
@@ -75,15 +68,14 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		return mainLayout;
 	}
 
-	private Layout build_user_bar_top() {
+	private Layout build_user_login_bar_top() {
 		VerticalLayout result_layout = new VerticalLayout();
 		result_layout.setStyleName("commonpage_searchbar_top");
 		result_layout.setWidth("100%");
 		result_layout.setHeight("40px");
 		
 		HorizontalLayout inner_right_layout = new HorizontalLayout();
-		
-		inner_right_layout = new HorizontalLayout();
+
 		inner_right_layout.setHeight("40px");
 
 		edUsername = new TextField();
@@ -97,9 +89,44 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		inner_right_layout.setComponentAlignment(edPassword, Alignment.MIDDLE_RIGHT);
 
 		btnLogin = new Button();
-		btnLogin.setCaption("Button");
+		btnLogin.setCaption("Login");
 		inner_right_layout.addComponent(btnLogin);
 		inner_right_layout.setComponentAlignment(btnLogin, Alignment.MIDDLE_RIGHT);
+		btnLogin.addClickListener(new ClickListener() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				onBtnLoginClicked();
+			}
+		});
+		
+		inner_right_layout.setSizeUndefined();
+		
+		
+		result_layout.addComponent(inner_right_layout);
+		result_layout.setComponentAlignment(inner_right_layout, Alignment.MIDDLE_RIGHT);
+		
+		return result_layout;
+	}
+	
+	private Layout build_user_bar_top() {
+		VerticalLayout result_layout = new VerticalLayout();
+		result_layout.setStyleName("commonpage_searchbar_top");
+		result_layout.setWidth("100%");
+		result_layout.setHeight("40px");
+		
+		VerticalLayout inner_right_layout = new VerticalLayout();
+
+		inner_right_layout.setHeight("40px");
+
+		Label edLoggedInName = new Label(User.Nickname);
+		inner_right_layout.addComponent(edLoggedInName);
+		inner_right_layout.setComponentAlignment(edLoggedInName, Alignment.MIDDLE_RIGHT);
+
+		Label edLoggedInMail = new Label(User.Email);
+		inner_right_layout.addComponent(edLoggedInMail);
+		inner_right_layout.setComponentAlignment(edLoggedInMail, Alignment.MIDDLE_RIGHT);
 
 		inner_right_layout.setSizeUndefined();
 		
@@ -117,8 +144,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		result_layout.setHeight("40px");
 		
 		HorizontalLayout inner_right_layout = new HorizontalLayout();
-		
-		inner_right_layout = new HorizontalLayout();
+
 		inner_right_layout.setHeight("40px");
 
 		inner_right_layout.setWidth("100.0%");
@@ -127,10 +153,9 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		
 		edSearch = new TextField();
 		edSearch.setWidth("200px");
-		edPassword.setHeight(17, Unit.PIXELS);
 		inner_right_layout.addComponent(edSearch);
 		inner_right_layout.setComponentAlignment(edSearch, Alignment.MIDDLE_RIGHT);
-
+		
 		cbxSearch = new NativeSelect();
 		inner_right_layout.addComponent(cbxSearch);
 		inner_right_layout.setComponentAlignment(cbxSearch, Alignment.MIDDLE_RIGHT);
@@ -139,7 +164,15 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		btnSearch.setCaption("Search");
 		inner_right_layout.addComponent(btnSearch);
 		inner_right_layout.setComponentAlignment(btnSearch, Alignment.MIDDLE_RIGHT);
+		btnSearch.addClickListener(new ClickListener() {
+			private static final long serialVersionUID = 1L;
 
+			@Override
+			public void buttonClick(ClickEvent event) {
+				onBtnSearchClicked();
+			}
+		});
+		
 		inner_right_layout.setSizeUndefined();
 		
 		
