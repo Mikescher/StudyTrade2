@@ -37,4 +37,11 @@ public abstract class CustomPresenter {
 		SearchResultPageViewImpl view = new SearchResultPageViewImpl(Model.GetLogedInUser(), searchstring, results);
 		new SearchResultPagePresenter(UI, Model, view);
 	}
+
+	protected void OnLogOffClicked() {
+		Model.logOff();
+
+		MainPageViewImpl view = new MainPageViewImpl(Model.GetLogedInUser());
+		new MainPagePresenter(UI, Model, view);
+	}
 }

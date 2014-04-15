@@ -69,4 +69,10 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 		for (SearchResultPageViewListener l : listeners)
 			l.SearchClicked(edSearch.getValue());
 	}
+
+	@Override
+	protected void onBtnLogOffClicked() {
+		for (SearchResultPageViewListener l : listeners)
+			l.LogOffClicked();
+	}
 }

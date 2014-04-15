@@ -37,15 +37,16 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	}
 
 	protected void Init() {
+		setHeight("100%");
+		setWidth("100%");
+		
 		setCompositionRoot(buildFullLayout());
 	}
 
 	private Layout buildFullLayout() {
 		mainLayout = new VerticalLayout();
-		mainLayout.setStyleName("commonpage_main_layout");
 		mainLayout.setWidth("100%");
-
-		mainLayout.addComponent(build_banner_top());
+		mainLayout.setHeight("100%");
 		
 		if (User == null) { 
 			// Not logged in
@@ -59,31 +60,34 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 
 		mainLayout.addComponent(build_searchbar_top());
 
-		
 		HorizontalLayout area_center = new HorizontalLayout();
-		area_center.setWidth("100%");
-		mainLayout.addComponent(area_center);
-		
-		
-		area_center.addComponent(build_sidebar_left());
-		area_center.addComponent(buildLayout());
-		area_center.addComponent(build_sidebar_right());
+		{
+			area_center.setWidth("100%");
+			area_center.setHeight("100%");
+			mainLayout.addComponent(area_center);
 
+			Layout abstractLayout;
+
+			area_center.addComponent(build_sidebar_left());
+			area_center.addComponent(abstractLayout = build_content_center());
+			area_center.addComponent(build_sidebar_right());
+			area_center.setExpandRatio(abstractLayout, 1.0f);
+		}
+		
+		
+		mainLayout.setExpandRatio(area_center, 1.0f);
+		
 		return mainLayout;
 	}
+	
+	private Layout build_content_center() {
+		VerticalLayout result_layout = new VerticalLayout();
+		result_layout.setStyleName("commonpage_main_layout");
 
-
-	private Layout build_banner_top() {
-		HorizontalLayout result_layout = new HorizontalLayout();
-		result_layout.setStyleName("commonpage_banner_top");
-		
 		result_layout.setWidth("100%");
+		result_layout.setHeight("100%");
 		
-		Resource res = new ThemeResource("img/StudyTrade.png");
-		Image image = new Image(null, res);
-		
-		result_layout.addComponent(image);
-		result_layout.setComponentAlignment(image, Alignment.MIDDLE_CENTER);
+		result_layout.addComponent(buildLayout());
 		
 		return result_layout;
 	}
@@ -95,34 +99,34 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		result_layout.setHeight("40px");
 		
 		HorizontalLayout inner_right_layout = new HorizontalLayout();
+		{
+			inner_right_layout.setHeight("40px");
 
-		inner_right_layout.setHeight("40px");
+			edUsername = new TextField();
+			edUsername.setHeight("17px");
+			inner_right_layout.addComponent(edUsername);
+			inner_right_layout.setComponentAlignment(edUsername, Alignment.MIDDLE_RIGHT);
 
-		edUsername = new TextField();
-		edUsername.setHeight("17px");
-		inner_right_layout.addComponent(edUsername);
-		inner_right_layout.setComponentAlignment(edUsername, Alignment.MIDDLE_RIGHT);
+			edPassword = new PasswordField();
+			edPassword.setHeight("17px");
+			inner_right_layout.addComponent(edPassword);
+			inner_right_layout.setComponentAlignment(edPassword, Alignment.MIDDLE_RIGHT);
 
-		edPassword = new PasswordField();
-		edPassword.setHeight("17px");
-		inner_right_layout.addComponent(edPassword);
-		inner_right_layout.setComponentAlignment(edPassword, Alignment.MIDDLE_RIGHT);
+			btnLogin = new Button();
+			btnLogin.setCaption("Login");
+			inner_right_layout.addComponent(btnLogin);
+			inner_right_layout.setComponentAlignment(btnLogin, Alignment.MIDDLE_RIGHT);
+			btnLogin.addClickListener(new ClickListener() {
+				private static final long serialVersionUID = 1L;
 
-		btnLogin = new Button();
-		btnLogin.setCaption("Login");
-		inner_right_layout.addComponent(btnLogin);
-		inner_right_layout.setComponentAlignment(btnLogin, Alignment.MIDDLE_RIGHT);
-		btnLogin.addClickListener(new ClickListener() {
-			private static final long serialVersionUID = 1L;
+				@Override
+				public void buttonClick(ClickEvent event) {
+					onBtnLoginClicked();
+				}
+			});
 
-			@Override
-			public void buttonClick(ClickEvent event) {
-				onBtnLoginClicked();
-			}
-		});
-		
-		inner_right_layout.setSizeUndefined();
-		
+			inner_right_layout.setSizeUndefined();
+		}
 		
 		result_layout.addComponent(inner_right_layout);
 		result_layout.setComponentAlignment(inner_right_layout, Alignment.MIDDLE_RIGHT);
@@ -131,26 +135,59 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	}
 	
 	private Layout build_user_bar_top() {
-		VerticalLayout result_layout = new VerticalLayout();
+		HorizontalLayout result_layout = new HorizontalLayout();
 		result_layout.setStyleName("commonpage_searchbar_top");
 		result_layout.setWidth("100%");
-		result_layout.setHeight("40px");
 		
-		VerticalLayout inner_right_layout = new VerticalLayout();
-
-		inner_right_layout.setHeight("40px");
-
-		Label edLoggedInName = new Label(User.Nickname);
-		inner_right_layout.addComponent(edLoggedInName);
-		inner_right_layout.setComponentAlignment(edLoggedInName, Alignment.MIDDLE_RIGHT);
-
-		Label edLoggedInMail = new Label(User.Email);
-		inner_right_layout.addComponent(edLoggedInMail);
-		inner_right_layout.setComponentAlignment(edLoggedInMail, Alignment.MIDDLE_RIGHT);
-
-		inner_right_layout.setSizeUndefined();
+		Resource res = new ThemeResource("img/logo.png");
+		Image image = new Image(null, res);
+		result_layout.addComponent(image);
+		result_layout.setComponentAlignment(image, Alignment.MIDDLE_LEFT);
 		
+		HorizontalLayout inner_right_layout = new HorizontalLayout();
+		{
+			VerticalLayout inner_right_layout_left = new VerticalLayout();
+			{
+				Label edLoggedInName = new Label(User.Nickname);
+				inner_right_layout_left.addComponent(edLoggedInName);
+				inner_right_layout_left.setComponentAlignment(edLoggedInName, Alignment.MIDDLE_RIGHT);
+
+//				Label edLoggedInMail = new Label(User.Email);
+//				inner_right_layout_left.addComponent(edLoggedInMail);
+//				inner_right_layout_left.setComponentAlignment(edLoggedInMail, Alignment.MIDDLE_RIGHT);
+				
+				Button btnLogOff = new Button("Log Off");
+				inner_right_layout_left.addComponent(btnLogOff);
+				btnLogOff.setStyleName("link");
+				inner_right_layout_left.setComponentAlignment(btnLogOff, Alignment.MIDDLE_RIGHT);
+				btnLogOff.addClickListener(new ClickListener() {
+					private static final long serialVersionUID = 1L;
+
+					@Override
+					public void buttonClick(ClickEvent event) {
+						onBtnLogOffClicked();
+					}
+				});
+
+				inner_right_layout_left.setSizeUndefined();
+			}
 		
+			VerticalLayout inner_right_layout_right = new VerticalLayout();
+			{
+				inner_right_layout_right.addComponent(new Image(null, new ThemeResource("img/default_avatar.png")));
+
+				inner_right_layout_right.setSizeUndefined();
+			}
+			
+			inner_right_layout.addComponent(inner_right_layout_left);
+			inner_right_layout.setComponentAlignment(inner_right_layout_left, Alignment.MIDDLE_RIGHT);
+			
+			inner_right_layout.addComponent(inner_right_layout_right);
+			inner_right_layout.setComponentAlignment(inner_right_layout_right, Alignment.MIDDLE_RIGHT);
+			
+			inner_right_layout.setSizeUndefined();
+		}
+
 		result_layout.addComponent(inner_right_layout);
 		result_layout.setComponentAlignment(inner_right_layout, Alignment.MIDDLE_RIGHT);
 		
@@ -164,37 +201,37 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		result_layout.setHeight("40px");
 		
 		HorizontalLayout inner_right_layout = new HorizontalLayout();
+		{
+			inner_right_layout.setHeight("40px");
 
-		inner_right_layout.setHeight("40px");
+			inner_right_layout.setWidth("100.0%");
+			inner_right_layout.setHeight("40px");
+			inner_right_layout.addComponent(new Label("&nbsp;", ContentMode.HTML));
 
-		inner_right_layout.setWidth("100.0%");
-		inner_right_layout.setHeight("40px");
-		inner_right_layout.addComponent(new Label("&nbsp;", ContentMode.HTML));
-		
-		edSearch = new TextField();
-		edSearch.setWidth("200px");
-		inner_right_layout.addComponent(edSearch);
-		inner_right_layout.setComponentAlignment(edSearch, Alignment.MIDDLE_RIGHT);
-		
-		cbxSearch = new NativeSelect();
-		inner_right_layout.addComponent(cbxSearch);
-		inner_right_layout.setComponentAlignment(cbxSearch, Alignment.MIDDLE_RIGHT);
+			edSearch = new TextField();
+			edSearch.setWidth("200px");
+			inner_right_layout.addComponent(edSearch);
+			inner_right_layout.setComponentAlignment(edSearch, Alignment.MIDDLE_RIGHT);
 
-		btnSearch = new Button();
-		btnSearch.setCaption("Search");
-		inner_right_layout.addComponent(btnSearch);
-		inner_right_layout.setComponentAlignment(btnSearch, Alignment.MIDDLE_RIGHT);
-		btnSearch.addClickListener(new ClickListener() {
-			private static final long serialVersionUID = 1L;
+			cbxSearch = new NativeSelect();
+			inner_right_layout.addComponent(cbxSearch);
+			inner_right_layout.setComponentAlignment(cbxSearch, Alignment.MIDDLE_RIGHT);
 
-			@Override
-			public void buttonClick(ClickEvent event) {
-				onBtnSearchClicked();
-			}
-		});
-		
-		inner_right_layout.setSizeUndefined();
-		
+			btnSearch = new Button();
+			btnSearch.setCaption("Search");
+			inner_right_layout.addComponent(btnSearch);
+			inner_right_layout.setComponentAlignment(btnSearch, Alignment.MIDDLE_RIGHT);
+			btnSearch.addClickListener(new ClickListener() {
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				public void buttonClick(ClickEvent event) {
+					onBtnSearchClicked();
+				}
+			});
+
+			inner_right_layout.setSizeUndefined();
+		}
 		
 		result_layout.addComponent(inner_right_layout);
 		result_layout.setComponentAlignment(inner_right_layout, Alignment.MIDDLE_RIGHT);
@@ -228,10 +265,10 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	
 	private Layout build_sidebar_right() {
 		VerticalLayout result_layout = new VerticalLayout();
-		result_layout.setWidth("200px");
 
 		result_layout.setStyleName("commonpage_layout_right");
 		result_layout.setHeight("300px");
+		result_layout.setWidth("200px");
 		
 		return result_layout;
 	}
@@ -239,4 +276,5 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	protected abstract Layout buildLayout();
 	protected abstract void onBtnLoginClicked();
 	protected abstract void onBtnSearchClicked();
+	protected abstract void onBtnLogOffClicked();
 }

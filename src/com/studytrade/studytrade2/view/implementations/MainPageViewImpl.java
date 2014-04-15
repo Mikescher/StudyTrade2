@@ -60,4 +60,10 @@ public class MainPageViewImpl extends CustomStudyTradeComponent implements MainP
 		for (MainPageViewListener l : listeners)
 			l.SearchClicked(edSearch.getValue());
 	}
+
+	@Override
+	protected void onBtnLogOffClicked() {
+		for (MainPageViewListener l : listeners)
+			l.LogOffClicked();
+	}
 }

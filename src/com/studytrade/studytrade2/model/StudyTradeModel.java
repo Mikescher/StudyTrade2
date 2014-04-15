@@ -86,4 +86,8 @@ public class StudyTradeModel {
 			return false;
 		}
 	}
+
+	public void logOff() {
+		CurrentUser = null;
+	}
 }

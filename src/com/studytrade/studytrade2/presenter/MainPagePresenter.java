@@ -28,4 +28,9 @@ public class MainPagePresenter extends CustomPresenter implements MainPageViewLi
 	public void SearchClicked(String searchstring) {
 		OnSearchClicked(searchstring);
 	}
+
+	@Override
+	public void LogOffClicked() {
+		OnLogOffClicked();
+	}
 }

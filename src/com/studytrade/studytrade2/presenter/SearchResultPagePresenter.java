@@ -28,4 +28,9 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
 	public void SearchClicked(String searchstring) {
 		OnSearchClicked(searchstring);
 	}
+
+	@Override
+	public void LogOffClicked() {
+		OnLogOffClicked();
+	}
 }
