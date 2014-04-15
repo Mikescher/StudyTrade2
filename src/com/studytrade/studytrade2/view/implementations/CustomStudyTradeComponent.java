@@ -57,7 +57,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 
 		
 		HorizontalLayout area_center = new HorizontalLayout();
-		area_center.setWidth(100, Unit.PERCENTAGE);
+		area_center.setWidth("100%");
 		mainLayout.addComponent(area_center);
 		
 		
@@ -186,6 +186,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		VerticalLayout result_layout;
 		
 		result_layout = new VerticalLayout();
+		result_layout.setWidth("400px");
 		
 		Layout pnlCategory = new VerticalLayout();
 		pnlCategory.setStyleName("commonpage_categories_left");
@@ -206,9 +207,9 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	}
 	
 	private Layout build_sidebar_right() {
-		VerticalLayout result_layout;
-		
-		result_layout = new VerticalLayout();
+		VerticalLayout result_layout = new VerticalLayout();
+		result_layout.setWidth("200px");
+
 		result_layout.setStyleName("commonpage_layout_right");
 		result_layout.setHeight("300px");
 		
