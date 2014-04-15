@@ -1,6 +1,8 @@
 package com.studytrade.studytrade2.view.implementations;
 
 import com.studytrade.studytrade2.model.StudyTradeUser;
+import com.vaadin.server.Resource;
+import com.vaadin.server.ThemeResource;
 import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
@@ -8,6 +10,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
 import com.vaadin.ui.NativeSelect;
@@ -32,17 +35,18 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	public CustomStudyTradeComponent(StudyTradeUser usr) {
 		this.User = usr;
 	}
-	
+
 	protected void Init() {
 		setCompositionRoot(buildFullLayout());
 	}
-	
+
 	private Layout buildFullLayout() {
 		mainLayout = new VerticalLayout();
 		mainLayout.setStyleName("commonpage_main_layout");
 		mainLayout.setWidth("100%");
 
-
+		mainLayout.addComponent(build_banner_top());
+		
 		if (User == null) { 
 			// Not logged in
 			
@@ -68,6 +72,22 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		return mainLayout;
 	}
 
+
+	private Layout build_banner_top() {
+		HorizontalLayout result_layout = new HorizontalLayout();
+		result_layout.setStyleName("commonpage_banner_top");
+		
+		result_layout.setWidth("100%");
+		
+		Resource res = new ThemeResource("img/StudyTrade.png");
+		Image image = new Image(null, res);
+		
+		result_layout.addComponent(image);
+		result_layout.setComponentAlignment(image, Alignment.MIDDLE_CENTER);
+		
+		return result_layout;
+	}
+	
 	private Layout build_user_login_bar_top() {
 		VerticalLayout result_layout = new VerticalLayout();
 		result_layout.setStyleName("commonpage_searchbar_top");

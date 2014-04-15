@@ -7,27 +7,26 @@ import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.SearchResultPageView;
 import com.studytrade.studytrade2.view.interfaces.SearchResultPageViewListener;
-import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
+import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 
 public class SearchResultPageViewImpl extends CustomStudyTradeComponent implements SearchResultPageView {
 	private static final long serialVersionUID = -2103599367448946610L;
 
-	private Label label_1;
-	private Button button_1;
-	
 	private List<SearchResultPageViewListener> listeners = new ArrayList<>();
 
 	private List<StudyTradeArticle> Articles;
 	
-	public SearchResultPageViewImpl(StudyTradeUser usr, List<StudyTradeArticle> articles) {
+	public SearchResultPageViewImpl(StudyTradeUser usr, String searchstr, List<StudyTradeArticle> articles) {
 		super(usr);
 		
 		this.Articles = articles;
 		
 		Init();
+		
+		edSearch.setValue(searchstr);
 	}
 	
 	@Override
@@ -42,6 +41,8 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 		mainLayout.setImmediate(false);
 		
 		for (StudyTradeArticle article : Articles) {
+			Panel p = new Panel();
+			
 			VerticalLayout l = new VerticalLayout();
 
 			l.addComponent(new Label("ID:" + article.ArticleID));
@@ -49,7 +50,9 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 			l.addComponent(new Label(article.Description));
 			l.addComponent(new Label(article.Place));
 			
-			mainLayout.addComponent(l);
+			p.setContent(l);
+			
+			mainLayout.addComponent(p);
 		}
 		
 		return mainLayout;

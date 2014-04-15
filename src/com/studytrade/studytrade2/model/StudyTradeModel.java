@@ -26,6 +26,7 @@ public class StudyTradeModel {
 		List<StudyTradeArticle> result = new ArrayList<>();
 		
 		try {
+			DBConnection.PrepStatements.Statement_FindArticle.setString(1, "%" + searchstring + "%");
 			ResultSet rs = DBConnection.PrepStatements.Statement_FindArticle.executeQuery();
 			
 			while (rs.next()) {

@@ -17,7 +17,7 @@ public class StudyTradeStatements {
 	private void prepare(Connection c) {
 		try {
 			Statement_UserByNickname = c.prepareStatement("SELECT * FROM users WHERE nickname LIKE ? LIMIT 1");
-			Statement_FindArticle = c.prepareStatement("SELECT * FROM articles");
+			Statement_FindArticle = c.prepareStatement("SELECT * FROM articles WHERE name LIKE ? LIMIT 25");
 		} catch (SQLException e) {
 			STLog.log(e);
 		}

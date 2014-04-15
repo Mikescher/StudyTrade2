@@ -34,7 +34,7 @@ public abstract class CustomPresenter {
 
 	protected void OnSearchClicked(String searchstring) {
 		List<StudyTradeArticle> results = Model.getSearchResults(searchstring);
-		SearchResultPageViewImpl view = new SearchResultPageViewImpl(Model.GetLogedInUser(), results);
+		SearchResultPageViewImpl view = new SearchResultPageViewImpl(Model.GetLogedInUser(), searchstring, results);
 		new SearchResultPagePresenter(UI, Model, view);
 	}
 }
