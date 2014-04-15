@@ -26,7 +26,7 @@ public class Studytrade2UI extends UI {
 	protected void init(VaadinRequest request) {
 		StudyTradeModel model = new StudyTradeModel();
 		
-		MainPageView view = new MainPageViewImpl();
+		MainPageView view = new MainPageViewImpl(model.GetLogedInUser());
 		
 		new MainPagePresenter(this, model, view);
 	}
