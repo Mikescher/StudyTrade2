@@ -87,6 +87,8 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		result_layout.setWidth("100%");
 		result_layout.setHeight("100%");
 		
+		result_layout.setMargin(true);
+		
 		result_layout.addComponent(buildLayout());
 		
 		return result_layout;
@@ -94,7 +96,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	
 	private Layout build_user_login_bar_top() {
 		VerticalLayout result_layout = new VerticalLayout();
-		result_layout.setStyleName("commonpage_searchbar_top");
+		result_layout.setStyleName("commonpage_user_bar_top");
 		result_layout.setWidth("100%");
 		result_layout.setHeight("40px");
 		
@@ -136,7 +138,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	
 	private Layout build_user_bar_top() {
 		HorizontalLayout result_layout = new HorizontalLayout();
-		result_layout.setStyleName("commonpage_searchbar_top");
+		result_layout.setStyleName("commonpage_user_bar_top");
 		result_layout.setWidth("100%");
 		
 		Resource res = new ThemeResource("img/logo.png");
@@ -146,6 +148,8 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		
 		HorizontalLayout inner_right_layout = new HorizontalLayout();
 		{
+			inner_right_layout.setStyleName("commonpage_user_bar_top_inner_right");
+			
 			VerticalLayout inner_right_layout_left = new VerticalLayout();
 			{
 				Label edLoggedInName = new Label(User.Nickname);
@@ -196,7 +200,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 
 	private Layout build_searchbar_top() {
 		VerticalLayout result_layout = new VerticalLayout();
-		result_layout.setStyleName("commonpage_user_bar_top");
+		result_layout.setStyleName("commonpage_searchbar_top");
 		result_layout.setWidth("100%");
 		result_layout.setHeight("40px");
 		
