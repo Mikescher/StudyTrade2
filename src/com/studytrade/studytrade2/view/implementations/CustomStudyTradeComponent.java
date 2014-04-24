@@ -105,16 +105,19 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 			inner_right_layout.setHeight("40px");
 
 			edUsername = new TextField();
+			edUsername.setId("selendebug_CmnPg_ed_username");
 			edUsername.setHeight("17px");
 			inner_right_layout.addComponent(edUsername);
 			inner_right_layout.setComponentAlignment(edUsername, Alignment.MIDDLE_RIGHT);
 
 			edPassword = new PasswordField();
+			edPassword.setId("selendebug_CmnPg_ed_passw");
 			edPassword.setHeight("17px");
 			inner_right_layout.addComponent(edPassword);
 			inner_right_layout.setComponentAlignment(edPassword, Alignment.MIDDLE_RIGHT);
 
 			btnLogin = new Button();
+			btnLogin.setId("selendebug_CmnPg_btn_login");
 			btnLogin.setCaption("Login");
 			inner_right_layout.addComponent(btnLogin);
 			inner_right_layout.setComponentAlignment(btnLogin, Alignment.MIDDLE_RIGHT);
