@@ -39,7 +39,6 @@ public class MainPageViewImpl extends CustomStudyTradeComponent implements MainP
 		// button_1
 		button_1 = new Button();
 		button_1.setCaption("HELLLOOOOO");
-		button_1.setDebugId("debg_Mainpage_btn_00");
 		mainLayout.addComponent(button_1, "top:60.0px;left:95.0px;");
 		
 		// label_1

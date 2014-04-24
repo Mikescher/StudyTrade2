@@ -3,7 +3,6 @@ package com.studytrade.studytrade2;
 import javax.servlet.annotation.WebServlet;
 
 import com.studytrade.studytrade2.model.StudyTradeModel;
-import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.presenter.MainPagePresenter;
 import com.studytrade.studytrade2.view.implementations.MainPageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.MainPageView;
@@ -27,8 +26,11 @@ public class Studytrade2UI extends UI {
 	protected void init(VaadinRequest request) {
 		StudyTradeModel model = new StudyTradeModel();
 		        
-//		MainPageView view = new MainPageViewImpl(model.GetLogedInUser());
-		MainPageView view = new MainPageViewImpl(new StudyTradeUser("testuser", "A@B.C"));
+//*
+		MainPageView view = new MainPageViewImpl(model.GetLogedInUser());
+/*/
+		MainPageView view = new MainPageViewImpl(new com.studytrade.studytrade2.model.StudyTradeUser("testuser", "A@B.C"));
+//*/
 		
 		new MainPagePresenter(this, model, view);
 	}
