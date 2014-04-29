@@ -1,7 +1,9 @@
 package com.studytrade.studytrade2.presenter;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
+import com.studytrade.studytrade2.view.implementations.ArticlePageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.SearchResultPageView;
 import com.studytrade.studytrade2.view.interfaces.SearchResultPageViewListener;
 import com.vaadin.ui.Component;
@@ -32,5 +34,11 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
 	@Override
 	public void LogOffClicked() {
 		OnLogOffClicked();
+	}
+
+	@Override
+	public void ArticleClicked(StudyTradeArticle article) {
+		ArticlePageViewImpl view = new ArticlePageViewImpl(Model.GetLogedInUser(), article);
+		new ArticlePagePresenter(UI, Model, view);
 	}
 }
