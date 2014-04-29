@@ -31,10 +31,8 @@ public class StudyTradeModel {
 			
 			while (rs.next()) {
 				StudyTradeArticle article = new StudyTradeArticle(
-						rs.getInt("id"), 
-						rs.getString("name"), 
-						rs.getString("place"), 
-						rs.getString("description"));
+						rs, new StudyTradeUser(rs)
+				);
 
 				result.add(article);
 			}
@@ -62,9 +60,7 @@ public class StudyTradeModel {
 			ResultSet rs = DBConnection.PrepStatements.Statement_UserByNickname.executeQuery();
 			
 			if (rs.next()) {
-				StudyTradeUser user = new StudyTradeUser(
-						rs.getString("nickname"), 
-						rs.getString("mail"));
+				StudyTradeUser user = new StudyTradeUser(rs);
 
 				String db_pwhash = rs.getString("passwordhash");
 				

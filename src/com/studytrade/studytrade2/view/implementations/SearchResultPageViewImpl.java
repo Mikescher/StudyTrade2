@@ -7,6 +7,8 @@ import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.SearchResultPageView;
 import com.studytrade.studytrade2.view.interfaces.SearchResultPageViewListener;
+import com.vaadin.event.MouseEvents.ClickEvent;
+import com.vaadin.event.MouseEvents.ClickListener;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
 import com.vaadin.ui.Panel;
@@ -40,7 +42,7 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 		VerticalLayout mainLayout = new VerticalLayout();
 		mainLayout.setImmediate(false);
 		
-		for (StudyTradeArticle article : Articles) {
+		for (final StudyTradeArticle article : Articles) {
 			Panel p = new Panel();
 			
 			VerticalLayout l = new VerticalLayout();
@@ -51,6 +53,15 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 			l.addComponent(new Label(article.Place));
 			
 			p.setContent(l);
+			
+			p.addClickListener(new ClickListener() {
+				private static final long serialVersionUID = 5665965853296644399L;
+
+				@Override
+				public void click(ClickEvent event) {
+					onArticleClicked(article);
+				}
+			});
 			
 			mainLayout.addComponent(p);
 		}
@@ -74,5 +85,10 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 	protected void onBtnLogOffClicked() {
 		for (SearchResultPageViewListener l : listeners)
 			l.LogOffClicked();
+	}
+
+	protected void onArticleClicked(StudyTradeArticle a) {
+		for (SearchResultPageViewListener l : listeners)
+			l.ArticleClicked(a);
 	}
 }
