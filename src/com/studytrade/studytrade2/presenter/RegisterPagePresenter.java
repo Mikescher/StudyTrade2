@@ -4,7 +4,6 @@ import com.studytrade.studytrade2.Studytrade2UI;
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.view.interfaces.RegisterPageView;
 import com.studytrade.studytrade2.view.interfaces.RegisterPageViewListener;
-
 import com.vaadin.ui.Component;
 
 public class RegisterPagePresenter extends CustomPresenter implements RegisterPageViewListener {
@@ -33,5 +32,11 @@ public class RegisterPagePresenter extends CustomPresenter implements RegisterPa
 	@Override
 	public void LogOffClicked() {
 		OnLogOffClicked();
+	}
+
+	@Override
+	public void RegisterClicked(String forename, String lastname, String nickname, String place, int university, String studydirection, String email, String password) {
+		// TODO register
+		
 	}
 }
