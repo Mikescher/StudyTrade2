@@ -68,18 +68,22 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 
 		edForename = new TextField();
 		edForename.setCaption("Vorname");
+		edForename.setId("selendebug_RegPg_ed_forename");
 		l.addComponent(edForename);
 
 		edLastname = new TextField();
 		edLastname.setCaption("Nachname");
+		edLastname.setId("selendebug_RegPg_ed_lastname");
 		l.addComponent(edLastname);
 
 		edNickname = new TextField();
 		edNickname.setCaption("Nickname");
+		edNickname.setId("selendebug_RegPg_ed_nickname");
 		l.addComponent(edNickname);
 
 		edCity = new TextField();
 		edCity.setCaption("Wohnort");
+		edCity.setId("selendebug_RegPg_ed_city");
 		l.addComponent(edCity);
 
 		edUniversity = new NativeSelect();
@@ -90,25 +94,31 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 			edUniversity.setItemCaption(edUniversity.addItem("Uni Offenburg"), "Uni Offenburg");
 			edUniversity.setItemCaption(edUniversity.addItem("Other"), "Other");
 		}
+		edUniversity.setId("selendebug_RegPg_cbx_university");
 		l.addComponent(edUniversity);
 
 		edDirection = new TextField();
 		edDirection.setCaption("Studienrichtung");
+		edDirection.setId("selendebug_RegPg_ed_direction");
 		l.addComponent(edDirection);
 
 		edMail = new TextField();
 		edMail.setCaption("E-Mail");
+		edMail.setId("selendebug_RegPg_ed_mail");
 		l.addComponent(edMail);
 
 		edPassword_1 = new PasswordField();
 		edPassword_1.setCaption("Passwort");
+		edPassword_1.setId("selendebug_RegPg_ed_pw1");
 		l.addComponent(edPassword_1);
 
 		edPassword_2 = new PasswordField();
+		edPassword_2.setId("selendebug_RegPg_ed_pw2");
 		l.addComponent(edPassword_2);
 
 		btnRegister = new NativeButton();
 		btnRegister.setCaption("Registrieren");
+		btnRegister.setId("selendebug_RegPg_btn_register");
 		l.addComponent(btnRegister);
 		btnRegister.addClickListener(new ClickListener() {
 			private static final long serialVersionUID = 1224460369183535360L;
@@ -143,7 +153,7 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 		}
 		
 		if (edNickname.getValue().trim().length() == 0) { // all Whitespace
-			lblMessage.setValue("Please insert a Nickname");
+			lblMessage.setValue("Please insert a nickname");
 			lblMessage.setVisible(true);
 			return false;
 		}
@@ -167,7 +177,7 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 		}
 		
 		if (edDirection.getValue().trim().length() == 0) { // all Whitespace
-			lblMessage.setValue("Please insert a StudyDirection");
+			lblMessage.setValue("Please insert a study direction");
 			lblMessage.setVisible(true);
 			return false;
 		}
