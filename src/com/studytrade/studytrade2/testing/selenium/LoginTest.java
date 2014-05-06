@@ -16,7 +16,7 @@ public class LoginTest {
 	}
 
 	@Test
-	public void testTempscriptMike() throws Exception {
+	public void testLogin_1() throws Exception {
 		WebDriver driver = new FirefoxDriver();
 
 		WebDriverBackedSelenium selenium = new WebDriverBackedSelenium(driver, "http://localhost:8080/");
@@ -36,9 +36,12 @@ public class LoginTest {
 
 		Assert.assertTrue(selenium.isTextPresent("Mikescher"));
 		Assert.assertTrue(selenium.isTextPresent("Log Off"));
+		
+		selenium.close();
 	}
+	
 	@Test
-	public void testTempscripTimot() throws Exception {
+	public void testLogin_2() throws Exception {
 		WebDriver driver = new FirefoxDriver();
 
 		WebDriverBackedSelenium selenium = new WebDriverBackedSelenium(driver, "http://localhost:8080/");
@@ -58,9 +61,12 @@ public class LoginTest {
 
 		Assert.assertTrue(selenium.isTextPresent("MBiel"));
 		Assert.assertTrue(selenium.isTextPresent("Log Off"));
+		
+		selenium.close();
 	}
+	
 	@Test
-	public void testTempscriptMUSTFAIL() throws Exception {
+	public void testLogin_3() throws Exception {
 		WebDriver driver = new FirefoxDriver();
 
 		WebDriverBackedSelenium selenium = new WebDriverBackedSelenium(driver, "http://localhost:8080/");
@@ -71,14 +77,15 @@ public class LoginTest {
 
 		selenium.waitForPageToLoad("10000");
 
-		selenium.type("selendebug_CmnPg_ed_username", "User");
+		selenium.type("selendebug_CmnPg_ed_username", "User_xxxxx");
 		selenium.type("selendebug_CmnPg_ed_passw", "test");
 
 		selenium.click("selendebug_CmnPg_btn_login");
 
 		selenium.waitForPageToLoad("10000");
 
-		Assert.assertTrue(selenium.isTextPresent("User"));
-		Assert.assertTrue(selenium.isTextPresent("test"));
+		Assert.assertFalse(selenium.isTextPresent("User_xxxxx")); // NOT LOGGED IN
+		
+		selenium.close();
 	}
 }
