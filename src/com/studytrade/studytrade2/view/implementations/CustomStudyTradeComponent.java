@@ -18,7 +18,7 @@ import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-public abstract class CustomStudyTradeComponent extends CustomComponent{
+public abstract class CustomStudyTradeComponent extends CustomComponent {
 	private static final long serialVersionUID = -8192711605278107723L;
 
 	private StudyTradeUser User;
@@ -28,6 +28,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	private TextField edUsername;
 	private PasswordField edPassword;
 	private Button btnLogin;
+	private Button btnRegister;
 	private TextField edSearch;
 	private NativeSelect cbxSearch;
 	private Button btnSearch;
@@ -126,7 +127,21 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 
 				@Override
 				public void buttonClick(ClickEvent event) {
-					onBtnloginClicked(edUsername.getValue(), edPassword.getValue());
+					onBtnLoginClicked(edUsername.getValue(), edPassword.getValue());
+				}
+			});
+
+			btnRegister = new Button();
+			btnRegister.setId("selendebug_CmnPg_btn_register");
+			btnRegister.setCaption("Register");
+			inner_right_layout.addComponent(btnRegister);
+			inner_right_layout.setComponentAlignment(btnRegister, Alignment.MIDDLE_RIGHT);
+			btnRegister.addClickListener(new ClickListener() {
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				public void buttonClick(ClickEvent event) {
+					onBtnRegisterClicked();
 				}
 			});
 
@@ -172,7 +187,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 
 					@Override
 					public void buttonClick(ClickEvent event) {
-						onBtnlogOffClicked();
+						onBtnLogOffClicked();
 					}
 				});
 
@@ -233,7 +248,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 
 				@Override
 				public void buttonClick(ClickEvent event) {
-					onBtnsearchClicked(edSearch.getValue());
+					onBtnSearchClicked(edSearch.getValue());
 				}
 			});
 
@@ -285,7 +300,8 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	}
 	
 	protected abstract Layout buildLayout();
-	protected abstract void onBtnloginClicked(String username, String password);
-	protected abstract void onBtnsearchClicked(String searchstring);
-	protected abstract void onBtnlogOffClicked();
+	protected abstract void onBtnLoginClicked(String username, String password);
+	protected abstract void onBtnRegisterClicked();
+	protected abstract void onBtnSearchClicked(String searchstring);
+	protected abstract void onBtnLogOffClicked();
 }

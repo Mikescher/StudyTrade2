@@ -83,7 +83,43 @@ public class StudyTradeModel {
 		}
 	}
 
+	public boolean register(String forename, String lastname, String nickname, String place, String university, String studydirection, String email, String password) {
+		try {
+			DBConnection.PrepStatements.Statement_InsertNewUser.setString(1, forename);
+			DBConnection.PrepStatements.Statement_InsertNewUser.setString(2, lastname);
+			DBConnection.PrepStatements.Statement_InsertNewUser.setString(3, nickname);
+			DBConnection.PrepStatements.Statement_InsertNewUser.setString(4, place);
+			DBConnection.PrepStatements.Statement_InsertNewUser.setString(5, university);
+			DBConnection.PrepStatements.Statement_InsertNewUser.setString(6, studydirection);
+			DBConnection.PrepStatements.Statement_InsertNewUser.setString(7, email);
+			DBConnection.PrepStatements.Statement_InsertNewUser.setString(8, HashHelper.doSHA1(password));
+			DBConnection.PrepStatements.Statement_InsertNewUser.setInt(9, 0);
+			
+			return DBConnection.PrepStatements.Statement_InsertNewUser.execute();
+		} catch (SQLException e) {
+			STLog.log(e);
+			return false;
+		}
+	}
+	
 	public void logOff() {
 		CurrentUser = null;
+	}
+
+	public List<String> getNicknameList() {
+		List<String> result = new ArrayList<>();
+		
+		try {
+			ResultSet rs = DBConnection.PrepStatements.Statement_ListNicknames.executeQuery();
+			
+			while (rs.next()) {
+				result.add(rs.getString(1));
+			}
+		} catch (SQLException e) {
+			STLog.log(e);
+			return null;
+		}
+		
+		return result;
 	}
 }

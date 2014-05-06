@@ -16,27 +16,33 @@ public class RegisterPagePresenter extends CustomPresenter implements RegisterPa
 
         view.addListener(this);
         
-        ChangeView((Component)view);
+        changeView((Component)view);
     }
 
 	@Override
 	public void loginClicked(String username, String password) {
-		OnloginClicked(username, password);
+		onLoginClicked(username, password);
 	}
 
 	@Override
 	public void searchClicked(String searchstring) {
-		OnsearchClicked(searchstring);
+		onSearchClicked(searchstring);
 	}
 
 	@Override
 	public void logOffClicked() {
-		OnlogOffClicked();
+		onLogOffClicked();
 	}
 
 	@Override
-	public void doRegisterClicked(String forename, String lastname, String nickname, String place, int university, String studydirection, String email, String password) {
-		// TODO register
+	public void registerClicked() {
+		onRegisterClicked();
+	}
+
+	@Override
+	public void doRegisterClicked(String forename, String lastname, String nickname, String place, String university, String studydirection, String email, String password) {
+		Model.register(forename, lastname, nickname, place, university, studydirection, email, password);
 		
+		onLoginClicked(nickname, password);
 	}
 }

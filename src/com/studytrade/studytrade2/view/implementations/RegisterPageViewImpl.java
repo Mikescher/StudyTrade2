@@ -22,6 +22,8 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 
 	private List<RegisterPageViewListener> listeners = new ArrayList<>();
 
+	private List<String> usrNames;
+	
 	private NativeButton btnRegister;
 	private PasswordField edPassword_2;
 	private PasswordField edPassword_1;
@@ -35,8 +37,10 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 	private Label lblCaption;
 	private Label lblMessage;
 
-	public RegisterPageViewImpl(StudyTradeUser usr) {
+	public RegisterPageViewImpl(StudyTradeUser usr, List<String> takenUsernames) {
 		super(usr);
+		
+		this.usrNames = takenUsernames;
 
 		Init();
 	}
@@ -80,6 +84,12 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 
 		edUniversity = new NativeSelect();
 		edUniversity.setCaption("Hochschule");
+		{
+			edUniversity.setItemCaption(edUniversity.addItem("DH Karlsruhe"), "DH Karlsruhe");
+			edUniversity.setItemCaption(edUniversity.addItem("DH Freiburg"), "DH Freiburg");
+			edUniversity.setItemCaption(edUniversity.addItem("Uni Offenburg"), "Uni Offenburg");
+			edUniversity.setItemCaption(edUniversity.addItem("Other"), "Other");
+		}
 		l.addComponent(edUniversity);
 
 		edDirection = new TextField();
@@ -106,7 +116,7 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 			@Override
 			public void buttonClick(ClickEvent event) {
 				if (isInputValid()) {
-					onBtnRegisterClicked();
+					onBtnDoRegisterClicked();
 				}
 				
 			}
@@ -138,12 +148,11 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 			return false;
 		}
 		
-		//TODO Test duplicate nickname
-//		if (edNickname.getValue().trim().length() == 0) { // all Whitespace
-//			lblMessage.setValue("Please insert a Nickname");
-//			lblMessage.setVisible(true);
-//			return false;
-//		}
+		if (isUsernameTaken(edNickname.getValue())) { // all Whitespace
+			lblMessage.setValue("Nickname already taken");
+			lblMessage.setVisible(true);
+			return false;
+		}
 		
 		if (edCity.getValue().trim().length() == 0) { // all Whitespace
 			lblMessage.setValue("Please insert a city");
@@ -151,7 +160,7 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 			return false;
 		}
 		
-		if (edUniversity.getValue() == null) { // all Whitespace
+		if (edUniversity.getValue() == null) {
 			lblMessage.setValue("Please choose a university");
 			lblMessage.setVisible(true);
 			return false;
@@ -169,13 +178,13 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 			return false;
 		}
 		
-		if (edPassword_1.getValue().trim().length() < 8) { // all Whitespace
+		if (edPassword_1.getValue().trim().length() < 8) {
 			lblMessage.setValue("Please insert a password with a minimum length of 8 characters");
 			lblMessage.setVisible(true);
 			return false;
 		}
 		
-		if (! edPassword_1.getValue().equals(edPassword_2.getValue())) { // all Whitespace
+		if (! edPassword_1.getValue().equals(edPassword_2.getValue())) {
 			lblMessage.setValue("Passwords do not match");
 			lblMessage.setVisible(true);
 			return false;
@@ -184,14 +193,22 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 		return true;
 	}
 	
-	private void onBtnRegisterClicked() {
+	private boolean isUsernameTaken(String value) {
+		for (String us : usrNames)
+			if (us.toLowerCase().equals(value.toLowerCase()))
+				return true;
+		
+		return false;
+	}
+
+	private void onBtnDoRegisterClicked() {
 		for (RegisterPageViewListener l : listeners) {
 			l.doRegisterClicked(
 					edForename.getValue(), 
 					edLastname.getValue(), 
 					edNickname.getValue(), 
 					edCity.getValue(), 
-					(int)edUniversity.getValue(), 
+					edUniversity.getItemCaption(edUniversity.getValue()), 
 					edDirection.getValue(), 
 					edMail.getValue(), 
 					edPassword_1.getValue());
@@ -199,19 +216,25 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 	}
 
 	@Override
-	protected void onBtnloginClicked(String username, String password) {
+	protected void onBtnLoginClicked(String username, String password) {
 		for (RegisterPageViewListener l : listeners)
 			l.loginClicked(username, password);
 	}
 
 	@Override
-	protected void onBtnsearchClicked(String searchstring) {
+	protected void onBtnRegisterClicked() {
+		for (RegisterPageViewListener l : listeners)
+			l.registerClicked();
+	}
+
+	@Override
+	protected void onBtnSearchClicked(String searchstring) {
 		for (RegisterPageViewListener l : listeners)
 			l.searchClicked(searchstring);
 	}
 
 	@Override
-	protected void onBtnlogOffClicked() {
+	protected void onBtnLogOffClicked() {
 		for (RegisterPageViewListener l : listeners)
 			l.logOffClicked();
 	}

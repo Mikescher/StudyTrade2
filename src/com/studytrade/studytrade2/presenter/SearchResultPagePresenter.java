@@ -18,22 +18,27 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
 
         view.addListener(this);
         
-        ChangeView((Component)view);
+        changeView((Component)view);
     }
 
 	@Override
 	public void loginClicked(String username, String password) {
-		OnloginClicked(username, password);
+		onLoginClicked(username, password);
 	}
 
 	@Override
 	public void searchClicked(String searchstring) {
-		OnsearchClicked(searchstring);
+		onSearchClicked(searchstring);
 	}
 
 	@Override
 	public void logOffClicked() {
-		OnlogOffClicked();
+		onLogOffClicked();
+	}
+
+	@Override
+	public void registerClicked() {
+		onRegisterClicked();
 	}
 
 	@Override

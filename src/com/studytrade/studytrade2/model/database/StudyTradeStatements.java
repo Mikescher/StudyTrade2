@@ -12,6 +12,8 @@ import logging.STLog;
 public class StudyTradeStatements {
 	public PreparedStatement Statement_UserByNickname;
 	public PreparedStatement Statement_FindArticle;
+	public PreparedStatement Statement_ListNicknames;
+	public PreparedStatement Statement_InsertNewUser;
 	
 	public StudyTradeStatements(Connection conn) {
 		prepare(conn);
@@ -21,6 +23,8 @@ public class StudyTradeStatements {
 		try {
 			Statement_UserByNickname = c.prepareStatement(loadResource("/Statement_UserByNickname.sql"));
 			Statement_FindArticle = c.prepareStatement(loadResource("/Statement_FindArticle.sql"));
+			Statement_ListNicknames = c.prepareStatement(loadResource("/Statement_ListNicknames.sql"));
+			Statement_InsertNewUser = c.prepareStatement(loadResource("/Statement_InsertNewUser.sql"));
 		} catch (SQLException e) {
 			STLog.log(e);
 		}
