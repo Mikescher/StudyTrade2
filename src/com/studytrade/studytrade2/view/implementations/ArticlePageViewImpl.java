@@ -48,15 +48,15 @@ public class ArticlePageViewImpl extends CustomStudyTradeComponent implements Ar
 	}
 
 	@Override
-	protected void onBtnLoginClicked() {
+	protected void onBtnLoginClicked(String username, String password) {
 		for (ArticlePageViewListener l : listeners)
-			l.LoginClicked(edUsername.getValue(), edPassword.getValue());
+			l.LoginClicked(username, password);
 	}
 
 	@Override
-	protected void onBtnSearchClicked() {
+	protected void onBtnSearchClicked(String searchstring) {
 		for (ArticlePageViewListener l : listeners)
-			l.SearchClicked(edSearch.getValue());
+			l.SearchClicked(searchstring);
 	}
 
 	@Override

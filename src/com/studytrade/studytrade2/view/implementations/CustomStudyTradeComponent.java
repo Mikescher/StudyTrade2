@@ -25,12 +25,12 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	
 	protected VerticalLayout mainLayout;
 	
-	protected TextField edUsername;
-	protected PasswordField edPassword;
-	protected Button btnLogin;
-	protected TextField edSearch;
-	protected NativeSelect cbxSearch;
-	protected Button btnSearch;
+	private TextField edUsername;
+	private PasswordField edPassword;
+	private Button btnLogin;
+	private TextField edSearch;
+	private NativeSelect cbxSearch;
+	private Button btnSearch;
 	
 	public CustomStudyTradeComponent(StudyTradeUser usr) {
 		this.User = usr;
@@ -126,7 +126,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 
 				@Override
 				public void buttonClick(ClickEvent event) {
-					onBtnLoginClicked();
+					onBtnLoginClicked(edUsername.getValue(), edPassword.getValue());
 				}
 			});
 
@@ -233,7 +233,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 
 				@Override
 				public void buttonClick(ClickEvent event) {
-					onBtnSearchClicked();
+					onBtnSearchClicked(edSearch.getValue());
 				}
 			});
 
@@ -280,8 +280,12 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 		return result_layout;
 	}
 	
+	protected void setSearchString(String searchstr) {
+		edSearch.setValue(searchstr);
+	}
+	
 	protected abstract Layout buildLayout();
-	protected abstract void onBtnLoginClicked();
-	protected abstract void onBtnSearchClicked();
+	protected abstract void onBtnLoginClicked(String username, String password);
+	protected abstract void onBtnSearchClicked(String searchstring);
 	protected abstract void onBtnLogOffClicked();
 }

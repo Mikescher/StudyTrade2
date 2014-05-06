@@ -28,9 +28,9 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 		
 		Init();
 		
-		edSearch.setValue(searchstr);
+		setSearchString(searchstr);
 	}
-	
+
 	@Override
 	public void addListener(SearchResultPageViewListener listener) {
 		listeners.add(listener);
@@ -70,15 +70,15 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 	}
 
 	@Override
-	protected void onBtnLoginClicked() {
+	protected void onBtnLoginClicked(String username, String password) {
 		for (SearchResultPageViewListener l : listeners)
-			l.LoginClicked(edUsername.getValue(), edPassword.getValue());
+			l.LoginClicked(username, password);
 	}
 
 	@Override
-	protected void onBtnSearchClicked() {
+	protected void onBtnSearchClicked(String searchstring) {
 		for (SearchResultPageViewListener l : listeners)
-			l.SearchClicked(edSearch.getValue());
+			l.SearchClicked(searchstring);
 	}
 
 	@Override
