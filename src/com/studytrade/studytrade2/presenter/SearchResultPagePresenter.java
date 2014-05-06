@@ -22,18 +22,18 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
     }
 
 	@Override
-	public void LoginClicked(String username, String password) {
-		OnLoginClicked(username, password);
+	public void loginClicked(String username, String password) {
+		OnloginClicked(username, password);
 	}
 
 	@Override
-	public void SearchClicked(String searchstring) {
-		OnSearchClicked(searchstring);
+	public void searchClicked(String searchstring) {
+		OnsearchClicked(searchstring);
 	}
 
 	@Override
-	public void LogOffClicked() {
-		OnLogOffClicked();
+	public void logOffClicked() {
+		OnlogOffClicked();
 	}
 
 	@Override

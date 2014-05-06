@@ -70,21 +70,21 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 	}
 
 	@Override
-	protected void onBtnLoginClicked(String username, String password) {
+	protected void onBtnloginClicked(String username, String password) {
 		for (SearchResultPageViewListener l : listeners)
-			l.LoginClicked(username, password);
+			l.loginClicked(username, password);
 	}
 
 	@Override
-	protected void onBtnSearchClicked(String searchstring) {
+	protected void onBtnsearchClicked(String searchstring) {
 		for (SearchResultPageViewListener l : listeners)
-			l.SearchClicked(searchstring);
+			l.searchClicked(searchstring);
 	}
 
 	@Override
-	protected void onBtnLogOffClicked() {
+	protected void onBtnlogOffClicked() {
 		for (SearchResultPageViewListener l : listeners)
-			l.LogOffClicked();
+			l.logOffClicked();
 	}
 
 	protected void onArticleClicked(StudyTradeArticle a) {

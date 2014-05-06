@@ -50,20 +50,20 @@ public class MainPageViewImpl extends CustomStudyTradeComponent implements MainP
 	}
 
 	@Override
-	protected void onBtnLoginClicked(String username, String password) {
+	protected void onBtnloginClicked(String username, String password) {
 		for (MainPageViewListener l : listeners)
-			l.LoginClicked(username, password);
+			l.loginClicked(username, password);
 	}
 
 	@Override
-	protected void onBtnSearchClicked(String searchstring) {
+	protected void onBtnsearchClicked(String searchstring) {
 		for (MainPageViewListener l : listeners)
-			l.SearchClicked(searchstring);
+			l.searchClicked(searchstring);
 	}
 
 	@Override
-	protected void onBtnLogOffClicked() {
+	protected void onBtnlogOffClicked() {
 		for (MainPageViewListener l : listeners)
-			l.LogOffClicked();
+			l.logOffClicked();
 	}
 }

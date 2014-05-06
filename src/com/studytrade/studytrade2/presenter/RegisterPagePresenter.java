@@ -20,22 +20,22 @@ public class RegisterPagePresenter extends CustomPresenter implements RegisterPa
     }
 
 	@Override
-	public void LoginClicked(String username, String password) {
-		OnLoginClicked(username, password);
+	public void loginClicked(String username, String password) {
+		OnloginClicked(username, password);
 	}
 
 	@Override
-	public void SearchClicked(String searchstring) {
-		OnSearchClicked(searchstring);
+	public void searchClicked(String searchstring) {
+		OnsearchClicked(searchstring);
 	}
 
 	@Override
-	public void LogOffClicked() {
-		OnLogOffClicked();
+	public void logOffClicked() {
+		OnlogOffClicked();
 	}
 
 	@Override
-	public void RegisterClicked(String forename, String lastname, String nickname, String place, int university, String studydirection, String email, String password) {
+	public void doRegisterClicked(String forename, String lastname, String nickname, String place, int university, String studydirection, String email, String password) {
 		// TODO register
 		
 	}

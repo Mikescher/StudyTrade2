@@ -126,7 +126,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 
 				@Override
 				public void buttonClick(ClickEvent event) {
-					onBtnLoginClicked(edUsername.getValue(), edPassword.getValue());
+					onBtnloginClicked(edUsername.getValue(), edPassword.getValue());
 				}
 			});
 
@@ -172,7 +172,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 
 					@Override
 					public void buttonClick(ClickEvent event) {
-						onBtnLogOffClicked();
+						onBtnlogOffClicked();
 					}
 				});
 
@@ -233,7 +233,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 
 				@Override
 				public void buttonClick(ClickEvent event) {
-					onBtnSearchClicked(edSearch.getValue());
+					onBtnsearchClicked(edSearch.getValue());
 				}
 			});
 
@@ -285,7 +285,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent{
 	}
 	
 	protected abstract Layout buildLayout();
-	protected abstract void onBtnLoginClicked(String username, String password);
-	protected abstract void onBtnSearchClicked(String searchstring);
-	protected abstract void onBtnLogOffClicked();
+	protected abstract void onBtnloginClicked(String username, String password);
+	protected abstract void onBtnsearchClicked(String searchstring);
+	protected abstract void onBtnlogOffClicked();
 }

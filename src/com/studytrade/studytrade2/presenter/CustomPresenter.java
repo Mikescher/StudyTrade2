@@ -22,7 +22,7 @@ public abstract class CustomPresenter {
 		UI.setContent(c);
 	}
 	
-	protected void OnLoginClicked(String username, String password) {
+	protected void OnloginClicked(String username, String password) {
 		if (Model.logIn(username, password)) {
 			//TODO Show (better) User Logged In Page
 			MainPageViewImpl view = new MainPageViewImpl(Model.GetLogedInUser());
@@ -32,13 +32,13 @@ public abstract class CustomPresenter {
 		}
 	}
 
-	protected void OnSearchClicked(String searchstring) {
+	protected void OnsearchClicked(String searchstring) {
 		List<StudyTradeArticle> results = Model.getSearchResults(searchstring);
 		SearchResultPageViewImpl view = new SearchResultPageViewImpl(Model.GetLogedInUser(), searchstring, results);
 		new SearchResultPagePresenter(UI, Model, view);
 	}
 
-	protected void OnLogOffClicked() {
+	protected void OnlogOffClicked() {
 		Model.logOff();
 
 		MainPageViewImpl view = new MainPageViewImpl(Model.GetLogedInUser());

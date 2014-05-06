@@ -186,7 +186,7 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 	
 	private void onBtnRegisterClicked() {
 		for (RegisterPageViewListener l : listeners) {
-			l.RegisterClicked(
+			l.doRegisterClicked(
 					edForename.getValue(), 
 					edLastname.getValue(), 
 					edNickname.getValue(), 
@@ -199,20 +199,20 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 	}
 
 	@Override
-	protected void onBtnLoginClicked(String username, String password) {
+	protected void onBtnloginClicked(String username, String password) {
 		for (RegisterPageViewListener l : listeners)
-			l.LoginClicked(username, password);
+			l.loginClicked(username, password);
 	}
 
 	@Override
-	protected void onBtnSearchClicked(String searchstring) {
+	protected void onBtnsearchClicked(String searchstring) {
 		for (RegisterPageViewListener l : listeners)
-			l.SearchClicked(searchstring);
+			l.searchClicked(searchstring);
 	}
 
 	@Override
-	protected void onBtnLogOffClicked() {
+	protected void onBtnlogOffClicked() {
 		for (RegisterPageViewListener l : listeners)
-			l.LogOffClicked();
+			l.logOffClicked();
 	}
 }
