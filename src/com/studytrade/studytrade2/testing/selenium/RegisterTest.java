@@ -19,6 +19,9 @@ public class RegisterTest {
         ///NOP
     }
     
+	/**
+	 * Incrementally fills all needed Fields and every times asserts the expected error message
+	 */
 	@Test
     public void testTempscript() throws Exception {
 		WebDriver driver = new FirefoxDriver();
@@ -31,33 +34,45 @@ public class RegisterTest {
 		selenium.waitForPageToLoad("1000");
 		selenium.click("selendebug_CmnPg_btn_register");
 		
+		//###########################################################
+		
 		selenium.click("selendebug_RegPg_btn_register");
 		selenium.waitForPageToLoad("1000");
 		Assert.assertTrue(selenium.isTextPresent("Please insert a forename"));
+
+		//###########################################################
 		
 		selenium.type("selendebug_RegPg_ed_forename", "sample_forename");
 		
 		selenium.click("selendebug_RegPg_btn_register");
 		selenium.waitForPageToLoad("1000");
 		Assert.assertTrue(selenium.isTextPresent("Please insert a lastname"));
+
+		//###########################################################
 		
 		selenium.type("selendebug_RegPg_ed_lastname", "sample_lastname");
 		
 		selenium.click("selendebug_RegPg_btn_register");
 		selenium.waitForPageToLoad("1000");
 		Assert.assertTrue(selenium.isTextPresent("Please insert a nickname"));
+
+		//###########################################################
 		
 		selenium.type("selendebug_RegPg_ed_nickname", "sample_nickname_" + new Random().nextInt());
 		
 		selenium.click("selendebug_RegPg_btn_register");
 		selenium.waitForPageToLoad("1000");
 		Assert.assertTrue(selenium.isTextPresent("Please insert a city"));
+
+		//###########################################################
 		
 		selenium.type("selendebug_RegPg_ed_city", "sample_city");
 		
 		selenium.click("selendebug_RegPg_btn_register");
 		selenium.waitForPageToLoad("1000");
 		Assert.assertTrue(selenium.isTextPresent("Please choose a university"));
+
+		//###########################################################
 		
 		Select selectObject = new Select(driver.findElement(By.id("selendebug_RegPg_cbx_university")).findElement(By.className("v-select-select")));
 		selectObject.selectByIndex(1);
@@ -65,33 +80,46 @@ public class RegisterTest {
 		selenium.click("selendebug_RegPg_btn_register");
 		selenium.waitForPageToLoad("1000");
 		Assert.assertTrue(selenium.isTextPresent("Please insert a study direction"));
+
+		//###########################################################
 		
 		selenium.type("selendebug_RegPg_ed_direction", "sample_studydirection");
 		
 		selenium.click("selendebug_RegPg_btn_register");
 		selenium.waitForPageToLoad("1000");
 		Assert.assertTrue(selenium.isTextPresent("Please insert a E-Mail address"));
+
+		//###########################################################
 		
 		selenium.type("selendebug_RegPg_ed_mail", "sample_mail@sample_host.tld");
 		
 		selenium.click("selendebug_RegPg_btn_register");
 		selenium.waitForPageToLoad("1000");
 		Assert.assertTrue(selenium.isTextPresent("Please insert a password with a minimum length of 8 characters"));
+
+		//###########################################################
 		
 		selenium.type("selendebug_RegPg_ed_pw1", "sample_password");
 		
 		selenium.click("selendebug_RegPg_btn_register");
 		selenium.waitForPageToLoad("1000");
 		Assert.assertTrue(selenium.isTextPresent("Passwords do not match"));
+
+		//###########################################################
 		
 		selenium.type("selendebug_RegPg_ed_pw2", "sample_password");
 		
 		selenium.click("selendebug_RegPg_btn_register");
 		selenium.waitForPageToLoad("1000");
+
+		//###########################################################
 		
 		Assert.assertTrue(selenium.isTextPresent("sample_nickname_"));
 		Assert.assertTrue(selenium.isTextPresent("Log Off"));
 		
+
+		//#####################
 		selenium.close();
+		//#####################
     }
 }

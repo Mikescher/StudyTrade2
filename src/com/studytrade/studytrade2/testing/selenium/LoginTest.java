@@ -15,6 +15,9 @@ public class LoginTest {
 		// /NOP
 	}
 
+	/**
+	 * Tries to login the existing user 'Mikescher'
+	 */
 	@Test
 	public void testLogin_1() throws Exception {
 		WebDriver driver = new FirefoxDriver();
@@ -40,6 +43,9 @@ public class LoginTest {
 		selenium.close();
 	}
 	
+	/**
+	 * Tries to login the existing user 'MBiel'
+	 */
 	@Test
 	public void testLogin_2() throws Exception {
 		WebDriver driver = new FirefoxDriver();
@@ -65,6 +71,9 @@ public class LoginTest {
 		selenium.close();
 	}
 	
+	/**
+	 * Tries to login the NON-existing user 'User_xxxxxx'
+	 */
 	@Test
 	public void testLogin_3() throws Exception {
 		WebDriver driver = new FirefoxDriver();
@@ -86,6 +95,10 @@ public class LoginTest {
 
 		Assert.assertFalse(selenium.isTextPresent("User_xxxxx")); // NOT LOGGED IN
 		
+		
+
+		//#####################
 		selenium.close();
+		//#####################
 	}
 }

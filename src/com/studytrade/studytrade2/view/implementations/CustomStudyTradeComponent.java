@@ -232,6 +232,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 
 			edSearch = new TextField();
 			edSearch.setWidth("200px");
+			edSearch.setId("selendebug_CmnPg_ed_search");
 			inner_right_layout.addComponent(edSearch);
 			inner_right_layout.setComponentAlignment(edSearch, Alignment.MIDDLE_RIGHT);
 
@@ -241,6 +242,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 
 			btnSearch = new Button();
 			btnSearch.setCaption("Search");
+			btnSearch.setId("selendebug_CmnPg_btn_search");
 			inner_right_layout.addComponent(btnSearch);
 			inner_right_layout.setComponentAlignment(btnSearch, Alignment.MIDDLE_RIGHT);
 			btnSearch.addClickListener(new ClickListener() {
