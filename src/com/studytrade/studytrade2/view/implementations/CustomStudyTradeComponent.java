@@ -25,6 +25,8 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 	
 	protected VerticalLayout mainLayout;
 	
+	private Layout searchbar;
+	
 	private TextField edUsername;
 	private PasswordField edPassword;
 	private Button btnLogin;
@@ -32,6 +34,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 	private TextField edSearch;
 	private NativeSelect cbxSearch;
 	private Button btnSearch;
+	private Button btnExtendedSearch;
 	
 	public CustomStudyTradeComponent(StudyTradeUser usr) {
 		this.User = usr;
@@ -59,7 +62,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 			mainLayout.addComponent(build_user_bar_top());
 		}
 
-		mainLayout.addComponent(build_searchbar_top());
+		mainLayout.addComponent(searchbar = build_searchbar_top());
 
 		HorizontalLayout area_center = new HorizontalLayout();
 		{
@@ -74,7 +77,6 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 			area_center.addComponent(build_sidebar_right());
 			area_center.setExpandRatio(abstractLayout, 1.0f);
 		}
-		
 		
 		mainLayout.setExpandRatio(area_center, 1.0f);
 		
@@ -253,6 +255,20 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 					onBtnSearchClicked(edSearch.getValue());
 				}
 			});
+			
+			btnExtendedSearch = new Button();
+			btnExtendedSearch.setCaption("Advanced");
+			btnExtendedSearch.setId("selendebug_CmnPg_btn_advsearch");
+			inner_right_layout.addComponent(btnExtendedSearch);
+			inner_right_layout.setComponentAlignment(btnExtendedSearch, Alignment.MIDDLE_RIGHT);
+			btnExtendedSearch.addClickListener(new ClickListener() {
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				public void buttonClick(ClickEvent event) {
+					onBtnAdvancedSearchClicked();
+				}
+			});
 
 			inner_right_layout.setSizeUndefined();
 		}
@@ -297,6 +313,10 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		return result_layout;
 	}
 	
+	protected void hideSearchbar() {
+		searchbar.setVisible(false);
+	}
+	
 	protected void setSearchString(String searchstr) {
 		edSearch.setValue(searchstr);
 	}
@@ -305,5 +325,6 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 	protected abstract void onBtnLoginClicked(String username, String password);
 	protected abstract void onBtnRegisterClicked();
 	protected abstract void onBtnSearchClicked(String searchstring);
+	protected abstract void onBtnAdvancedSearchClicked();
 	protected abstract void onBtnLogOffClicked();
 }

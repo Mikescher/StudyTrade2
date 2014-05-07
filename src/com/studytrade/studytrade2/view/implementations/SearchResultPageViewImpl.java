@@ -109,4 +109,10 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 	public List<StudyTradeArticle> getArticles() {
 		return Articles;
 	}
+
+	@Override
+	protected void onBtnAdvancedSearchClicked() {
+		for (SearchResultPageViewListener l : listeners)
+			l.advancedSearchClicked();
+	}
 }

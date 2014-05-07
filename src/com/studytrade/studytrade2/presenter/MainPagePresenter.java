@@ -39,6 +39,11 @@ public class MainPagePresenter extends CustomPresenter implements MainPageViewLi
 	}
 
 	@Override
+	public void advancedSearchClicked() {
+		onAdvancedSearchClicked();
+	}
+
+	@Override
 	public void logOffClicked() {
 		onLogOffClicked();
 	}

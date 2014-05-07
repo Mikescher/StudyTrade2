@@ -6,6 +6,7 @@ public interface SearchResultPageViewListener {
 	public void loginClicked(String username, String password);
 	public void registerClicked();
 	public void searchClicked(String searchstring);
+	public void advancedSearchClicked();
 	public void logOffClicked();
 	
 	public void ArticleClicked(StudyTradeArticle article);

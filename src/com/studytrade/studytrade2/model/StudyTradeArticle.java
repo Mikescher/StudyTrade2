@@ -36,4 +36,7 @@ public class StudyTradeArticle {
 		this.Owner = owner;
 	}
 
+	public String getConditionString() {
+		return StudyTradeDefinitions.CONDITIONS[Condition];
+	}
 }

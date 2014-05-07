@@ -39,6 +39,11 @@ public class ArticlePagePresenter extends CustomPresenter implements ArticlePage
 	}
 
 	@Override
+	public void advancedSearchClicked() {
+		onAdvancedSearchClicked();
+	}
+
+	@Override
 	public void logOffClicked() {
 		onLogOffClicked();
 	}

@@ -100,4 +100,10 @@ public class MessagePageViewImpl extends CustomStudyTradeComponent implements Me
 	public ActionListener getAction() {
 		return pageEvent;
 	}
+
+	@Override
+	protected void onBtnAdvancedSearchClicked() {
+		for (MessagePageViewListener l : listeners)
+			l.advancedSearchClicked();
+	}
 }

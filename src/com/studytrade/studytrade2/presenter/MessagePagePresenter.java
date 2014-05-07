@@ -39,6 +39,11 @@ public class MessagePagePresenter extends CustomPresenter implements MessagePage
 	}
 
 	@Override
+	public void advancedSearchClicked() {
+		onAdvancedSearchClicked();
+	}
+
+	@Override
 	public void logOffClicked() {
 		onLogOffClicked();
 	}

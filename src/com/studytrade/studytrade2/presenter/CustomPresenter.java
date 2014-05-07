@@ -2,10 +2,10 @@ package com.studytrade.studytrade2.presenter;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 import com.studytrade.studytrade2.Studytrade2UI;
 import com.studytrade.studytrade2.model.StudyTradeModel;
+import com.studytrade.studytrade2.view.implementations.AdvancedSearchPageViewImpl;
 import com.studytrade.studytrade2.view.implementations.MainPageViewImpl;
 import com.studytrade.studytrade2.view.implementations.MessagePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.RegisterPageViewImpl;
@@ -44,10 +44,11 @@ public abstract class CustomPresenter {
 	}
 	
 	protected void onRegisterClicked() {
-		List<String> usrList = Model.getNicknameList();
-		
-		RegisterPageViewImpl view = new RegisterPageViewImpl(Model.getLogedInUser(), usrList);
-		new RegisterPagePresenter(UI, Model, view);
+		new RegisterPagePresenter(UI, Model, new RegisterPageViewImpl(Model.getLogedInUser(),  Model.getNicknameList()));
+	}
+
+	protected void onAdvancedSearchClicked() {
+		new AdvancedSearchPagePresenter(UI, Model, new AdvancedSearchPageViewImpl(Model.getLogedInUser()));
 	}
 	
 	protected void showMessagePage(String msg, ActionListener ac) {

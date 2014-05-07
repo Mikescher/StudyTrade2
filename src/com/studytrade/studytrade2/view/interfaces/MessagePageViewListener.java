@@ -4,5 +4,6 @@ public interface MessagePageViewListener {
 	public void loginClicked(String username, String password);
 	public void registerClicked();
 	public void searchClicked(String searchstring);
+	public void advancedSearchClicked();
 	public void logOffClicked();
 }

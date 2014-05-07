@@ -39,6 +39,11 @@ public class RegisterPagePresenter extends CustomPresenter implements RegisterPa
 	}
 
 	@Override
+	public void advancedSearchClicked() {
+		onAdvancedSearchClicked();
+	}
+
+	@Override
 	public void logOffClicked() {
 		onLogOffClicked();
 	}

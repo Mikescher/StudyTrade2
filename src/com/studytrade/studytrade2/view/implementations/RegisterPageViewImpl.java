@@ -3,6 +3,7 @@ package com.studytrade.studytrade2.view.implementations;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.studytrade.studytrade2.model.StudyTradeDefinitions;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.RegisterPageView;
 import com.studytrade.studytrade2.view.interfaces.RegisterPageViewListener;
@@ -88,12 +89,7 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 
 		edUniversity = new NativeSelect();
 		edUniversity.setCaption("Hochschule");
-		{
-			edUniversity.setItemCaption(edUniversity.addItem("DH Karlsruhe"), "DH Karlsruhe");
-			edUniversity.setItemCaption(edUniversity.addItem("DH Freiburg"), "DH Freiburg");
-			edUniversity.setItemCaption(edUniversity.addItem("Uni Offenburg"), "Uni Offenburg");
-			edUniversity.setItemCaption(edUniversity.addItem("Other"), "Other");
-		}
+		StudyTradeDefinitions.addSelectItems_Places(edUniversity);
 		edUniversity.setId("selendebug_RegPg_cbx_university");
 		l.addComponent(edUniversity);
 
@@ -247,5 +243,11 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 	protected void onBtnLogOffClicked() {
 		for (RegisterPageViewListener l : listeners)
 			l.logOffClicked();
+	}
+
+	@Override
+	protected void onBtnAdvancedSearchClicked() {
+		for (RegisterPageViewListener l : listeners)
+			l.advancedSearchClicked();
 	}
 }

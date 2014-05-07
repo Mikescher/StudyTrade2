@@ -75,4 +75,10 @@ public class ArticlePageViewImpl extends CustomStudyTradeComponent implements Ar
 	public StudyTradeArticle getArticle() {
 		return article;
 	}
+
+	@Override
+	protected void onBtnAdvancedSearchClicked() {
+		for (ArticlePageViewListener l : listeners)
+			l.advancedSearchClicked();
+	}
 }
