@@ -143,6 +143,7 @@ public class AdvancedSearchPageViewImpl extends CustomStudyTradeComponent implem
 		mainLayout.addComponent(tmp);
 		
 		btnAdvancedSearch = new Button("Advanced Search");
+		btnAdvancedSearch.setId("selendebug_AdvSrPg_btn_advsearch");
 		btnAdvancedSearch.addClickListener(new ClickListener() {
 			private static final long serialVersionUID = -4387688246523201319L;
 

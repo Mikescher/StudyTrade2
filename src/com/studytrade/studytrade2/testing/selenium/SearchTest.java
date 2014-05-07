@@ -21,7 +21,7 @@ public class SearchTest {
 	 * Searches for 'Random string' and asserts no results (=> no 'ID:')
 	 */
 	@Test
-	public void testSearch_1() throws Exception {
+	public void testSearch_Normal() throws Exception {
 		WebDriver driver = new FirefoxDriver();
 
 		WebDriverBackedSelenium selenium = new WebDriverBackedSelenium(driver, "http://localhost:8080/");
@@ -43,8 +43,48 @@ public class SearchTest {
 		
 		Assert.assertFalse(selenium.isTextPresent("ID:"));
 		
-		
+		//#####################
+		selenium.close();
+		//#####################
+	}
+	
+	/**
+	 * Searches for Articles in the Advanced Dialog
+	 */
+	@Test
+	public void testSearch_Advanced() throws Exception {
+		WebDriver driver = new FirefoxDriver();
 
+		WebDriverBackedSelenium selenium = new WebDriverBackedSelenium(driver, "http://localhost:8080/");
+
+		selenium.open("StudyTrade2/");
+
+		selenium.setTimeout("10000");
+		selenium.waitForPageToLoad("10000");
+
+		//#####################
+		
+		selenium.click("selendebug_CmnPg_btn_advsearch");
+		selenium.waitForPageToLoad("10000");
+
+		selenium.type("selendebug_AdvSrPg_ed_direction", "BWL"); // Study Driection BWL --> Seller 4 --> Article 3 (SwimmingPool)
+		selenium.click("selendebug_AdvSrPg_btn_advsearch");
+		selenium.waitForPageToLoad("10000");
+		
+		Assert.assertTrue(selenium.isTextPresent("SwimmingPool"));
+		
+		//#####################
+		
+		selenium.click("selendebug_CmnPg_btn_advsearch");
+		selenium.waitForPageToLoad("10000");
+
+		selenium.type("selendebug_AdvSrPg_ed_minprice", "100");
+		selenium.type("selendebug_AdvSrPg_ed_maxprice", "150");
+		selenium.click("selendebug_AdvSrPg_btn_advsearch");
+		selenium.waitForPageToLoad("10000");
+		
+		Assert.assertTrue(selenium.isTextPresent("hello world")); //testdata[1].description = hello world
+		
 		//#####################
 		selenium.close();
 		//#####################

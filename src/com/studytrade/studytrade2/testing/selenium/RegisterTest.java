@@ -23,7 +23,7 @@ public class RegisterTest {
 	 * Incrementally fills all needed Fields and every times asserts the expected error message
 	 */
 	@Test
-    public void testTempscript() throws Exception {
+    public void testRegister_All() throws Exception {
 		WebDriver driver = new FirefoxDriver();
 
 		WebDriverBackedSelenium selenium = new WebDriverBackedSelenium(driver, "http://localhost:8080/");
@@ -114,8 +114,8 @@ public class RegisterTest {
 
 		//###########################################################
 		
-		Assert.assertTrue(selenium.isTextPresent("sample_nickname_"));
-		Assert.assertTrue(selenium.isTextPresent("Log Off"));
+		Assert.assertTrue(selenium.isTextPresent("Register"));
+		Assert.assertTrue(selenium.isTextPresent("Login"));
 		
 
 		//#####################
