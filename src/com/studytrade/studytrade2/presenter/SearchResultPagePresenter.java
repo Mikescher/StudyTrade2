@@ -1,9 +1,13 @@
 package com.studytrade.studytrade2.presenter;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import com.studytrade.studytrade2.Studytrade2UI;
 import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.view.implementations.ArticlePageViewImpl;
+import com.studytrade.studytrade2.view.implementations.SearchResultPageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.SearchResultPageView;
 import com.studytrade.studytrade2.view.interfaces.SearchResultPageViewListener;
 import com.vaadin.ui.Component;
@@ -23,7 +27,12 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
 
 	@Override
 	public void loginClicked(String username, String password) {
-		onLoginClicked(username, password);
+		onLoginClicked(username, password, new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new SearchResultPagePresenter(UI, Model, new SearchResultPageViewImpl(Model.getLogedInUser(), view.getSearchString(), view.getArticles()));
+			}
+		});
 	}
 
 	@Override
@@ -43,7 +52,6 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
 
 	@Override
 	public void ArticleClicked(StudyTradeArticle article) {
-		ArticlePageViewImpl view = new ArticlePageViewImpl(Model.GetLogedInUser(), article);
-		new ArticlePagePresenter(UI, Model, view);
+		new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLogedInUser(), article));
 	}
 }

@@ -48,7 +48,7 @@ public class StudyTradeModel {
 		return CurrentUser != null;
 	}
 	
-	public StudyTradeUser GetLogedInUser() {
+	public StudyTradeUser getLogedInUser() {
 		return CurrentUser;
 	}
 	

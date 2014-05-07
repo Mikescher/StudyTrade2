@@ -1,7 +1,11 @@
 package com.studytrade.studytrade2.presenter;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import com.studytrade.studytrade2.Studytrade2UI;
 import com.studytrade.studytrade2.model.StudyTradeModel;
+import com.studytrade.studytrade2.view.implementations.RegisterPageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.RegisterPageView;
 import com.studytrade.studytrade2.view.interfaces.RegisterPageViewListener;
 import com.vaadin.ui.Component;
@@ -21,7 +25,12 @@ public class RegisterPagePresenter extends CustomPresenter implements RegisterPa
 
 	@Override
 	public void loginClicked(String username, String password) {
-		onLoginClicked(username, password);
+		onLoginClicked(username, password, new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new RegisterPagePresenter(UI, Model, new RegisterPageViewImpl(Model.getLogedInUser(), Model.getNicknameList()));
+			}
+		});
 	}
 
 	@Override
@@ -43,6 +52,9 @@ public class RegisterPagePresenter extends CustomPresenter implements RegisterPa
 	public void doRegisterClicked(String forename, String lastname, String nickname, String place, String university, String studydirection, String email, String password) {
 		Model.register(forename, lastname, nickname, place, university, studydirection, email, password);
 		
-		onLoginClicked(nickname, password);
+		// onLoginClicked(nickname, password);
+		
+		//TODO Send Email
+		showMessagePageToMainWindow("You have succesfully registered yourself. \r\n You should recieve a validation email shortly.");
 	}
 }

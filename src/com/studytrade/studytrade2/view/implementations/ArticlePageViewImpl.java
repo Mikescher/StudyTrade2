@@ -70,4 +70,9 @@ public class ArticlePageViewImpl extends CustomStudyTradeComponent implements Ar
 		for (ArticlePageViewListener l : listeners)
 			l.logOffClicked();
 	}
+
+	@Override
+	public StudyTradeArticle getArticle() {
+		return article;
+	}
 }

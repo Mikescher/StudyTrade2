@@ -5,15 +5,15 @@ import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
 import com.studytrade.studytrade2.model.StudyTradeModel;
-import com.studytrade.studytrade2.view.implementations.MainPageViewImpl;
-import com.studytrade.studytrade2.view.interfaces.MainPageView;
-import com.studytrade.studytrade2.view.interfaces.MainPageViewListener;
+import com.studytrade.studytrade2.view.implementations.MessagePageViewImpl;
+import com.studytrade.studytrade2.view.interfaces.MessagePageView;
+import com.studytrade.studytrade2.view.interfaces.MessagePageViewListener;
 import com.vaadin.ui.Component;
 
-public class MainPagePresenter extends CustomPresenter implements MainPageViewListener {
-    private MainPageView  view;
+public class MessagePagePresenter extends CustomPresenter implements MessagePageViewListener {
+    private MessagePageView  view;
     
-    public MainPagePresenter(Studytrade2UI ui, StudyTradeModel m, MainPageView  v) {
+    public MessagePagePresenter(Studytrade2UI ui, StudyTradeModel m, MessagePageView  v) {
     	super(ui, m);
     	
         this.view  = v;
@@ -28,7 +28,7 @@ public class MainPagePresenter extends CustomPresenter implements MainPageViewLi
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new MainPagePresenter(UI, Model, new MainPageViewImpl(Model.getLogedInUser()));
+				new MessagePagePresenter(UI, Model, new MessagePageViewImpl(Model.getLogedInUser(), view.getMessage(), view.getAction()));
 			}
 		});
 	}

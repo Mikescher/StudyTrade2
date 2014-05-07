@@ -20,11 +20,13 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 	private List<SearchResultPageViewListener> listeners = new ArrayList<>();
 
 	private List<StudyTradeArticle> Articles;
+	private String searchStr;
 	
 	public SearchResultPageViewImpl(StudyTradeUser usr, String searchstr, List<StudyTradeArticle> articles) {
 		super(usr);
 		
 		this.Articles = articles;
+		this.searchStr = searchstr;
 		
 		Init();
 		
@@ -96,5 +98,15 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 	protected void onArticleClicked(StudyTradeArticle a) {
 		for (SearchResultPageViewListener l : listeners)
 			l.ArticleClicked(a);
+	}
+
+	@Override
+	public String getSearchString() {
+		return searchStr;
+	}
+
+	@Override
+	public List<StudyTradeArticle> getArticles() {
+		return Articles;
 	}
 }
