@@ -11,7 +11,7 @@ import com.studytrade.studytrade2.model.database.MyDatabaseConnection;
 import com.studytrade.studytrade2.model.helper.HashHelper;
 
 public class StudyTradeModel {
-	private final static String DB_URL = "jdbc:mysql://localhost/StudyTrade";
+	private final static String DB_URL = "jdbc:mysql://localhost/studytrade";
 	private final static String DB_USERNAME = "server";
 	private final static String DB_PASSWORD = "password";
 	
