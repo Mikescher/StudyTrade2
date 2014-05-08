@@ -1,5 +1,6 @@
 package com.studytrade.studytrade2.model;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -52,38 +53,61 @@ public class StudyTradeModel {
 		return CurrentUser;
 	}
 	
-	public LoginProblem logIn(String nickname, String password) {
-		String in_pwhash = HashHelper.doSHA1(password);
-		
+	public StudyTradeUser getUser(String nickname) {
 		try {
 			DBConnection.PrepStatements.Statement_UserByNickname.setString(1, nickname);
 			ResultSet rs = DBConnection.PrepStatements.Statement_UserByNickname.executeQuery();
 			
 			if (rs.next()) {
-				StudyTradeUser user = new StudyTradeUser(rs);
-
-				String db_pwhash = rs.getString("passwordhash");
-				
-				if (db_pwhash.equalsIgnoreCase(in_pwhash)) {
-					if (user.Activated) {
-						CurrentUser = user;
-
-						STLog.Log("Login of User >>" + nickname + "<< successfull");
-						return LoginProblem.NO_PROBLEM;
-					} else {
-						return LoginProblem.NOT_ACTIVATED;
-					}
-				} else {
-					STLog.Log("Login failed -- Password mismatch");
-					return LoginProblem.WRONG_PWD;
-				}
+				return new StudyTradeUser(rs);
 			} else {
-				STLog.Log("Login failed -- Username not found in DB");
-				return LoginProblem.WRONG_USN; // No user found
+				return null;
 			}
 		} catch (SQLException e) {
 			STLog.log(e);
-			return LoginProblem.UNKNOWN;
+			return null;
+		}
+	}
+	
+	public StudyTradeUser getUser(int userid) {
+		try {
+			DBConnection.PrepStatements.Statement_UserByID.setInt(1, userid);
+			ResultSet rs = DBConnection.PrepStatements.Statement_UserByID.executeQuery();
+			
+			if (rs.next()) {
+				return new StudyTradeUser(rs);
+			} else {
+				return null;
+			}
+		} catch (SQLException e) {
+			STLog.log(e);
+			return null;
+		}
+	}
+	
+	public LoginProblem logIn(String nickname, String password) {
+		String in_pwhash = HashHelper.doSHA1(password);
+		
+		StudyTradeUser user = getUser(nickname);
+
+		if (user == null) {
+			STLog.Log("Login failed -- Username not found in DB");
+			return LoginProblem.WRONG_USN; // No user found (or internal err)
+		}
+		
+		if (user.Passwordhash.equalsIgnoreCase(in_pwhash)) {
+			if (user.Activated) {
+				CurrentUser = user;
+
+				STLog.Log("Login of User >>" + nickname + "<< successfull");
+				return LoginProblem.NO_PROBLEM;
+			} else {
+				STLog.Log("Login of User >>" + nickname + "<< failed: Not activated");
+				return LoginProblem.NOT_ACTIVATED;
+			}
+		} else {
+			STLog.Log("Login failed -- Password mismatch");
+			return LoginProblem.WRONG_PWD;
 		}
 	}
 
@@ -139,5 +163,49 @@ public class StudyTradeModel {
 			STLog.log(e);
 			return false;
 		}
+	}
+	
+	public List<StudyTradeMessage> getMessagesBySender(StudyTradeUser sender, boolean unread) {
+		List<StudyTradeMessage> result = new ArrayList<>();
+		
+		@SuppressWarnings("resource")
+		PreparedStatement prepStmt = unread ? DBConnection.PrepStatements.Statement_UnreadMessagesBySender : DBConnection.PrepStatements.Statement_MessagesBySender;
+		
+		try {
+			prepStmt.setInt(1, sender.ID);
+			
+			ResultSet rs = prepStmt.executeQuery();
+			
+			while (rs.next()) {
+				result.add(new StudyTradeMessage(this, rs));
+			}
+		} catch (SQLException e) {
+			STLog.log(e);
+			return null;
+		}
+		
+		return result;
+	}
+	
+	public List<StudyTradeMessage> getMessagesByTarget(StudyTradeUser target, boolean unread) {
+		List<StudyTradeMessage> result = new ArrayList<>();
+		
+		@SuppressWarnings("resource")
+		PreparedStatement prepStmt = unread ? DBConnection.PrepStatements.Statement_UnreadMessagesByTarget : DBConnection.PrepStatements.Statement_MessagesByTarget;
+		
+		try {
+			prepStmt.setInt(1, target.ID);
+			
+			ResultSet rs = prepStmt.executeQuery();
+			
+			while (rs.next()) {
+				result.add(new StudyTradeMessage(this, rs));
+			}
+		} catch (SQLException e) {
+			STLog.log(e);
+			return null;
+		}
+		
+		return result;
 	}
 }
