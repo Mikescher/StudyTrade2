@@ -21,6 +21,7 @@ public class StudyTradeStatements {
 	public PreparedStatement Statement_UnreadMessagesBySender;
 	public PreparedStatement Statement_UnreadMessagesByTarget;
 	public PreparedStatement Statement_MarkMessageRead;
+	public PreparedStatement Statement_CreateUserMail;
 	
 	public StudyTradeStatements(Connection conn) {
 		prepare(conn);
@@ -39,6 +40,7 @@ public class StudyTradeStatements {
 			Statement_UnreadMessagesBySender = c.prepareStatement(loadResource("/Statement_UnreadMessagesBySender.sql"));
 			Statement_UnreadMessagesByTarget = c.prepareStatement(loadResource("/Statement_UnreadMessagesByTarget.sql"));
 			Statement_MarkMessageRead = c.prepareStatement(loadResource("/Statement_MarkMessageRead.sql"));
+			Statement_CreateUserMail = c.prepareStatement(loadResource("/Statement_UserByIDMail.sql"));
 		} catch (SQLException e) {
 			STLog.log(e);
 		}
