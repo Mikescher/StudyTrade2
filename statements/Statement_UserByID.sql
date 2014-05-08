@@ -1,6 +1,6 @@
+USE studytrade;
 SELECT 
-    passwordhash,
-    user_id, forename, lastname, nickname, city, university, studydirection, mail, activated
+	users.forename, users.lastname, users.nickname, users.mail
 FROM users 
-WHERE user_id = ? 
-LIMIT 1
+WHERE     
+	users.user_id = ?
