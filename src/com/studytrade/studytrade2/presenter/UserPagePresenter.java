@@ -63,6 +63,13 @@ public class UserPagePresenter extends CustomPresenter implements UserPageViewLi
 
 	@Override
 	public void sendUserMessageClickded(StudyTradeUser sender, StudyTradeUser target, String header, String text) {
-		// TODO SEND MSG
+		Model.createMessage(sender, target, header, text);
+		
+		showMessagePage("Message to " + target.Nickname + " send", new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLogedInUser(), view.getDisplayUser()));
+			}
+		});
 	}
 }

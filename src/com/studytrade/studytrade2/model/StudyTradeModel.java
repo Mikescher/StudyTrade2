@@ -126,4 +126,18 @@ public class StudyTradeModel {
 		
 		return result;
 	}
+	
+	public boolean createMessage(StudyTradeUser sender, StudyTradeUser target, String header, String text) {
+		try {
+			DBConnection.PrepStatements.Statement_CreateMessage.setInt(1, sender.ID);
+			DBConnection.PrepStatements.Statement_CreateMessage.setInt(2, target.ID);
+			DBConnection.PrepStatements.Statement_CreateMessage.setString(3, header);
+			DBConnection.PrepStatements.Statement_CreateMessage.setString(4, text);
+			
+			return DBConnection.PrepStatements.Statement_CreateMessage.execute();
+		} catch (SQLException e) {
+			STLog.log(e);
+			return false;
+		}
+	}
 }

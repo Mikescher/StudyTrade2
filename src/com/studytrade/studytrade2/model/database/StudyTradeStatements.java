@@ -14,6 +14,7 @@ public class StudyTradeStatements {
 	public PreparedStatement Statement_FindArticle;
 	public PreparedStatement Statement_ListNicknames;
 	public PreparedStatement Statement_InsertNewUser;
+	public PreparedStatement Statement_CreateMessage;
 	
 	public StudyTradeStatements(Connection conn) {
 		prepare(conn);
@@ -25,6 +26,7 @@ public class StudyTradeStatements {
 			Statement_FindArticle = c.prepareStatement(loadResource("/Statement_FindArticle.sql"));
 			Statement_ListNicknames = c.prepareStatement(loadResource("/Statement_ListNicknames.sql"));
 			Statement_InsertNewUser = c.prepareStatement(loadResource("/Statement_InsertNewUser.sql"));
+			Statement_CreateMessage = c.prepareStatement(loadResource("/Statement_CreateMessage.sql"));
 		} catch (SQLException e) {
 			STLog.log(e);
 		}
