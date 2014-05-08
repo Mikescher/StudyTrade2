@@ -13,6 +13,7 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
+import com.vaadin.ui.NativeButton;
 import com.vaadin.ui.NativeSelect;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
@@ -103,9 +104,11 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		result_layout.setWidth("100%");
 		result_layout.setHeight("40px");
 		
+		
 		HorizontalLayout inner_right_layout = new HorizontalLayout();
 		{
 			inner_right_layout.setHeight("40px");
+			
 
 			edUsername = new TextField();
 			edUsername.setId("selendebug_CmnPg_ed_username");
@@ -119,9 +122,10 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 			inner_right_layout.addComponent(edPassword);
 			inner_right_layout.setComponentAlignment(edPassword, Alignment.MIDDLE_RIGHT);
 
-			btnLogin = new Button();
+			btnLogin = new NativeButton();
 			btnLogin.setId("selendebug_CmnPg_btn_login");
 			btnLogin.setCaption("Login");
+			btnLogin.setPrimaryStyleName("btn btn-success");
 			inner_right_layout.addComponent(btnLogin);
 			inner_right_layout.setComponentAlignment(btnLogin, Alignment.MIDDLE_RIGHT);
 			btnLogin.addClickListener(new ClickListener() {
@@ -136,6 +140,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 			btnRegister = new Button();
 			btnRegister.setId("selendebug_CmnPg_btn_register");
 			btnRegister.setCaption("Register");
+			btnRegister.setPrimaryStyleName("btn btn-success");
 			inner_right_layout.addComponent(btnRegister);
 			inner_right_layout.setComponentAlignment(btnRegister, Alignment.MIDDLE_RIGHT);
 			btnRegister.addClickListener(new ClickListener() {
