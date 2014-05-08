@@ -35,7 +35,7 @@ public class AdvancedSearchPagePresenter extends CustomPresenter implements Adva
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new AdvancedSearchPagePresenter(UI, Model, new AdvancedSearchPageViewImpl(Model.getLogedInUser()));
+				new AdvancedSearchPagePresenter(UI, Model, new AdvancedSearchPageViewImpl(Model.getLoggedInUser()));
 			}
 		});
 	}
@@ -126,7 +126,7 @@ public class AdvancedSearchPagePresenter extends CustomPresenter implements Adva
 			results = tmp;
 		}
 		
-		SearchResultPageViewImpl view = new SearchResultPageViewImpl(Model.getLogedInUser(), name, results);
+		SearchResultPageViewImpl view = new SearchResultPageViewImpl(Model.getLoggedInUser(), name, results);
 		new SearchResultPagePresenter(UI, Model, view);
 	}
 }

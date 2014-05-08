@@ -32,7 +32,7 @@ public class ArticlePagePresenter extends CustomPresenter implements ArticlePage
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLogedInUser(), view.getArticle()));
+				new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), view.getArticle()));
 			}
 		});
 	}
@@ -69,6 +69,6 @@ public class ArticlePagePresenter extends CustomPresenter implements ArticlePage
 
 	@Override
 	public void onSellerClicked(StudyTradeUser seller) {
-		new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLogedInUser(), seller));
+		new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLoggedInUser(), seller));
 	}
 }

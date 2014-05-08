@@ -1,8 +1,8 @@
 package com.studytrade.studytrade2.view.interfaces;
 
-import com.studytrade.studytrade2.model.StudyTradeMessage;
+import com.studytrade.studytrade2.model.StudyTradeUser;
 
-public interface ProfilePageViewListener {
+public interface UserMessagePageViewListener {
 	public void loginClicked(String username, String password);
 	public void registerClicked();
 	public void searchClicked(String searchstring);
@@ -11,5 +11,5 @@ public interface ProfilePageViewListener {
 	public void onShowMessage(String msg);
 	public void buttonProfileClicked();
 	
-	public void messageClicked(StudyTradeMessage msg);
+	public void userClicked(StudyTradeUser target);
 }

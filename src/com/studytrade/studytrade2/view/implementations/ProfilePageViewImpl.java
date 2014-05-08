@@ -60,7 +60,7 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 		List<StudyTradeMessage> msg_recieved = User.getRecievedMessages();
 		
 		mainLayout.addComponent(new Label("Unread Messages (" + msg_unread.size() + "):"));
-		for (StudyTradeMessage msg : msg_unread) {
+		for (final StudyTradeMessage msg : msg_unread) {
 			Button btnLink = new Button(msg.getDisplayString());
 			mainLayout.addComponent(btnLink);
 			btnLink.setStyleName("link");
@@ -69,14 +69,13 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 
 				@Override
 				public void buttonClick(ClickEvent event) {
-					// TODO Open Msg
+					onMessageClicked(msg);
 				}
 			});
 		}
-		
 		
 		mainLayout.addComponent(new Label("Send Messages (" + msg_send.size() + "):"));
-		for (StudyTradeMessage msg : msg_send) {
+		for (final StudyTradeMessage msg : msg_send) {
 			Button btnLink = new Button(msg.getDisplayString());
 			mainLayout.addComponent(btnLink);
 			btnLink.setStyleName("link");
@@ -85,14 +84,13 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 
 				@Override
 				public void buttonClick(ClickEvent event) {
-					// TODO Open Msg
+					onMessageClicked(msg);
 				}
 			});
 		}
-		
 		
 		mainLayout.addComponent(new Label("Recieved Messages (" + msg_recieved.size() + "):"));
-		for (StudyTradeMessage msg : msg_recieved) {
+		for (final StudyTradeMessage msg : msg_recieved) {
 			Button btnLink = new Button(msg.getDisplayString());
 			mainLayout.addComponent(btnLink);
 			btnLink.setStyleName("link");
@@ -101,13 +99,17 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 
 				@Override
 				public void buttonClick(ClickEvent event) {
-					// TODO Open Msg
+					onMessageClicked(msg);
 				}
 			});
 		}
-		
-		
+				
 		return mainLayout;
+	}
+
+	private void onMessageClicked(StudyTradeMessage m) {
+		for (ProfilePageViewListener l : listeners)
+			l.messageClicked(m);
 	}
 
 	@Override

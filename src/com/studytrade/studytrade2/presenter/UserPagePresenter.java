@@ -31,7 +31,7 @@ public class UserPagePresenter extends CustomPresenter implements UserPageViewLi
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLogedInUser(), view.getDisplayUser()));
+				new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLoggedInUser(), view.getDisplayUser()));
 			}
 		});
 	}
@@ -73,7 +73,7 @@ public class UserPagePresenter extends CustomPresenter implements UserPageViewLi
 		showMessagePage("Message to " + target.Nickname + " send", new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLogedInUser(), view.getDisplayUser()));
+				new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLoggedInUser(), view.getDisplayUser()));
 			}
 		});
 	}

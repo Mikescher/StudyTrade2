@@ -27,7 +27,7 @@ public class Studytrade2UI extends UI {
 		StudyTradeModel model = new StudyTradeModel();
 		        
 //*
-		MainPageView view = new MainPageViewImpl(model.getLogedInUser());
+		MainPageView view = new MainPageViewImpl(model.getLoggedInUser());
 /*/
 		MainPageView view = new MainPageViewImpl(new com.studytrade.studytrade2.model.StudyTradeUser("testuser", "A@B.C"));
 //*/

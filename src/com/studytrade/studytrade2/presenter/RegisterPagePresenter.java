@@ -30,7 +30,7 @@ public class RegisterPagePresenter extends CustomPresenter implements RegisterPa
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new RegisterPagePresenter(UI, Model, new RegisterPageViewImpl(Model.getLogedInUser(), Model.getNicknameList()));
+				new RegisterPagePresenter(UI, Model, new RegisterPageViewImpl(Model.getLoggedInUser(), Model.getNicknameList()));
 			}
 		});
 	}

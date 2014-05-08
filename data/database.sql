@@ -29,13 +29,15 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `message_header` varchar(50) NOT NULL DEFAULT '0',
   `message_text` varchar(50) NOT NULL DEFAULT '0',
   `message_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `message_read` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`message_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 DELETE FROM `messages`;
-INSERT INTO `messages` (`message_id`, `sender_id`, `target_id`, `message_header`, `message_text`, `message_timestamp`) VALUES
-	(1, 1, 4, 'header', 'Hello Armin this is Mike', '2014-05-08 18:51:17'),
-	(2, 1, 4, 'header', 'Hello Armin this is Mike, again', '2014-05-08 18:51:27'),
-	(3, 1, 2, 'lalalalalalalalalaaaaa', 'Hallo Timo, was GÄÄÄÄÄÄÄÄHT', '2014-05-08 18:55:47');
+INSERT INTO `messages` (`message_id`, `sender_id`, `target_id`, `message_header`, `message_text`, `message_timestamp`, `message_read`) VALUES
+	(4, 4, 1, 'blub', 'hello mike, its armin', '2014-05-08 19:40:15', 0),
+	(5, 1, 2, 'Hi', 'Hallo test', '2014-05-08 20:53:44', 0),
+	(6, 1, 2, 'test multiline', '123\n312\n123\n321\nalösdlösl', '2014-05-08 20:56:27', 0),
+	(7, 1, 2, 'unreada ??', '???', '2014-05-08 20:57:16', 0);
 
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,

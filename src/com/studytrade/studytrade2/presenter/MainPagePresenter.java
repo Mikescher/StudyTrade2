@@ -30,7 +30,7 @@ public class MainPagePresenter extends CustomPresenter implements MainPageViewLi
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new MainPagePresenter(UI, Model, new MainPageViewImpl(Model.getLogedInUser()));
+				new MainPagePresenter(UI, Model, new MainPageViewImpl(Model.getLoggedInUser()));
 			}
 		});
 	}

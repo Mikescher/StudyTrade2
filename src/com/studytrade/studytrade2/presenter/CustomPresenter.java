@@ -53,36 +53,36 @@ public abstract class CustomPresenter {
 	}
 
 	protected void onSearchClicked(String searchstring) {
-		new SearchResultPagePresenter(UI, Model, new SearchResultPageViewImpl(Model.getLogedInUser(), searchstring, Model.getSearchResults(searchstring)));
+		new SearchResultPagePresenter(UI, Model, new SearchResultPageViewImpl(Model.getLoggedInUser(), searchstring, Model.getSearchResults(searchstring)));
 	}
 
 	protected void onLogOffClicked() {
 		Model.logOff();
 
-		new MainPagePresenter(UI, Model, new MainPageViewImpl(Model.getLogedInUser()));
+		new MainPagePresenter(UI, Model, new MainPageViewImpl(Model.getLoggedInUser()));
 	}
 	
 	protected void onRegisterClicked() {
-		new RegisterPagePresenter(UI, Model, new RegisterPageViewImpl(Model.getLogedInUser(),  Model.getNicknameList()));
+		new RegisterPagePresenter(UI, Model, new RegisterPageViewImpl(Model.getLoggedInUser(),  Model.getNicknameList()));
 	}
 
 	protected void onAdvancedSearchClicked() {
-		new AdvancedSearchPagePresenter(UI, Model, new AdvancedSearchPageViewImpl(Model.getLogedInUser()));
+		new AdvancedSearchPagePresenter(UI, Model, new AdvancedSearchPageViewImpl(Model.getLoggedInUser()));
 	}
 
 	protected void onButtonProfileClicked() {
-		new ProfilePagePresenter(UI, Model, new ProfilePageViewImpl(Model.getLogedInUser()));
+		new ProfilePagePresenter(UI, Model, new ProfilePageViewImpl(Model.getLoggedInUser()));
 	}
 	
 	protected void showMessagePage(String msg, ActionListener ac) {
-		new MessagePagePresenter(UI, Model, new MessagePageViewImpl(Model.getLogedInUser(), msg, ac));
+		new MessagePagePresenter(UI, Model, new MessagePageViewImpl(Model.getLoggedInUser(), msg, ac));
 	}
 	
 	protected void showMessagePageToMainWindow(String msg) {
 		showMessagePage(msg, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new MainPagePresenter(UI, Model, new MainPageViewImpl(Model.getLogedInUser()));
+				new MainPagePresenter(UI, Model, new MainPageViewImpl(Model.getLoggedInUser()));
 			}
 		});
 	}

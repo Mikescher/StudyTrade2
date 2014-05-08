@@ -16,7 +16,7 @@ public class StudyTradeModel {
 	private final static String DB_USERNAME = "server";
 	private final static String DB_PASSWORD = "password";
 	
-	private MyDatabaseConnection DBConnection = new MyDatabaseConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+	public MyDatabaseConnection DBConnection = new MyDatabaseConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
 	private StudyTradeUser CurrentUser = null;
 	
 	public StudyTradeModel() {
@@ -47,7 +47,7 @@ public class StudyTradeModel {
 		return CurrentUser != null;
 	}
 	
-	public StudyTradeUser getLogedInUser() {
+	public StudyTradeUser getLoggedInUser() {
 		return CurrentUser;
 	}
 	

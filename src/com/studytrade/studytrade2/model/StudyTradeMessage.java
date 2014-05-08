@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
+import logging.STLog;
+
 public class StudyTradeMessage {
 	private StudyTradeModel Model;
 	
@@ -42,10 +44,12 @@ public class StudyTradeMessage {
 		this.MessageRead = read;
 	}
 
+	public String getFormattedDate(){
+		return new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(Timestamp);
+	}
+	
 	public String getDisplayString() {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
-		
-		return String.format("[%s] %s : >> %s << ", sdf.format(Timestamp), Sender.Nickname, getShortenedHeader());
+		return String.format("[%s] %s -> %s: %s", getFormattedDate(), Sender.Nickname, Target.Nickname, getShortenedHeader());
 	}
 	
 	public String getShortenedHeader() {
@@ -53,6 +57,20 @@ public class StudyTradeMessage {
 			return MessageHeader.substring(0, 17) + "...";
 		} else {
 			return MessageHeader;
+		}
+	}
+
+	public boolean markAsRead() {
+		if (MessageRead)
+			return true;
+		
+		try {
+			Model.DBConnection.PrepStatements.Statement_MarkMessageRead.setInt(1, ID);
+			
+			return Model.DBConnection.PrepStatements.Statement_MarkMessageRead.execute();
+		} catch (SQLException e) {
+			STLog.log(e);
+			return false;
 		}
 	}
 }

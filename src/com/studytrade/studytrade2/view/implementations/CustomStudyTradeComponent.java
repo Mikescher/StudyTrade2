@@ -190,7 +190,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 			VerticalLayout inner_right_layout_left = new VerticalLayout();
 			{
 				int msgCount = User.getUnreadMessages().size();
-				Button edLoggedInName = new Button(User.Nickname + ((msgCount > 0) ? ("    (" + msgCount + " new messages)") : ("")));
+				Button edLoggedInName = new Button(User.Nickname + ((msgCount > 0) ? ("    (" + msgCount + " new message" + (msgCount == 1 ? "" : "s") + ")") : ("")));
 				edLoggedInName.setStyleName("link");
 				edLoggedInName.addClickListener(new ClickListener() {
 					private static final long serialVersionUID = 3673502648449522631L;

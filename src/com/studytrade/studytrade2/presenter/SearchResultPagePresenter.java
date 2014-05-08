@@ -32,7 +32,7 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new SearchResultPagePresenter(UI, Model, new SearchResultPageViewImpl(Model.getLogedInUser(), view.getSearchString(), view.getArticles()));
+				new SearchResultPagePresenter(UI, Model, new SearchResultPageViewImpl(Model.getLoggedInUser(), view.getSearchString(), view.getArticles()));
 			}
 		});
 	}
@@ -69,6 +69,6 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
 
 	@Override
 	public void ArticleClicked(StudyTradeArticle article) {
-		new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLogedInUser(), article));
+		new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), article));
 	}
 }
