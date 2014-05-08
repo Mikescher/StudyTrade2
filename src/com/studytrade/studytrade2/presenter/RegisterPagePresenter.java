@@ -56,6 +56,11 @@ public class RegisterPagePresenter extends CustomPresenter implements RegisterPa
 	}
 
 	@Override
+	public void buttonProfileClicked() {
+		onButtonProfileClicked();
+	}
+
+	@Override
 	public void onShowMessage(String msg) {
 		showMessagePageToMainWindow(msg);
 	}

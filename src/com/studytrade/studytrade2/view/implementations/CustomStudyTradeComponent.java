@@ -190,7 +190,17 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 			
 			VerticalLayout inner_right_layout_left = new VerticalLayout();
 			{
-				Label edLoggedInName = new Label(User.Nickname);
+				int msgCount = User.getUnreadMessages().size();
+				Button edLoggedInName = new Button(User.Nickname + ((msgCount > 0) ? ("    (" + msgCount + " new messages)") : ("")));
+				edLoggedInName.setStyleName("link");
+				edLoggedInName.addClickListener(new ClickListener() {
+					private static final long serialVersionUID = 3673502648449522631L;
+
+					@Override
+					public void buttonClick(ClickEvent event) {
+						onButtonProfileClicked();
+					}
+				});
 				inner_right_layout_left.addComponent(edLoggedInName);
 				inner_right_layout_left.setComponentAlignment(edLoggedInName, Alignment.MIDDLE_RIGHT);
 
@@ -347,6 +357,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		}
 	}
 	
+	protected abstract void onButtonProfileClicked();
 	protected abstract Layout buildLayout();
 	protected abstract void onBtnLoginClicked(String username, String password);
 	protected abstract void onBtnRegisterClicked();

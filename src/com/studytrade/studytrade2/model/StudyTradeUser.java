@@ -2,8 +2,11 @@ package com.studytrade.studytrade2.model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class StudyTradeUser {
+	private StudyTradeModel Model;
+	
 	public final int ID;
 	
 	public final String Nickname;
@@ -16,8 +19,9 @@ public class StudyTradeUser {
 	public final String Passwordhash;
 	public final boolean Activated;
 	
-	public StudyTradeUser(ResultSet rs) throws SQLException {
+	public StudyTradeUser(StudyTradeModel model, ResultSet rs) throws SQLException {
 		this(
+			model,
 			rs.getInt("user_id"),
 			rs.getString("nickname"),
 			rs.getString("mail"),
@@ -31,7 +35,9 @@ public class StudyTradeUser {
 		);
 	}
 
-	public StudyTradeUser(int id, String nickname, String mail, String forename, String lastname, String city, String university, String studydirection, String pwhash, boolean activated) {
+	public StudyTradeUser(StudyTradeModel model, int id, String nickname, String mail, String forename, String lastname, String city, String university, String studydirection, String pwhash, boolean activated) {
+		this.Model = model;
+
 		this.ID = id;
 		this.Passwordhash = pwhash;
 		this.Nickname = nickname;
@@ -42,5 +48,17 @@ public class StudyTradeUser {
 		this.University = university;
 		this.Studydirection = studydirection;
 		this.Activated = activated;
+	}
+	
+	public List<StudyTradeMessage> getSendMessages() {
+		return Model.getMessagesBySender(this, false);
+	}
+	
+	public List<StudyTradeMessage> getRecievedMessages() {
+		return Model.getMessagesByTarget(this, false);
+	}
+	
+	public List<StudyTradeMessage> getUnreadMessages() {
+		return Model.getMessagesByTarget(this, true);
 	}
 }

@@ -63,6 +63,11 @@ public class ArticlePagePresenter extends CustomPresenter implements ArticlePage
 	}
 
 	@Override
+	public void buttonProfileClicked() {
+		onButtonProfileClicked();
+	}
+
+	@Override
 	public void onSellerClicked(StudyTradeUser seller) {
 		new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLogedInUser(), seller));
 	}

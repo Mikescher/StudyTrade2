@@ -31,9 +31,7 @@ public class StudyTradeModel {
 			ResultSet rs = DBConnection.PrepStatements.Statement_FindArticle.executeQuery();
 			
 			while (rs.next()) {
-				StudyTradeArticle article = new StudyTradeArticle(
-						rs, new StudyTradeUser(rs)
-				);
+				StudyTradeArticle article = new StudyTradeArticle(this, rs);
 
 				result.add(article);
 			}
@@ -59,7 +57,7 @@ public class StudyTradeModel {
 			ResultSet rs = DBConnection.PrepStatements.Statement_UserByNickname.executeQuery();
 			
 			if (rs.next()) {
-				return new StudyTradeUser(rs);
+				return new StudyTradeUser(this, rs);
 			} else {
 				return null;
 			}
@@ -75,7 +73,7 @@ public class StudyTradeModel {
 			ResultSet rs = DBConnection.PrepStatements.Statement_UserByID.executeQuery();
 			
 			if (rs.next()) {
-				return new StudyTradeUser(rs);
+				return new StudyTradeUser(this, rs);
 			} else {
 				return null;
 			}

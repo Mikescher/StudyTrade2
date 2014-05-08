@@ -114,6 +114,12 @@ public class MessagePageViewImpl extends CustomStudyTradeComponent implements Me
 	}
 
 	@Override
+	protected void onButtonProfileClicked() {
+		for (MessagePageViewListener l : listeners)
+			l.buttonProfileClicked();
+	}
+
+	@Override
 	public void onAfterInit() {
 		// NOP
 	}

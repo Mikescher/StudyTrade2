@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class StudyTradeArticle {
+	private StudyTradeModel Model;
+	
 	public final int ArticleID;
 	public final String Name;
 	public final BigDecimal Price;
@@ -14,26 +16,29 @@ public class StudyTradeArticle {
 	
 	public final StudyTradeUser Owner;
 	
-	public StudyTradeArticle(ResultSet rs, StudyTradeUser owner) throws SQLException {
+	public StudyTradeArticle(StudyTradeModel model, ResultSet rs) throws SQLException {
 		this(
+			model,
 			rs.getInt("article_id"),
+			rs.getInt("seller_id"),
 			rs.getString("name"),
 			rs.getBigDecimal("price"),
 			rs.getInt("condition"),
 			rs.getString("place"),
-			rs.getString("description"),
-			owner
+			rs.getString("description")
 		);
 	}
 	
-	public StudyTradeArticle(int id, String name, BigDecimal price, int condition, String place, String desc, StudyTradeUser owner) {
+	public StudyTradeArticle(StudyTradeModel model, int id, int owner, String name, BigDecimal price, int condition, String place, String desc) {
+		this.Model = model;
+		
 		this.ArticleID = id;
 		this.Price = price;
 		this.Condition = condition;
 		this.Name = name;
 		this.Place = place;
 		this.Description = desc;
-		this.Owner = owner;
+		this.Owner = Model.getUser(owner);
 	}
 
 	public String getConditionString() {

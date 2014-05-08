@@ -110,6 +110,12 @@ public class ArticlePageViewImpl extends CustomStudyTradeComponent implements Ar
 	}
 
 	@Override
+	protected void onButtonProfileClicked() {
+		for (ArticlePageViewListener l : listeners)
+			l.buttonProfileClicked();
+	}
+
+	@Override
 	public void onAfterInit() {
 		// NOP
 	}

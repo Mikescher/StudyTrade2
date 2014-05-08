@@ -56,6 +56,11 @@ public class MessagePagePresenter extends CustomPresenter implements MessagePage
 	}
 
 	@Override
+	public void buttonProfileClicked() {
+		onButtonProfileClicked();
+	}
+
+	@Override
 	public void onShowMessage(String msg) {
 		showMessagePageToMainWindow(msg);
 	}

@@ -7,4 +7,5 @@ public interface MainPageViewListener {
 	public void advancedSearchClicked();
 	public void logOffClicked();
 	public void onShowMessage(String msg);
+	public void buttonProfileClicked();
 }

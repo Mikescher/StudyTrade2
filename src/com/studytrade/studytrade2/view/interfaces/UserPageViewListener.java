@@ -9,5 +9,7 @@ public interface UserPageViewListener {
 	public void advancedSearchClicked();
 	public void logOffClicked();
 	public void onShowMessage(String msg);
+	public void buttonProfileClicked();
+	
 	public void sendUserMessageClickded(StudyTradeUser sender, StudyTradeUser target, String header, String text);
 }

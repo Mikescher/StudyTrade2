@@ -123,6 +123,12 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 	}
 
 	@Override
+	protected void onButtonProfileClicked() {
+		for (SearchResultPageViewListener l : listeners)
+			l.buttonProfileClicked();
+	}
+
+	@Override
 	public void onAfterInit() {
 		// NOP
 	}

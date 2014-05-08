@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class StudyTradeMessage {
+	private StudyTradeModel Model;
+	
 	public final int ID;
 	
 	public final StudyTradeUser Sender;
@@ -28,9 +30,11 @@ public class StudyTradeMessage {
 	}
 
 	public StudyTradeMessage(StudyTradeModel model, int id, int sender, int target, String header, String text, Date timestamp, boolean read) {
+		this.Model = model;
+		
 		this.ID = id;
-		this.Sender = model.getUser(sender);
-		this.Target = model.getUser(target);
+		this.Sender = Model.getUser(sender);
+		this.Target = Model.getUser(target);
 		this.MessageHeader = header;
 		this.MessageText = text;
 		this.Timestamp = timestamp;

@@ -113,6 +113,12 @@ public class UserPageViewImpl extends CustomStudyTradeComponent implements UserP
 	}
 
 	@Override
+	protected void onButtonProfileClicked() {
+		for (UserPageViewListener l : listeners)
+			l.buttonProfileClicked();
+	}
+
+	@Override
 	public StudyTradeUser getDisplayUser() {
 		return displayUser;
 	}

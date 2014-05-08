@@ -220,6 +220,12 @@ public class AdvancedSearchPageViewImpl extends CustomStudyTradeComponent implem
 	}
 
 	@Override
+	protected void onButtonProfileClicked() {
+		for (AdvancedSearchPageViewListener l : listeners)
+			l.buttonProfileClicked();
+	}
+
+	@Override
 	public void onAfterInit() {
 		// NOP
 	}

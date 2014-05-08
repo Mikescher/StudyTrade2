@@ -58,6 +58,11 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
 	}
 
 	@Override
+	public void buttonProfileClicked() {
+		onButtonProfileClicked();
+	}
+
+	@Override
 	public void onShowMessage(String msg) {
 		showMessagePageToMainWindow(msg);
 	}

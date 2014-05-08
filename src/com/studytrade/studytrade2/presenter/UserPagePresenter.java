@@ -57,6 +57,11 @@ public class UserPagePresenter extends CustomPresenter implements UserPageViewLi
 	}
 
 	@Override
+	public void buttonProfileClicked() {
+		onButtonProfileClicked();
+	}
+
+	@Override
 	public void onShowMessage(String msg) {
 		showMessagePageToMainWindow(msg);
 	}

@@ -68,6 +68,10 @@ public abstract class CustomPresenter {
 	protected void onAdvancedSearchClicked() {
 		new AdvancedSearchPagePresenter(UI, Model, new AdvancedSearchPageViewImpl(Model.getLogedInUser()));
 	}
+
+	protected void onButtonProfileClicked() {
+		//TODO Show Profile
+	}
 	
 	protected void showMessagePage(String msg, ActionListener ac) {
 		new MessagePagePresenter(UI, Model, new MessagePageViewImpl(Model.getLogedInUser(), msg, ac));

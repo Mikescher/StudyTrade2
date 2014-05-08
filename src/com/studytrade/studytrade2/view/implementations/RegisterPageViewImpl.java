@@ -258,6 +258,12 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 	}
 
 	@Override
+	protected void onButtonProfileClicked() {
+		for (RegisterPageViewListener l : listeners)
+			l.buttonProfileClicked();
+	}
+
+	@Override
 	public void onAfterInit() {
 		// NOP
 	}

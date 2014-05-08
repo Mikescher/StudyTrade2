@@ -86,6 +86,12 @@ public class MainPageViewImpl extends CustomStudyTradeComponent implements MainP
 	}
 
 	@Override
+	protected void onButtonProfileClicked() {
+		for (MainPageViewListener l : listeners)
+			l.buttonProfileClicked();
+	}
+
+	@Override
 	public void onAfterInit() {
 		// NOP
 	}
