@@ -52,7 +52,7 @@ public class StudyTradeModel {
 		return CurrentUser;
 	}
 	
-	public boolean logIn(String nickname, String password) {
+	public LoginProblem logIn(String nickname, String password) {
 		String in_pwhash = HashHelper.doSHA1(password);
 		
 		try {
@@ -65,21 +65,25 @@ public class StudyTradeModel {
 				String db_pwhash = rs.getString("passwordhash");
 				
 				if (db_pwhash.equalsIgnoreCase(in_pwhash)) {
-					CurrentUser = user;
+					if (user.Activated) {
+						CurrentUser = user;
 
-					STLog.Log("Login of User >>" + nickname + "<< successfull");
-					return true;
+						STLog.Log("Login of User >>" + nickname + "<< successfull");
+						return LoginProblem.NO_PROBLEM;
+					} else {
+						return LoginProblem.NOT_ACTIVATED;
+					}
 				} else {
 					STLog.Log("Login failed -- Password mismatch");
-					return false;
+					return LoginProblem.WRONG_PWD;
 				}
 			} else {
 				STLog.Log("Login failed -- Username not found in DB");
-				return false; // No user found
+				return LoginProblem.WRONG_USN; // No user found
 			}
 		} catch (SQLException e) {
 			STLog.log(e);
-			return false;
+			return LoginProblem.UNKNOWN;
 		}
 	}
 

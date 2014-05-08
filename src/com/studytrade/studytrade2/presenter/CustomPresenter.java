@@ -3,7 +3,10 @@ package com.studytrade.studytrade2.presenter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import logging.STLog;
+
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.model.LoginProblem;
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.view.implementations.AdvancedSearchPageViewImpl;
 import com.studytrade.studytrade2.view.implementations.MainPageViewImpl;
@@ -26,10 +29,25 @@ public abstract class CustomPresenter {
 	}
 	
 	protected void onLoginClicked(String username, String password, ActionListener action) {
-		if (Model.logIn(username, password)) {
+		LoginProblem result = Model.logIn(username, password);
+		
+		switch (result) {
+		case NO_PROBLEM:
 			action.actionPerformed(null);
-		} else {
-			showMessagePage("Password or Username wrong.", action);
+			break;
+		case WRONG_PWD:
+			showMessagePage("Wrong password", action);
+			break;
+		case WRONG_USN:
+			showMessagePage("Username not found", action);
+			break;
+		case NOT_ACTIVATED:
+			showMessagePage("Profile not activated", action);
+			break;
+		case UNKNOWN:
+			STLog.Log("INTERNAL LOGIN EXCEPTION [" + username + ", " + password + "]");
+			showMessagePage("Internal Error", action);
+			break;
 		}
 	}
 

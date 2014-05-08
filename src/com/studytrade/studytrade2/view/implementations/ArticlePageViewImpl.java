@@ -7,6 +7,10 @@ import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.ArticlePageView;
 import com.studytrade.studytrade2.view.interfaces.ArticlePageViewListener;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
 import com.vaadin.ui.VerticalLayout;
@@ -18,6 +22,8 @@ public class ArticlePageViewImpl extends CustomStudyTradeComponent implements Ar
 	
 	private List<ArticlePageViewListener> listeners = new ArrayList<>();
 
+	private Button btnSeller;
+	
 	public ArticlePageViewImpl(StudyTradeUser usr, StudyTradeArticle article) {
 		super(usr);
 		
@@ -42,9 +48,24 @@ public class ArticlePageViewImpl extends CustomStudyTradeComponent implements Ar
 		mainLayout.addComponent(new Label("Ort: " + article.Place));
 		mainLayout.addComponent(new Label("Condition: " + article.Condition));
 		mainLayout.addComponent(new Label("Price: " + article.Price));
-		mainLayout.addComponent(new Label("Verkaufer: " + article.Owner.Nickname));
+		
+		mainLayout.addComponent(new HorizontalLayout(new Label("Seller: "), btnSeller = new Button(article.Owner.Nickname)));
+		btnSeller.setStyleName("link");
+		btnSeller.addClickListener(new ClickListener() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				onLinkSellerClicked();
+			}
+		});
 		
 		return mainLayout;
+	}
+
+	protected void onLinkSellerClicked() {
+		for (ArticlePageViewListener l : listeners)
+			l.onSellerClicked(article.Owner);
 	}
 
 	@Override
@@ -80,5 +101,11 @@ public class ArticlePageViewImpl extends CustomStudyTradeComponent implements Ar
 	protected void onBtnAdvancedSearchClicked() {
 		for (ArticlePageViewListener l : listeners)
 			l.advancedSearchClicked();
+	}
+
+	@Override
+	protected void onShowMessage(String msg) {
+		for (ArticlePageViewListener l : listeners)
+			l.onShowMessage(msg);
 	}
 }

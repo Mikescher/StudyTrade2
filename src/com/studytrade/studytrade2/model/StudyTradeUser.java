@@ -13,6 +13,7 @@ public class StudyTradeUser {
 	public final String City;
 	public final String University;
 	public final String Studydirection;
+	public final boolean Activated;
 	
 	public StudyTradeUser(ResultSet rs) throws SQLException {
 		this(
@@ -23,11 +24,12 @@ public class StudyTradeUser {
 			rs.getString("lastname"),
 			rs.getString("city"),
 			rs.getString("university"),
-			rs.getString("studydirection")
+			rs.getString("studydirection"),
+			rs.getInt("activated") != 0
 		);
 	}
 
-	public StudyTradeUser(int id, String nickname, String mail, String forename, String lastname, String city, String university, String studydirection) {
+	public StudyTradeUser(int id, String nickname, String mail, String forename, String lastname, String city, String university, String studydirection, boolean activated) {
 		this.ID = id;
 		this.Nickname = nickname;
 		this.Email = mail;
@@ -36,5 +38,6 @@ public class StudyTradeUser {
 		this.City = city;
 		this.University = university;
 		this.Studydirection = studydirection;
+		this.Activated = activated;
 	}
 }

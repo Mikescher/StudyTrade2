@@ -106,4 +106,10 @@ public class MessagePageViewImpl extends CustomStudyTradeComponent implements Me
 		for (MessagePageViewListener l : listeners)
 			l.advancedSearchClicked();
 	}
+
+	@Override
+	protected void onShowMessage(String msg) {
+		for (MessagePageViewListener l : listeners)
+			l.onShowMessage(msg);
+	}
 }

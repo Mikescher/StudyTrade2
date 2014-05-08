@@ -250,4 +250,10 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 		for (RegisterPageViewListener l : listeners)
 			l.advancedSearchClicked();
 	}
+
+	@Override
+	protected void onShowMessage(String msg) {
+		for (RegisterPageViewListener l : listeners)
+			l.onShowMessage(msg);
+	}
 }

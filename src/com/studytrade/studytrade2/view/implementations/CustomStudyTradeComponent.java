@@ -23,7 +23,7 @@ import com.vaadin.ui.VerticalLayout;
 public abstract class CustomStudyTradeComponent extends CustomComponent {
 	private static final long serialVersionUID = -8192711605278107723L;
 
-	private StudyTradeUser User;
+	protected final StudyTradeUser User;
 	
 	protected VerticalLayout mainLayout;
 	
@@ -55,15 +55,13 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		fullLayout.setWidth("90%");
 		overallMainLayout.addComponent(fullLayout);
 		overallMainLayout.setComponentAlignment(fullLayout, Alignment.TOP_CENTER);
-		overallMainLayout.setPrimaryStyleName("overallLayout");;
+		overallMainLayout.setPrimaryStyleName("overallLayout");
 		
 		setCompositionRoot(overallMainLayout);
 	}
 
 	private Layout buildFullLayout() {
 		mainLayout = new VerticalLayout();
-		
-		
 		
 		if (User == null) { 
 			// Not logged in
@@ -343,10 +341,17 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		edSearch.setValue(searchstr);
 	}
 	
+	protected void forceLoggedIn() {
+		if (User == null) {
+			onShowMessage("You must be logged in to display this page");
+		}
+	}
+	
 	protected abstract Layout buildLayout();
 	protected abstract void onBtnLoginClicked(String username, String password);
 	protected abstract void onBtnRegisterClicked();
 	protected abstract void onBtnSearchClicked(String searchstring);
 	protected abstract void onBtnAdvancedSearchClicked();
 	protected abstract void onBtnLogOffClicked();
+	protected abstract void onShowMessage(String msg);
 }

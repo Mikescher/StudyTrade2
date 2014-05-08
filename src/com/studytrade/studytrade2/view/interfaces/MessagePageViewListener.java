@@ -6,4 +6,5 @@ public interface MessagePageViewListener {
 	public void searchClicked(String searchstring);
 	public void advancedSearchClicked();
 	public void logOffClicked();
+	public void onShowMessage(String msg);
 }

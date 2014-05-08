@@ -52,4 +52,9 @@ public class MainPagePresenter extends CustomPresenter implements MainPageViewLi
 	public void registerClicked() {
 		onRegisterClicked();
 	}
+
+	@Override
+	public void onShowMessage(String msg) {
+		showMessagePageToMainWindow(msg);
+	}
 }

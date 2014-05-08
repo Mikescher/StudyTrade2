@@ -56,6 +56,11 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
 	}
 
 	@Override
+	public void onShowMessage(String msg) {
+		showMessagePageToMainWindow(msg);
+	}
+
+	@Override
 	public void ArticleClicked(StudyTradeArticle article) {
 		new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLogedInUser(), article));
 	}

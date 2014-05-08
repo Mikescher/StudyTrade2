@@ -212,4 +212,10 @@ public class AdvancedSearchPageViewImpl extends CustomStudyTradeComponent implem
 	protected void onBtnAdvancedSearchClicked() {
 		// Eventless
 	}
+
+	@Override
+	protected void onShowMessage(String msg) {
+		for (AdvancedSearchPageViewListener l : listeners)
+			l.onShowMessage(msg);
+	}
 }

@@ -54,6 +54,11 @@ public class RegisterPagePresenter extends CustomPresenter implements RegisterPa
 	}
 
 	@Override
+	public void onShowMessage(String msg) {
+		showMessagePageToMainWindow(msg);
+	}
+
+	@Override
 	public void doRegisterClicked(String forename, String lastname, String nickname, String place, String university, String studydirection, String email, String password) {
 		Model.register(forename, lastname, nickname, place, university, studydirection, email, password);
 		

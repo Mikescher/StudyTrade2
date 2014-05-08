@@ -8,6 +8,7 @@ public interface SearchResultPageViewListener {
 	public void searchClicked(String searchstring);
 	public void advancedSearchClicked();
 	public void logOffClicked();
+	public void onShowMessage(String msg);
 	
 	public void ArticleClicked(StudyTradeArticle article);
 }
