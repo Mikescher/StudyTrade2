@@ -17,6 +17,7 @@ import com.vaadin.ui.NativeButton;
 import com.vaadin.ui.NativeSelect;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 public abstract class CustomStudyTradeComponent extends CustomComponent {
@@ -42,16 +43,27 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 	}
 
 	protected void Init() {
-		setHeight("100%");
-		setWidth("100%");
 		
-		setCompositionRoot(buildFullLayout());
+		VerticalLayout overallMainLayout = new VerticalLayout();
+		overallMainLayout.setHeight("100%");
+		overallMainLayout.setWidth("100%");
+		
+		Layout fullLayout = buildFullLayout();
+		fullLayout.setPrimaryStyleName("allLayouts");
+		String h = String.valueOf(UI.getCurrent().getPage().getBrowserWindowHeight());
+		fullLayout.setHeight(h+"px");
+		fullLayout.setWidth("90%");
+		overallMainLayout.addComponent(fullLayout);
+		overallMainLayout.setComponentAlignment(fullLayout, Alignment.TOP_CENTER);
+		overallMainLayout.setPrimaryStyleName("overallLayout");;
+		
+		setCompositionRoot(overallMainLayout);
 	}
 
 	private Layout buildFullLayout() {
 		mainLayout = new VerticalLayout();
-		mainLayout.setWidth("100%");
-		mainLayout.setHeight("100%");
+		
+		
 		
 		if (User == null) { 
 			// Not logged in
@@ -105,6 +117,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		result_layout.setHeight("40px");
 		
 		
+		
 		HorizontalLayout inner_right_layout = new HorizontalLayout();
 		{
 			inner_right_layout.setHeight("40px");
@@ -112,6 +125,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 
 			edUsername = new TextField();
 			edUsername.setId("selendebug_CmnPg_ed_username");
+			edUsername.setStyleName("customTextfield");
 			edUsername.setHeight("17px");
 			inner_right_layout.addComponent(edUsername);
 			inner_right_layout.setComponentAlignment(edUsername, Alignment.MIDDLE_RIGHT);
@@ -119,6 +133,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 			edPassword = new PasswordField();
 			edPassword.setId("selendebug_CmnPg_ed_passw");
 			edPassword.setHeight("17px");
+			edPassword.setStyleName("customTextfield");
 			inner_right_layout.addComponent(edPassword);
 			inner_right_layout.setComponentAlignment(edPassword, Alignment.MIDDLE_RIGHT);
 
@@ -250,6 +265,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 			btnSearch = new Button();
 			btnSearch.setCaption("Search");
 			btnSearch.setId("selendebug_CmnPg_btn_search");
+			btnSearch.setPrimaryStyleName("btn btn-primary");
 			inner_right_layout.addComponent(btnSearch);
 			inner_right_layout.setComponentAlignment(btnSearch, Alignment.MIDDLE_RIGHT);
 			btnSearch.addClickListener(new ClickListener() {
@@ -265,6 +281,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 			btnExtendedSearch.setCaption("Advanced");
 			btnExtendedSearch.setId("selendebug_CmnPg_btn_advsearch");
 			inner_right_layout.addComponent(btnExtendedSearch);
+			btnExtendedSearch.setPrimaryStyleName("btn btn-primary");
 			inner_right_layout.setComponentAlignment(btnExtendedSearch, Alignment.MIDDLE_RIGHT);
 			btnExtendedSearch.addClickListener(new ClickListener() {
 				private static final long serialVersionUID = 1L;
@@ -288,21 +305,21 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		VerticalLayout result_layout;
 		
 		result_layout = new VerticalLayout();
-		result_layout.setWidth("400px");
+		result_layout.setWidth("200px");
 		
 		Layout pnlCategory = new VerticalLayout();
 		pnlCategory.setStyleName("commonpage_categories_left");
-		pnlCategory.setHeight("100px");
+		pnlCategory.setHeight("200px");
 		result_layout.addComponent(pnlCategory);
 		
 		Layout pnlCriteria = new VerticalLayout();
 		pnlCriteria.setStyleName("commonpage_criteria_left");
-		pnlCriteria.setHeight("100px");
+		pnlCriteria.setHeight("200px");
 		result_layout.addComponent(pnlCriteria);
 		
 		Layout pnlAds = new VerticalLayout();
 		pnlAds.setStyleName("commonpage_ads_left");
-		pnlAds.setHeight("100px");
+		pnlAds.setHeight("200px");
 		result_layout.addComponent(pnlAds);
 		
 		return result_layout;
@@ -312,7 +329,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		VerticalLayout result_layout = new VerticalLayout();
 
 		result_layout.setStyleName("commonpage_layout_right");
-		result_layout.setHeight("300px");
+		result_layout.setHeight("600px");
 		result_layout.setWidth("200px");
 		
 		return result_layout;
