@@ -13,6 +13,7 @@ import com.studytrade.studytrade2.view.implementations.MainPageViewImpl;
 import com.studytrade.studytrade2.view.implementations.MessagePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.RegisterPageViewImpl;
 import com.studytrade.studytrade2.view.implementations.SearchResultPageViewImpl;
+import com.studytrade.studytrade2.view.implementations.ProfilePageViewImpl;
 import com.vaadin.ui.Component;
 
 public abstract class CustomPresenter {
@@ -70,7 +71,7 @@ public abstract class CustomPresenter {
 	}
 
 	protected void onButtonProfileClicked() {
-		//TODO Show Profile
+		new ProfilePagePresenter(UI, Model, new ProfilePageViewImpl(Model.getLogedInUser()));
 	}
 	
 	protected void showMessagePage(String msg, ActionListener ac) {

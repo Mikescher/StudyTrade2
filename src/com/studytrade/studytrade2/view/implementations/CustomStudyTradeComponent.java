@@ -43,7 +43,6 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 	}
 
 	protected void Init() {
-		
 		VerticalLayout overallMainLayout = new VerticalLayout();
 		overallMainLayout.setHeight("100%");
 		overallMainLayout.setWidth("100%");
