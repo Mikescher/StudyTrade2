@@ -84,4 +84,9 @@ public class MainPageViewImpl extends CustomStudyTradeComponent implements MainP
 		for (MainPageViewListener l : listeners)
 			l.onShowMessage(msg);
 	}
+
+	@Override
+	public void onAfterInit() {
+		// NOP
+	}
 }

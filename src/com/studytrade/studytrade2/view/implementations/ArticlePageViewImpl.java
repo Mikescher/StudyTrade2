@@ -108,4 +108,9 @@ public class ArticlePageViewImpl extends CustomStudyTradeComponent implements Ar
 		for (ArticlePageViewListener l : listeners)
 			l.onShowMessage(msg);
 	}
+
+	@Override
+	public void onAfterInit() {
+		// NOP
+	}
 }

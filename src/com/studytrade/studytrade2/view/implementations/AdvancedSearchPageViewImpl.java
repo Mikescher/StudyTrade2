@@ -218,4 +218,9 @@ public class AdvancedSearchPageViewImpl extends CustomStudyTradeComponent implem
 		for (AdvancedSearchPageViewListener l : listeners)
 			l.onShowMessage(msg);
 	}
+
+	@Override
+	public void onAfterInit() {
+		// NOP
+	}
 }

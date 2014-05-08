@@ -21,6 +21,8 @@ public class MainPagePresenter extends CustomPresenter implements MainPageViewLi
         view.addListener(this);
         
         changeView((Component)view);
+        
+        view.onAfterInit();
     }
 
 	@Override

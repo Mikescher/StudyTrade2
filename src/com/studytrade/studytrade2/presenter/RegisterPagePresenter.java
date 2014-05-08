@@ -21,6 +21,8 @@ public class RegisterPagePresenter extends CustomPresenter implements RegisterPa
         view.addListener(this);
         
         changeView((Component)view);
+        
+        view.onAfterInit();
     }
 
 	@Override

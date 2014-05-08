@@ -112,4 +112,9 @@ public class MessagePageViewImpl extends CustomStudyTradeComponent implements Me
 		for (MessagePageViewListener l : listeners)
 			l.onShowMessage(msg);
 	}
+
+	@Override
+	public void onAfterInit() {
+		// NOP
+	}
 }

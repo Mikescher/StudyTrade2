@@ -21,6 +21,8 @@ public class MessagePagePresenter extends CustomPresenter implements MessagePage
         view.addListener(this);
         
         changeView((Component)view);
+        
+        view.onAfterInit();
     }
 
 	@Override

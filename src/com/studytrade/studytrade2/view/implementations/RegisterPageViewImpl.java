@@ -256,4 +256,9 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 		for (RegisterPageViewListener l : listeners)
 			l.onShowMessage(msg);
 	}
+
+	@Override
+	public void onAfterInit() {
+		// NOP
+	}
 }

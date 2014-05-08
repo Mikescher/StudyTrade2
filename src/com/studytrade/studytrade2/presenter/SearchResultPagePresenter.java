@@ -23,6 +23,8 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
         view.addListener(this);
         
         changeView((Component)view);
+        
+        view.onAfterInit();
     }
 
 	@Override

@@ -22,6 +22,8 @@ public class UserPagePresenter extends CustomPresenter implements UserPageViewLi
         view.addListener(this);
         
         changeView((Component)view);
+        
+        view.onAfterInit();
     }
 
 	@Override

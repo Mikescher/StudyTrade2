@@ -23,6 +23,8 @@ public class ArticlePagePresenter extends CustomPresenter implements ArticlePage
         view.addListener(this);
         
         changeView((Component)view);
+        
+        view.onAfterInit();
     }
 
 	@Override

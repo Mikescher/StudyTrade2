@@ -26,6 +26,8 @@ public class AdvancedSearchPagePresenter extends CustomPresenter implements Adva
         view.addListener(this);
         
         changeView((Component)view);
+        
+        view.onAfterInit();
     }
 
 	@Override

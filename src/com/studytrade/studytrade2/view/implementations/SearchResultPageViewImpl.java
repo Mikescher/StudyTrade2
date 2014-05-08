@@ -121,4 +121,9 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 		for (SearchResultPageViewListener l : listeners)
 			l.onShowMessage(msg);
 	}
+
+	@Override
+	public void onAfterInit() {
+		// NOP
+	}
 }

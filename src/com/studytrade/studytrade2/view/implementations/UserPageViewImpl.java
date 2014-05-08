@@ -33,8 +33,6 @@ public class UserPageViewImpl extends CustomStudyTradeComponent implements UserP
 		this.displayUser = dispUser;
 		
 		Init();
-		
-		forceLoggedIn();
 	}
 
 	@Override
@@ -117,5 +115,10 @@ public class UserPageViewImpl extends CustomStudyTradeComponent implements UserP
 	@Override
 	public StudyTradeUser getDisplayUser() {
 		return displayUser;
+	}
+
+	@Override
+	public void onAfterInit() {
+		forceLoggedIn();
 	}
 }
