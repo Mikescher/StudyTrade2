@@ -1,7 +1,7 @@
 @CHARSET "US-ASCII";
 
 .commonpage_main_layout {
-    background-color: #DDD;
+	
     margin: 00px
 }
 
@@ -63,7 +63,7 @@
     
     border-width: 0px 1px 1px 1px;
 
-    border-radius: 0px 0px 20px 00px;
+    border-radius: 0px 0px 00px 00px;
     
     box-shadow: inset 0 0 3px #AAA;
 }
@@ -74,7 +74,16 @@
     
     border-width: 0px 1px 1px 1px;
 
-    border-radius: 0px 0px 0px 100px;
+   border-radius: 0px 0px 00px 00px;
     
     box-shadow: inset 0 0 3px #AAA;
+}
+.overallLayout{
+	background: #FFF;
+}
+.allLayouts{
+	background: #DDD;
+}
+.customTextfield{
+	margin-right: 11px;
 }
