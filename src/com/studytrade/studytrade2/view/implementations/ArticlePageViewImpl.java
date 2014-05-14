@@ -119,4 +119,10 @@ public class ArticlePageViewImpl extends CustomStudyTradeComponent implements Ar
 	public void onAfterInit() {
 		// NOP
 	}
+
+	@Override
+	protected void onBtnAddArticleClicked() {
+		for (ArticlePageViewListener l : listeners)
+			l.onAddArticle();
+	}
 }

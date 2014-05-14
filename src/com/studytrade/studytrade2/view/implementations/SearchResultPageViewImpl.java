@@ -132,4 +132,10 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 	public void onAfterInit() {
 		// NOP
 	}
+
+	@Override
+	protected void onBtnAddArticleClicked() {
+		for (SearchResultPageViewListener l : listeners)
+			l.onAddArticle();
+	}
 }

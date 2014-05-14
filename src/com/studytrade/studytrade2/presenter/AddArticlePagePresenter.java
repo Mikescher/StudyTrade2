@@ -6,16 +6,16 @@ import java.awt.event.ActionListener;
 import com.studytrade.studytrade2.Studytrade2UI;
 import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
+import com.studytrade.studytrade2.view.implementations.AddArticlePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.ArticlePageViewImpl;
-import com.studytrade.studytrade2.view.implementations.SearchResultPageViewImpl;
-import com.studytrade.studytrade2.view.interfaces.SearchResultPageView;
-import com.studytrade.studytrade2.view.interfaces.SearchResultPageViewListener;
+import com.studytrade.studytrade2.view.interfaces.AddArticlePageView;
+import com.studytrade.studytrade2.view.interfaces.AddArticlePageViewListener;
 import com.vaadin.ui.Component;
 
-public class SearchResultPagePresenter extends CustomPresenter implements SearchResultPageViewListener {
-    private SearchResultPageView  view;
+public class AddArticlePagePresenter extends CustomPresenter implements AddArticlePageViewListener {
+    private AddArticlePageView  view;
     
-    public SearchResultPagePresenter(Studytrade2UI ui, StudyTradeModel m, SearchResultPageView v) {
+    public AddArticlePagePresenter(Studytrade2UI ui, StudyTradeModel m, AddArticlePageView  v) {
     	super(ui, m);
     	
         this.view  = v;
@@ -32,7 +32,7 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new SearchResultPagePresenter(UI, Model, new SearchResultPageViewImpl(Model.getLoggedInUser(), view.getSearchString(), view.getArticles()));
+				new AddArticlePagePresenter(UI, Model, new AddArticlePageViewImpl(Model.getLoggedInUser()));
 			}
 		});
 	}
@@ -73,7 +73,20 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
 	}
 
 	@Override
-	public void ArticleClicked(StudyTradeArticle article) {
-		new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), article));
+	public void addArticleClicked(String name, Float fprice, int cond, String place, String desc) {
+		final StudyTradeArticle starr =  Model.addArticle(name, fprice, cond, place, desc);
+		
+		if (starr == null) {
+			showMessagePageToMainWindow("Internal error while adding article :( ");
+		} else {
+			showMessagePage("You have succesfully added a article", new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), starr));
+				}
+			});
+		}
+		
+
 	}
 }

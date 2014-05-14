@@ -37,6 +37,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 	private NativeSelect cbxSearch;
 	private Button btnSearch;
 	private Button btnExtendedSearch;
+	private Button btnAddArticle;
 	
 	public CustomStudyTradeComponent(StudyTradeUser usr) {
 		this.User = usr;
@@ -187,6 +188,16 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		{
 			inner_right_layout.setStyleName("commonpage_user_bar_top_inner_right");
 			
+			btnAddArticle = new Button("Add");
+			btnAddArticle.addClickListener(new ClickListener() {
+				private static final long serialVersionUID = 3673502648449522631L;
+
+				@Override
+				public void buttonClick(ClickEvent event) {
+					onBtnAddArticleClicked();
+				}
+			});
+			
 			VerticalLayout inner_right_layout_left = new VerticalLayout();
 			{
 				int msgCount = User.getUnreadMessages().size();
@@ -229,6 +240,9 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 
 				inner_right_layout_right.setSizeUndefined();
 			}
+			
+			inner_right_layout.addComponent(btnAddArticle);
+			inner_right_layout.setComponentAlignment(btnAddArticle, Alignment.MIDDLE_RIGHT);
 			
 			inner_right_layout.addComponent(inner_right_layout_left);
 			inner_right_layout.setComponentAlignment(inner_right_layout_left, Alignment.MIDDLE_RIGHT);
@@ -363,5 +377,6 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 	protected abstract void onBtnSearchClicked(String searchstring);
 	protected abstract void onBtnAdvancedSearchClicked();
 	protected abstract void onBtnLogOffClicked();
+	protected abstract void onBtnAddArticleClicked();
 	protected abstract void onShowMessage(String msg);
 }

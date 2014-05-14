@@ -95,4 +95,10 @@ public class MainPageViewImpl extends CustomStudyTradeComponent implements MainP
 	public void onAfterInit() {
 		// NOP
 	}
+
+	@Override
+	protected void onBtnAddArticleClicked() {
+		for (MainPageViewListener l : listeners)
+			l.onAddArticle();
+	}
 }

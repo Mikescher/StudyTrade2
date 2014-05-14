@@ -158,4 +158,10 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 	public void onAfterInit() {
 		forceLoggedIn();
 	}
+
+	@Override
+	protected void onBtnAddArticleClicked() {
+		for (ProfilePageViewListener l : listeners)
+			l.onAddArticle();
+	}
 }

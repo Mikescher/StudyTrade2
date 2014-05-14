@@ -63,6 +63,11 @@ public class UserMessagePagePresenter extends CustomPresenter implements UserMes
 	}
 
 	@Override
+	public void onAddArticle() {
+		onButtonAddArticleClicked();
+	}
+
+	@Override
 	public void onShowMessage(String msg) {
 		showMessagePageToMainWindow(msg);
 	}

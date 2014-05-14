@@ -8,6 +8,7 @@ import logging.STLog;
 import com.studytrade.studytrade2.Studytrade2UI;
 import com.studytrade.studytrade2.model.LoginProblem;
 import com.studytrade.studytrade2.model.StudyTradeModel;
+import com.studytrade.studytrade2.view.implementations.AddArticlePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.AdvancedSearchPageViewImpl;
 import com.studytrade.studytrade2.view.implementations.MainPageViewImpl;
 import com.studytrade.studytrade2.view.implementations.MessagePageViewImpl;
@@ -85,5 +86,9 @@ public abstract class CustomPresenter {
 				new MainPagePresenter(UI, Model, new MainPageViewImpl(Model.getLoggedInUser()));
 			}
 		});
+	}
+
+	protected void onButtonAddArticleClicked() {
+		new AddArticlePagePresenter(UI, Model, new AddArticlePageViewImpl(Model.getLoggedInUser()));
 	}
 }

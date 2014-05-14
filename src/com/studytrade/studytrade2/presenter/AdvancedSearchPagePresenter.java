@@ -71,6 +71,11 @@ public class AdvancedSearchPagePresenter extends CustomPresenter implements Adva
 	}
 
 	@Override
+	public void onAddArticle() {
+		onButtonAddArticleClicked();
+	}
+
+	@Override
 	public void advancedSearch(String name, String direction, Float minPrice, Float maxPrice, String description, String place, String condition) {
 		List<StudyTradeArticle> results = Model.getSearchResults(name);
 		

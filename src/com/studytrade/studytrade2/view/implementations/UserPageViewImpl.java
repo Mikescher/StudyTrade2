@@ -18,20 +18,20 @@ import com.vaadin.ui.VerticalLayout;
 
 public class UserPageViewImpl extends CustomStudyTradeComponent implements UserPageView {
 	private static final long serialVersionUID = -2103599367448946610L;
-	
+
 	private List<UserPageViewListener> listeners = new ArrayList<>();
 
 	private TextField edMsgHeader;
 	private TextArea memoMsgText;
 	private Button btnSendMessage;
-	
+
 	private final StudyTradeUser displayUser;
-	
+
 	public UserPageViewImpl(StudyTradeUser usr, StudyTradeUser dispUser) {
 		super(usr);
-		
+
 		this.displayUser = dispUser;
-		
+
 		Init();
 	}
 
@@ -43,22 +43,22 @@ public class UserPageViewImpl extends CustomStudyTradeComponent implements UserP
 	@Override
 	protected Layout buildLayout() {
 		VerticalLayout mainLayout = new VerticalLayout();
-		
+
 		mainLayout.setWidth("100%");
-		
+
 		mainLayout.addComponent(new Label("Userpage from " + displayUser.Nickname));
-		
+
 		mainLayout.addComponent(new Label("Name: " + displayUser.Forename + " " + displayUser.Lastname));
 		mainLayout.addComponent(new Label("City: " + displayUser.City));
 		mainLayout.addComponent(new Label("Studydirection: " + displayUser.Studydirection));
 		mainLayout.addComponent(new Label("University: " + displayUser.University));
-		
+
 		mainLayout.addComponent(new Label("Send Message to User:"));
-		
+
 		mainLayout.addComponent(new HorizontalLayout(new Label("Header"), edMsgHeader = new TextField()));
 		mainLayout.addComponent(new HorizontalLayout(new Label("Text"), memoMsgText = new TextArea()));
 		mainLayout.addComponent(btnSendMessage = new Button("Send"));
-		
+
 		btnSendMessage.addClickListener(new ClickListener() {
 			private static final long serialVersionUID = 2421638485684843164L;
 
@@ -67,7 +67,7 @@ public class UserPageViewImpl extends CustomStudyTradeComponent implements UserP
 				onBtnSendMessageClicked();
 			}
 		});
-		
+
 		return mainLayout;
 	}
 
@@ -126,5 +126,11 @@ public class UserPageViewImpl extends CustomStudyTradeComponent implements UserP
 	@Override
 	public void onAfterInit() {
 		forceLoggedIn();
+	}
+
+	@Override
+	protected void onBtnAddArticleClicked() {
+		for (UserPageViewListener l : listeners)
+			l.onAddArticle();
 	}
 }

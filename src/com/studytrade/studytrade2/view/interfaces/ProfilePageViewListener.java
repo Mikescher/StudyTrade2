@@ -10,6 +10,7 @@ public interface ProfilePageViewListener {
 	public void logOffClicked();
 	public void onShowMessage(String msg);
 	public void buttonProfileClicked();
+	public void onAddArticle();
 	
 	public void messageClicked(StudyTradeMessage msg);
 }

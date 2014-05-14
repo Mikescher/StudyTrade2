@@ -171,4 +171,10 @@ public class UserMessagePageViewImpl extends CustomStudyTradeComponent implement
 	public ActionListener getOKEvent() {
 		return pageEvent;
 	}
+
+	@Override
+	protected void onBtnAddArticleClicked() {
+		for (UserMessagePageViewListener l : listeners)
+			l.onAddArticle();
+	}
 }

@@ -61,6 +61,11 @@ public class MessagePagePresenter extends CustomPresenter implements MessagePage
 	}
 
 	@Override
+	public void onAddArticle() {
+		onButtonAddArticleClicked();
+	}
+
+	@Override
 	public void onShowMessage(String msg) {
 		showMessagePageToMainWindow(msg);
 	}

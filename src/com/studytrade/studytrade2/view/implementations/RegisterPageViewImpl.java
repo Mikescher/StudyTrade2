@@ -267,4 +267,10 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 	public void onAfterInit() {
 		// NOP
 	}
+
+	@Override
+	protected void onBtnAddArticleClicked() {
+		for (RegisterPageViewListener l : listeners)
+			l.onAddArticle();
+	}
 }

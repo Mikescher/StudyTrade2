@@ -229,4 +229,10 @@ public class AdvancedSearchPageViewImpl extends CustomStudyTradeComponent implem
 	public void onAfterInit() {
 		// NOP
 	}
+
+	@Override
+	protected void onBtnAddArticleClicked() {
+		for (AdvancedSearchPageViewListener l : listeners)
+			l.onAddArticle();
+	}
 }

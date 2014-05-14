@@ -63,6 +63,11 @@ public class ProfilePagePresenter extends CustomPresenter implements ProfilePage
 	}
 
 	@Override
+	public void onAddArticle() {
+		onButtonAddArticleClicked();
+	}
+
+	@Override
 	public void onShowMessage(String msg) {
 		showMessagePageToMainWindow(msg);
 	}

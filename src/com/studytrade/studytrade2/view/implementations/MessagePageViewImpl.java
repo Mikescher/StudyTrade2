@@ -123,4 +123,10 @@ public class MessagePageViewImpl extends CustomStudyTradeComponent implements Me
 	public void onAfterInit() {
 		// NOP
 	}
+
+	@Override
+	protected void onBtnAddArticleClicked() {
+		for (MessagePageViewListener l : listeners)
+			l.onAddArticle();
+	}
 }

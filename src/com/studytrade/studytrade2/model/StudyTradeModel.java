@@ -1,5 +1,6 @@
 package com.studytrade.studytrade2.model;
 
+import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -205,5 +206,35 @@ public class StudyTradeModel {
 		}
 		
 		return result;
+	}
+
+	public StudyTradeArticle addArticle(String name, Float price, int cond, String place, String desc) {
+		try {
+			DBConnection.PrepStatements.Statement_CreateArticle.setString(1, name);
+			DBConnection.PrepStatements.Statement_CreateArticle.setBigDecimal(2, new BigDecimal(price));
+			DBConnection.PrepStatements.Statement_CreateArticle.setInt(3, cond);
+			DBConnection.PrepStatements.Statement_CreateArticle.setString(4, place);
+			DBConnection.PrepStatements.Statement_CreateArticle.setInt(5, getLoggedInUser().ID);
+			DBConnection.PrepStatements.Statement_CreateArticle.setString(6, ""); // Pictures
+			DBConnection.PrepStatements.Statement_CreateArticle.setString(7, desc);
+			
+			DBConnection.PrepStatements.Statement_CreateArticle.execute();
+		} catch (SQLException e) {
+			STLog.log(e);
+			return null;
+		}
+		
+		try {
+			ResultSet rs = DBConnection.PrepStatements.Statement_NewestArticle.executeQuery();
+			
+			if (rs.next()) {
+				return new StudyTradeArticle(this, rs);
+			} else {
+				return null;
+			}
+		} catch (SQLException e) {
+			STLog.log(e);
+			return null;
+		}
 	}
 }

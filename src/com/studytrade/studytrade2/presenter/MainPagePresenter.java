@@ -61,6 +61,11 @@ public class MainPagePresenter extends CustomPresenter implements MainPageViewLi
 	}
 
 	@Override
+	public void onAddArticle() {
+		onButtonAddArticleClicked();
+	}
+
+	@Override
 	public void onShowMessage(String msg) {
 		showMessagePageToMainWindow(msg);
 	}

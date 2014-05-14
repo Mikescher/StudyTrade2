@@ -8,4 +8,5 @@ public interface MainPageViewListener {
 	public void logOffClicked();
 	public void onShowMessage(String msg);
 	public void buttonProfileClicked();
+	public void onAddArticle();
 }

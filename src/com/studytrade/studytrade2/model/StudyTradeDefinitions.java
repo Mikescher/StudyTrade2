@@ -35,4 +35,13 @@ public class StudyTradeDefinitions {
 			sel.setItemCaption(sel.addItem(p), p);
 		}
 	}
+	
+	public static int getConditionIndex(String cond) {
+		for (int i = 0; i < CONDITIONS.length; i++) {
+			if (CONDITIONS[i].equalsIgnoreCase(cond)) {
+				return i;
+			}
+		}
+		return 0;
+	}
 }

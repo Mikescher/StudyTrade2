@@ -62,6 +62,11 @@ public class UserPagePresenter extends CustomPresenter implements UserPageViewLi
 	}
 
 	@Override
+	public void onAddArticle() {
+		onButtonAddArticleClicked();
+	}
+
+	@Override
 	public void onShowMessage(String msg) {
 		showMessagePageToMainWindow(msg);
 	}
