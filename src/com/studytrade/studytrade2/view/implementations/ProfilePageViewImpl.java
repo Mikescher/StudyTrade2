@@ -3,15 +3,19 @@ package com.studytrade.studytrade2.view.implementations;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeMessage;
 import com.studytrade.studytrade2.model.StudyTradeUser;
+import com.studytrade.studytrade2.presenter.ArticlePagePresenter;
 import com.studytrade.studytrade2.view.interfaces.ProfilePageView;
 import com.studytrade.studytrade2.view.interfaces.ProfilePageViewListener;
+import com.studytrade.studytrade2.view.interfaces.UserPageViewListener;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
+import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 
 public class ProfilePageViewImpl extends CustomStudyTradeComponent implements ProfilePageView {
@@ -37,6 +41,8 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 		VerticalLayout mainLayout = new VerticalLayout();
 		
 		mainLayout.setWidth("100%");
+		
+		//#######################################
 
 		mainLayout.addComponent(new Label("Hello " + User.Forename + " " + User.Lastname + " (aka " + User.Nickname + ")"));
 		
@@ -54,6 +60,8 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 				// TODO Add Edit Profile Page
 			}
 		});
+		
+		//#######################################
 		
 		List<StudyTradeMessage> msg_unread = User.getUnreadMessages();
 		List<StudyTradeMessage> msg_send = User.getSendMessages();
@@ -74,6 +82,36 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 			});
 		}
 		
+		//#######################################
+		
+		mainLayout.addComponent(new Label("Articles:"));
+		
+		for (final StudyTradeArticle article : User.getArticles()) {
+			Panel p = new Panel();
+			
+			VerticalLayout l = new VerticalLayout();
+
+			l.addComponent(new Label("ID:" + article.ArticleID));
+			l.addComponent(new Label(article.Name));
+			l.addComponent(new Label(article.Description));
+			l.addComponent(new Label(article.Place));
+			
+			p.setContent(l);
+			
+			p.addClickListener(new com.vaadin.event.MouseEvents.ClickListener() {
+				private static final long serialVersionUID = 5665965853296644399L;
+
+				@Override
+				public void click(com.vaadin.event.MouseEvents.ClickEvent event) {
+					onArticleClicked(article);
+				}
+			});
+			
+			mainLayout.addComponent(p);
+		}
+		
+		//#######################################
+		
 		mainLayout.addComponent(new Label("Send Messages (" + msg_send.size() + "):"));
 		for (final StudyTradeMessage msg : msg_send) {
 			Button btnLink = new Button(msg.getDisplayString());
@@ -88,6 +126,8 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 				}
 			});
 		}
+		
+		//#######################################
 		
 		mainLayout.addComponent(new Label("Recieved Messages (" + msg_recieved.size() + "):"));
 		for (final StudyTradeMessage msg : msg_recieved) {
@@ -105,6 +145,11 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 		}
 				
 		return mainLayout;
+	}
+
+	private void onArticleClicked(StudyTradeArticle a) {
+		for (ProfilePageViewListener l : listeners)
+			l.articleClicked(a);
 	}
 
 	private void onMessageClicked(StudyTradeMessage m) {

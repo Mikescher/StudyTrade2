@@ -61,4 +61,8 @@ public class StudyTradeUser {
 	public List<StudyTradeMessage> getUnreadMessages() {
 		return Model.getMessagesByTarget(this, true);
 	}
+	
+	public List<StudyTradeArticle> getArticles() {
+		return Model.getArticlesByOwner(this);
+	}
 }

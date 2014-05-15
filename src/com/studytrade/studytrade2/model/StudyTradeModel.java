@@ -237,4 +237,23 @@ public class StudyTradeModel {
 			return null;
 		}
 	}
+	
+	public List<StudyTradeArticle> getArticlesByOwner(StudyTradeUser usr) {
+		List<StudyTradeArticle> result = new ArrayList<>();
+
+		try {
+			DBConnection.PrepStatements.Statement_ArticleByOwner.setInt(1, usr.ID);
+			
+			ResultSet rs = DBConnection.PrepStatements.Statement_ArticleByOwner.executeQuery();
+			
+			while (rs.next()) {
+				result.add(new StudyTradeArticle(this, rs));
+			}
+		} catch (SQLException e) {
+			STLog.log(e);
+			return null;
+		}
+		
+		return result;
+	}
 }

@@ -4,8 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeMessage;
 import com.studytrade.studytrade2.model.StudyTradeModel;
+import com.studytrade.studytrade2.view.implementations.ArticlePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.ProfilePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.UserMessagePageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.ProfilePageView;
@@ -80,5 +82,10 @@ public class ProfilePagePresenter extends CustomPresenter implements ProfilePage
 				new ProfilePagePresenter(UI, Model, new ProfilePageViewImpl(Model.getLoggedInUser()));
 			}
 		}));
+	}
+
+	@Override
+	public void articleClicked(StudyTradeArticle article) {
+		new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), article));
 	}
 }
