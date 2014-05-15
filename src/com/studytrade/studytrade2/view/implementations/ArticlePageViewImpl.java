@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.studytrade.studytrade2.model.StudyTradeArticle;
+import com.studytrade.studytrade2.model.StudyTradeDefinitions;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.ArticlePageView;
 import com.studytrade.studytrade2.view.interfaces.ArticlePageViewListener;
@@ -46,7 +47,7 @@ public class ArticlePageViewImpl extends CustomStudyTradeComponent implements Ar
 		mainLayout.addComponent(new Label("Name: " + article.Name));
 		mainLayout.addComponent(new Label("Description:\r\n" + article.Description));
 		mainLayout.addComponent(new Label("Ort: " + article.Place));
-		mainLayout.addComponent(new Label("Condition: " + article.Condition));
+		mainLayout.addComponent(new Label("Condition: " + StudyTradeDefinitions.CONDITIONS[article.Condition]));
 		mainLayout.addComponent(new Label("Price: " + article.Price));
 		
 		mainLayout.addComponent(new HorizontalLayout(new Label("Seller: "), btnSeller = new Button(article.Owner.Nickname)));

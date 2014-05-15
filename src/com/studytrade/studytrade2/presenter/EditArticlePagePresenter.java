@@ -5,20 +5,18 @@ import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
 import com.studytrade.studytrade2.model.StudyTradeArticle;
-import com.studytrade.studytrade2.model.StudyTradeMessage;
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.view.implementations.ArticlePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.EditArticlePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.ProfilePageViewImpl;
-import com.studytrade.studytrade2.view.implementations.UserMessagePageViewImpl;
-import com.studytrade.studytrade2.view.interfaces.ProfilePageView;
-import com.studytrade.studytrade2.view.interfaces.ProfilePageViewListener;
+import com.studytrade.studytrade2.view.interfaces.EditArticlePageView;
+import com.studytrade.studytrade2.view.interfaces.EditArticlePageViewListener;
 import com.vaadin.ui.Component;
 
-public class ProfilePagePresenter extends CustomPresenter implements ProfilePageViewListener {
-    private ProfilePageView  view;
+public class EditArticlePagePresenter extends CustomPresenter implements EditArticlePageViewListener {
+    private EditArticlePageView  view;
     
-    public ProfilePagePresenter(Studytrade2UI ui, StudyTradeModel m, ProfilePageView  v) {
+    public EditArticlePagePresenter(Studytrade2UI ui, StudyTradeModel m, EditArticlePageView  v) {
     	super(ui, m);
     	
         this.view  = v;
@@ -35,7 +33,7 @@ public class ProfilePagePresenter extends CustomPresenter implements ProfilePage
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new ProfilePagePresenter(UI, Model, new ProfilePageViewImpl(Model.getLoggedInUser()));
+				new EditArticlePagePresenter(UI, Model, new EditArticlePageViewImpl(Model.getLoggedInUser(), view.getArticle()));
 			}
 		});
 	}
@@ -76,22 +74,26 @@ public class ProfilePagePresenter extends CustomPresenter implements ProfilePage
 	}
 
 	@Override
-	public void messageClicked(StudyTradeMessage msg) {
-		new UserMessagePagePresenter(UI, Model, new UserMessagePageViewImpl(Model.getLoggedInUser(), msg, new ActionListener() {
+	public void deleteArticle(StudyTradeArticle article) {
+		Model.deleteArticle(article);
+		
+		showMessagePage("Article deleted", new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new ProfilePagePresenter(UI, Model, new ProfilePageViewImpl(Model.getLoggedInUser()));
 			}
-		}));
+		});
 	}
 
 	@Override
-	public void articleClicked(StudyTradeArticle article) {
-		new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), article));
-	}
-
-	@Override
-	public void editArticle(StudyTradeArticle article) {
-		new EditArticlePagePresenter(UI, Model, new EditArticlePageViewImpl(Model.getLoggedInUser(), article));
+	public void updateArticle(StudyTradeArticle article, String name, Float fprice, int cond, String place, String desc) {
+		final StudyTradeArticle newarticle = Model.updateArticle(article, name, fprice, cond, place, desc);
+		
+		showMessagePage("Article updated", new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), newarticle));
+			}
+		});
 	}
 }

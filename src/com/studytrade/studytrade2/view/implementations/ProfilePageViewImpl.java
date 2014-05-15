@@ -6,13 +6,12 @@ import java.util.List;
 import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeMessage;
 import com.studytrade.studytrade2.model.StudyTradeUser;
-import com.studytrade.studytrade2.presenter.ArticlePagePresenter;
 import com.studytrade.studytrade2.view.interfaces.ProfilePageView;
 import com.studytrade.studytrade2.view.interfaces.ProfilePageViewListener;
-import com.studytrade.studytrade2.view.interfaces.UserPageViewListener;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
 import com.vaadin.ui.Panel;
@@ -98,14 +97,32 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 			
 			p.setContent(l);
 			
-			p.addClickListener(new com.vaadin.event.MouseEvents.ClickListener() {
-				private static final long serialVersionUID = 5665965853296644399L;
-
+			HorizontalLayout hl = new HorizontalLayout();
+			
+			Button btnArticleShow = new Button("Show");
+			btnArticleShow.addClickListener(new ClickListener() {
+				private static final long serialVersionUID = 2646188737118750380L;
+				
 				@Override
-				public void click(com.vaadin.event.MouseEvents.ClickEvent event) {
+				public void buttonClick(ClickEvent event) {
 					onArticleClicked(article);
 				}
 			});
+			hl.addComponent(btnArticleShow);
+			
+			Button btnArticleEdit = new Button("Edit");
+			btnArticleEdit.addClickListener(new ClickListener() {
+				private static final long serialVersionUID = 2646188737118750380L;
+				
+				@Override
+				public void buttonClick(ClickEvent event) {
+					onEditArticleClicked(article);
+				}
+			});
+			
+			hl.addComponent(btnArticleEdit);
+			
+			l.addComponent(hl);
 			
 			mainLayout.addComponent(p);
 		}
@@ -145,6 +162,11 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 		}
 				
 		return mainLayout;
+	}
+
+	private void onEditArticleClicked(StudyTradeArticle article) {
+		for (ProfilePageViewListener l : listeners)
+			l.editArticle(article);
 	}
 
 	private void onArticleClicked(StudyTradeArticle a) {

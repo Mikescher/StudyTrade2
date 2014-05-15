@@ -15,4 +15,5 @@ public interface ProfilePageViewListener {
 	
 	public void messageClicked(StudyTradeMessage msg);
 	public void articleClicked(StudyTradeArticle article);
+	public void editArticle(StudyTradeArticle article);
 }

@@ -19,7 +19,7 @@ import logging.STLog;
 
 public class SendMail {
 
-	public boolean sendRegisterMail(int userID) {
+	public boolean sendRegisterMail(/*StudyTradeUser usr */) {
 		try {
 			String host = "smtp.strato.de";
 			int port = 587;

@@ -25,6 +25,8 @@ public class StudyTradeStatements {
 	public PreparedStatement Statement_CreateArticle;
 	public PreparedStatement Statement_NewestArticle;
 	public PreparedStatement Statement_ArticleByOwner;
+	public PreparedStatement Statement_DeleteArticle;
+	public PreparedStatement Statement_UpdateArticle;
 	
 	public StudyTradeStatements(Connection conn) {
 		prepare(conn);
@@ -47,6 +49,8 @@ public class StudyTradeStatements {
 			Statement_CreateArticle = c.prepareStatement(loadResource("/Statement_CreateArticle.sql"));
 			Statement_NewestArticle = c.prepareStatement(loadResource("/Statement_NewestArticle.sql"));
 			Statement_ArticleByOwner = c.prepareStatement(loadResource("/Statement_ArticleByOwner.sql"));
+			Statement_DeleteArticle = c.prepareStatement(loadResource("/Statement_DeleteArticle.sql"));
+			Statement_UpdateArticle = c.prepareStatement(loadResource("/Statement_UpdateArticle.sql"));
 		} catch (SQLException e) {
 			STLog.log(e);
 		}

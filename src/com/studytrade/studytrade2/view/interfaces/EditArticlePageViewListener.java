@@ -1,6 +1,8 @@
 package com.studytrade.studytrade2.view.interfaces;
 
-public interface AddArticlePageViewListener {
+import com.studytrade.studytrade2.model.StudyTradeArticle;
+
+public interface EditArticlePageViewListener {
 	public void loginClicked(String username, String password);
 	public void registerClicked();
 	public void searchClicked(String searchstring);
@@ -10,5 +12,6 @@ public interface AddArticlePageViewListener {
 	public void buttonProfileClicked();
 	public void onAddArticle();
 	
-	public void addArticleClicked(String name, Float fprice, int intValue, String place, String desc);
+	public void deleteArticle(StudyTradeArticle article);
+	public void updateArticle(StudyTradeArticle article, String name, Float fprice, int cond, String place, String desc);
 }

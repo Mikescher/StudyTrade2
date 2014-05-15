@@ -256,4 +256,38 @@ public class StudyTradeModel {
 		
 		return result;
 	}
+
+	public boolean deleteArticle(StudyTradeArticle article) {
+		try {
+			DBConnection.PrepStatements.Statement_DeleteArticle.setInt(1, article.ArticleID);
+			
+			DBConnection.PrepStatements.Statement_DeleteArticle.execute();
+		} catch (SQLException e) {
+			STLog.log(e);
+			return false;
+		}
+		return true;
+	}
+
+	public StudyTradeArticle updateArticle(StudyTradeArticle article, String name, Float fprice, int cond, String place, String desc) {
+		StudyTradeArticle na = new StudyTradeArticle(this, article.ArticleID, article.Owner.ID, name, new BigDecimal(fprice), cond, place, desc);
+		
+		try {
+			DBConnection.PrepStatements.Statement_UpdateArticle.setString(1, na.Name);
+			DBConnection.PrepStatements.Statement_UpdateArticle.setBigDecimal(2, na.Price);
+			DBConnection.PrepStatements.Statement_UpdateArticle.setInt(3, na.Condition);
+			DBConnection.PrepStatements.Statement_UpdateArticle.setString(4, na.Place);
+			DBConnection.PrepStatements.Statement_UpdateArticle.setInt(5, na.Owner.ID);
+			DBConnection.PrepStatements.Statement_UpdateArticle.setString(6, ""); // Pictures
+			DBConnection.PrepStatements.Statement_UpdateArticle.setString(7, na.Description);
+			DBConnection.PrepStatements.Statement_UpdateArticle.setInt(8, na.ArticleID);
+			
+			DBConnection.PrepStatements.Statement_UpdateArticle.execute();
+		} catch (SQLException e) {
+			STLog.log(e);
+			return null;
+		}
+		
+		return na;
+	}
 }
