@@ -4,8 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.model.StudyTradeUser;
+import com.studytrade.studytrade2.view.implementations.ArticlePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.UserPageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.UserPageView;
 import com.studytrade.studytrade2.view.interfaces.UserPageViewListener;
@@ -81,5 +83,10 @@ public class UserPagePresenter extends CustomPresenter implements UserPageViewLi
 				new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLoggedInUser(), view.getDisplayUser()));
 			}
 		});
+	}
+
+	@Override
+	public void articleClicked(StudyTradeArticle article) {
+		new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), article));
 	}
 }

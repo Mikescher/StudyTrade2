@@ -3,6 +3,7 @@ package com.studytrade.studytrade2.view.implementations;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.UserPageView;
 import com.studytrade.studytrade2.view.interfaces.UserPageViewListener;
@@ -12,6 +13,7 @@ import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
+import com.vaadin.ui.Panel;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
@@ -53,6 +55,36 @@ public class UserPageViewImpl extends CustomStudyTradeComponent implements UserP
 		mainLayout.addComponent(new Label("Studydirection: " + displayUser.Studydirection));
 		mainLayout.addComponent(new Label("University: " + displayUser.University));
 
+		//#######################################
+		
+		mainLayout.addComponent(new Label("Articles:"));
+		
+		for (final StudyTradeArticle article : displayUser.getArticles()) {
+			Panel p = new Panel();
+			
+			VerticalLayout l = new VerticalLayout();
+
+			l.addComponent(new Label("ID:" + article.ArticleID));
+			l.addComponent(new Label(article.Name));
+			l.addComponent(new Label(article.Description));
+			l.addComponent(new Label(article.Place));
+			
+			p.setContent(l);
+			
+			p.addClickListener(new com.vaadin.event.MouseEvents.ClickListener() {
+				private static final long serialVersionUID = 5665965853296644399L;
+
+				@Override
+				public void click(com.vaadin.event.MouseEvents.ClickEvent event) {
+					onArticleClicked(article);
+				}
+			});
+			
+			mainLayout.addComponent(p);
+		}
+		
+		//#######################################
+		
 		mainLayout.addComponent(new Label("Send Message to User:"));
 
 		mainLayout.addComponent(new HorizontalLayout(new Label("Header"), edMsgHeader = new TextField()));
@@ -69,6 +101,11 @@ public class UserPageViewImpl extends CustomStudyTradeComponent implements UserP
 		});
 
 		return mainLayout;
+	}
+
+	private void onArticleClicked(StudyTradeArticle a) {
+		for (UserPageViewListener l : listeners)
+			l.articleClicked(a);
 	}
 
 	private void onBtnSendMessageClicked() {

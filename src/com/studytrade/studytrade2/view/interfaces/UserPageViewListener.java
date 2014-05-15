@@ -1,5 +1,6 @@
 package com.studytrade.studytrade2.view.interfaces;
 
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 
 public interface UserPageViewListener {
@@ -13,4 +14,5 @@ public interface UserPageViewListener {
 	public void onAddArticle();
 	
 	public void sendUserMessageClickded(StudyTradeUser sender, StudyTradeUser target, String header, String text);
+	public void articleClicked(StudyTradeArticle article);
 }
