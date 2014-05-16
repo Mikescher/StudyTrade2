@@ -47,6 +47,8 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 		for (final StudyTradeArticle article : Articles) {
 			Panel p = new Panel();
 			
+			p.setId("selendebug_serepg_pnl_result");
+			
 			VerticalLayout l = new VerticalLayout();
 
 			l.addComponent(new Label("ID:" + article.ArticleID));

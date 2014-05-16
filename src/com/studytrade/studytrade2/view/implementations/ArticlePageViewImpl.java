@@ -52,6 +52,7 @@ public class ArticlePageViewImpl extends CustomStudyTradeComponent implements Ar
 		
 		mainLayout.addComponent(new HorizontalLayout(new Label("Seller: "), btnSeller = new Button(article.Owner.Nickname)));
 		btnSeller.setStyleName("link");
+		btnSeller.setId("selendebug_artpg_btn_seller");
 		btnSeller.addClickListener(new ClickListener() {
 			private static final long serialVersionUID = 1L;
 

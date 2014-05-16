@@ -88,8 +88,11 @@ public class UserPageViewImpl extends CustomStudyTradeComponent implements UserP
 		mainLayout.addComponent(new Label("Send Message to User:"));
 
 		mainLayout.addComponent(new HorizontalLayout(new Label("Header"), edMsgHeader = new TextField()));
+		edMsgHeader.setId("selendebug_usrpg_ed_msgheader");
 		mainLayout.addComponent(new HorizontalLayout(new Label("Text"), memoMsgText = new TextArea()));
+		memoMsgText.setId("selendebug_usrpg_ed_msgtext");
 		mainLayout.addComponent(btnSendMessage = new Button("Send"));
+		btnSendMessage.setId("selendebug_usrpg_btn_msgsend");
 
 		btnSendMessage.addClickListener(new ClickListener() {
 			private static final long serialVersionUID = 2421638485684843164L;
