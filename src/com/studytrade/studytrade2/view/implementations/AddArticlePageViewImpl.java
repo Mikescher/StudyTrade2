@@ -53,6 +53,8 @@ public class AddArticlePageViewImpl extends CustomStudyTradeComponent implements
 		
 		edName = new TextField();
 		edName.setCaption("Name");
+		edName.setId("selendebug_addartg_ed_name");
+		
 		edPrice = new TextField();
 		edPrice.addValueChangeListener(new ValueChangeListener() {
 			private static final long serialVersionUID = 8185727033283969217L;
@@ -63,15 +65,23 @@ public class AddArticlePageViewImpl extends CustomStudyTradeComponent implements
 			}
 		});
 		edPrice.setCaption("Price");
+		edPrice.setId("selendebug_addartg_ed_price");
+		
 		edCondition = new NativeSelect();
 		StudyTradeDefinitions.addSelectItems_Condition(edCondition);
 		edCondition.setCaption("Condition");
+		edCondition.setId("selendebug_addartg_cbx_condition");
+		
 		edPlace = new TextField();
 		edPlace.setCaption("Place");
+		edPlace.setId("selendebug_addartg_ed_place");
+		
 		edDescription = new TextArea();
 		edDescription.setCaption("Description");
+		edDescription.setId("selendebug_addartg_ed_desc");
 		
 		btnSend = new Button("Insert");
+		btnSend.setId("selendebug_addartg_btn_send");
 		btnSend.addClickListener(new ClickListener() {
 			private static final long serialVersionUID = 1L;
 
@@ -100,6 +110,7 @@ public class AddArticlePageViewImpl extends CustomStudyTradeComponent implements
 		try {
 			fprice = Float.valueOf(price);
 		} catch (NumberFormatException e) {
+			edPrice.setValue("");
 			lblPriceNonInt.setVisible(true);
 			return;
 		}

@@ -54,6 +54,7 @@ public class MessagePageViewImpl extends CustomStudyTradeComponent implements Me
 		// button_1
 		button_1 = new Button();
 		button_1.setCaption("OK");
+		button_1.setId("selendebug_showmsgpg_btn_ok");
 		button_1.addClickListener(new ClickListener() {
 			private static final long serialVersionUID = 4578944120001881810L;
 

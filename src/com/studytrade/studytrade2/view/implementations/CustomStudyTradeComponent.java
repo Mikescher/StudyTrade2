@@ -189,6 +189,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 			inner_right_layout.setStyleName("commonpage_user_bar_top_inner_right");
 			
 			btnAddArticle = new Button("Add");
+			btnAddArticle.setId("selendebug_CmnPg_btn_addarticle");
 			btnAddArticle.addClickListener(new ClickListener() {
 				private static final long serialVersionUID = 3673502648449522631L;
 
