@@ -11,6 +11,8 @@ public interface SearchResultPageViewListener {
 	public void onShowMessage(String msg);
 	public void buttonProfileClicked();
 	public void onAddArticle();
+	public void filterArticleByCondClicked(int category);
+	public void filterArticleByPlaceClicked(int place);
 	
 	public void ArticleClicked(StudyTradeArticle article);
 }

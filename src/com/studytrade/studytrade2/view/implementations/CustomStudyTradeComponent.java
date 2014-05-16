@@ -1,5 +1,7 @@
 package com.studytrade.studytrade2.view.implementations;
 
+import com.studytrade.studytrade2.model.StudyTradeArticle;
+import com.studytrade.studytrade2.model.StudyTradeDefinitions;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.vaadin.server.Resource;
 import com.vaadin.server.ThemeResource;
@@ -331,14 +333,47 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		
 		Layout pnlCategory = new VerticalLayout();
 		pnlCategory.setStyleName("commonpage_categories_left");
+
+		pnlCategory.addComponent(new Label("Categories:"));
+		for (int i = 0; i < StudyTradeDefinitions.CONDITIONS.length; i++) {
+			final int cat = i;
+			Button btnCond = new Button("[" + StudyTradeDefinitions.CONDITIONS[cat] + "]");
+			btnCond.setStyleName("link");
+			btnCond.addClickListener(new ClickListener() {
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				public void buttonClick(ClickEvent event) {
+					onFilterCategorieClicked(cat);
+				}
+			});
+			pnlCategory.addComponent(btnCond);
+		}
+
 		pnlCategory.setHeight("200px");
 		result_layout.addComponent(pnlCategory);
-		
+
 		Layout pnlCriteria = new VerticalLayout();
 		pnlCriteria.setStyleName("commonpage_criteria_left");
 		pnlCriteria.setHeight("200px");
 		result_layout.addComponent(pnlCriteria);
-		
+
+		pnlCriteria.addComponent(new Label("Places:"));
+		for (int i = 0; i < StudyTradeDefinitions.PLACES.length; i++) {
+			final int plc = i;
+			Button btnPlc = new Button(StudyTradeDefinitions.PLACES[plc]);
+			btnPlc.setStyleName("link");
+			btnPlc.addClickListener(new ClickListener() {
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				public void buttonClick(ClickEvent event) {
+					onFilterPlacesClicked(plc);
+				}
+			});
+			pnlCriteria.addComponent(btnPlc);
+		}
+
 		Layout pnlAds = new VerticalLayout();
 		pnlAds.setStyleName("commonpage_ads_left");
 		pnlAds.setHeight("200px");
@@ -346,7 +381,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		
 		return result_layout;
 	}
-	
+
 	private Layout build_sidebar_right() {
 		VerticalLayout result_layout = new VerticalLayout();
 
@@ -354,9 +389,26 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		result_layout.setHeight("600px");
 		result_layout.setWidth("200px");
 		
+		if (User != null) {
+			result_layout.addComponent(new Label("Your Articles:"));
+			for (final StudyTradeArticle artc : User.getArticles()) {
+				Button btnPlc = new Button(artc.Name);
+				btnPlc.setStyleName("link");
+				btnPlc.addClickListener(new ClickListener() {
+					private static final long serialVersionUID = 1L;
+
+					@Override
+					public void buttonClick(ClickEvent event) {
+						onArticleClicked(artc);
+					}
+				});
+				result_layout.addComponent(btnPlc);
+			}
+		}
+		
 		return result_layout;
 	}
-	
+
 	protected void hideSearchbar() {
 		searchbar.setVisible(false);
 	}
@@ -380,4 +432,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 	protected abstract void onBtnLogOffClicked();
 	protected abstract void onBtnAddArticleClicked();
 	protected abstract void onShowMessage(String msg);
+	protected abstract void onArticleClicked(StudyTradeArticle artc);
+	protected abstract void onFilterCategorieClicked(int cat);
+	protected abstract void onFilterPlacesClicked(int plc);
 }

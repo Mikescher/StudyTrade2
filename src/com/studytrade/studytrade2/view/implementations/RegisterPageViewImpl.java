@@ -3,6 +3,7 @@ package com.studytrade.studytrade2.view.implementations;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeDefinitions;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.RegisterPageView;
@@ -272,5 +273,23 @@ public class RegisterPageViewImpl extends CustomStudyTradeComponent implements R
 	protected void onBtnAddArticleClicked() {
 		for (RegisterPageViewListener l : listeners)
 			l.onAddArticle();
+	}
+
+	@Override
+	protected void onArticleClicked(StudyTradeArticle artc) {
+		for (RegisterPageViewListener l : listeners)
+			l.showArticleClicked(artc);
+	}
+
+	@Override
+	protected void onFilterCategorieClicked(int cat) {
+		for (RegisterPageViewListener l : listeners)
+			l.filterArticleByCondClicked(cat);
+	}
+
+	@Override
+	protected void onFilterPlacesClicked(int plc) {
+		for (RegisterPageViewListener l : listeners)
+			l.filterArticleByPlaceClicked(plc);
 	}
 }

@@ -97,6 +97,7 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 			l.logOffClicked();
 	}
 
+	@Override
 	protected void onArticleClicked(StudyTradeArticle a) {
 		for (SearchResultPageViewListener l : listeners)
 			l.ArticleClicked(a);
@@ -139,5 +140,17 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 	protected void onBtnAddArticleClicked() {
 		for (SearchResultPageViewListener l : listeners)
 			l.onAddArticle();
+	}
+
+	@Override
+	protected void onFilterCategorieClicked(int cat) {
+		for (SearchResultPageViewListener l : listeners)
+			l.filterArticleByCondClicked(cat);
+	}
+
+	@Override
+	protected void onFilterPlacesClicked(int plc) {
+		for (SearchResultPageViewListener l : listeners)
+			l.filterArticleByPlaceClicked(plc);
 	}
 }

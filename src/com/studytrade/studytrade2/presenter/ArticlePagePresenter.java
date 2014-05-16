@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.implementations.ArticlePageViewImpl;
@@ -75,5 +76,20 @@ public class ArticlePagePresenter extends CustomPresenter implements ArticlePage
 	@Override
 	public void onSellerClicked(StudyTradeUser seller) {
 		new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLoggedInUser(), seller));
+	}
+
+	@Override
+	public void showArticleClicked(StudyTradeArticle article) {
+		onButtonShowArticleClicked(article);
+	}
+	
+	@Override
+	public void filterArticleByCondClicked(int category) {
+		onButtonFilterCondClicked(category);
+	}
+
+	@Override
+	public void filterArticleByPlaceClicked(int place) {
+		onButtonFilterPlaceClicked(place);
 	}
 }

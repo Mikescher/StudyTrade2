@@ -11,6 +11,9 @@ public interface EditArticlePageViewListener {
 	public void onShowMessage(String msg);
 	public void buttonProfileClicked();
 	public void onAddArticle();
+	public void showArticleClicked(StudyTradeArticle article);
+	public void filterArticleByCondClicked(int category);
+	public void filterArticleByPlaceClicked(int place);
 	
 	public void deleteArticle(StudyTradeArticle article);
 	public void updateArticle(StudyTradeArticle article, String name, Float fprice, int cond, String place, String desc);

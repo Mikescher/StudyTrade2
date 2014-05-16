@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.implementations.UserMessagePageViewImpl;
@@ -75,5 +76,20 @@ public class UserMessagePagePresenter extends CustomPresenter implements UserMes
 	@Override
 	public void userClicked(StudyTradeUser target) {
 		new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLoggedInUser(), target));
+	}
+
+	@Override
+	public void showArticleClicked(StudyTradeArticle article) {
+		onButtonShowArticleClicked(article);
+	}
+	
+	@Override
+	public void filterArticleByCondClicked(int category) {
+		onButtonFilterCondClicked(category);
+	}
+
+	@Override
+	public void filterArticleByPlaceClicked(int place) {
+		onButtonFilterPlaceClicked(place);
 	}
 }

@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.MessagePageView;
 import com.studytrade.studytrade2.view.interfaces.MessagePageViewListener;
@@ -129,5 +130,23 @@ public class MessagePageViewImpl extends CustomStudyTradeComponent implements Me
 	protected void onBtnAddArticleClicked() {
 		for (MessagePageViewListener l : listeners)
 			l.onAddArticle();
+	}
+
+	@Override
+	protected void onArticleClicked(StudyTradeArticle artc) {
+		for (MessagePageViewListener l : listeners)
+			l.showArticleClicked(artc);
+	}
+
+	@Override
+	protected void onFilterCategorieClicked(int cat) {
+		for (MessagePageViewListener l : listeners)
+			l.filterArticleByCondClicked(cat);
+	}
+
+	@Override
+	protected void onFilterPlacesClicked(int plc) {
+		for (MessagePageViewListener l : listeners)
+			l.filterArticleByPlaceClicked(plc);
 	}
 }

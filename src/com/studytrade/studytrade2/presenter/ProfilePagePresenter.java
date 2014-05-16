@@ -94,4 +94,14 @@ public class ProfilePagePresenter extends CustomPresenter implements ProfilePage
 	public void editArticle(StudyTradeArticle article) {
 		new EditArticlePagePresenter(UI, Model, new EditArticlePageViewImpl(Model.getLoggedInUser(), article));
 	}
+	
+	@Override
+	public void filterArticleByCondClicked(int category) {
+		onButtonFilterCondClicked(category);
+	}
+
+	@Override
+	public void filterArticleByPlaceClicked(int place) {
+		onButtonFilterPlaceClicked(place);
+	}
 }

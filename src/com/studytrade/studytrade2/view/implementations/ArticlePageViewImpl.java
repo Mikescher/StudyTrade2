@@ -127,4 +127,22 @@ public class ArticlePageViewImpl extends CustomStudyTradeComponent implements Ar
 		for (ArticlePageViewListener l : listeners)
 			l.onAddArticle();
 	}
+
+	@Override
+	protected void onArticleClicked(StudyTradeArticle artc) {
+		for (ArticlePageViewListener l : listeners)
+			l.showArticleClicked(artc);
+	}
+
+	@Override
+	protected void onFilterCategorieClicked(int cat) {
+		for (ArticlePageViewListener l : listeners)
+			l.filterArticleByCondClicked(cat);
+	}
+
+	@Override
+	protected void onFilterPlacesClicked(int plc) {
+		for (ArticlePageViewListener l : listeners)
+			l.filterArticleByPlaceClicked(plc);
+	}
 }

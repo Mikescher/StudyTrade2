@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.view.implementations.MessagePageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.MessagePageView;
@@ -68,5 +69,20 @@ public class MessagePagePresenter extends CustomPresenter implements MessagePage
 	@Override
 	public void onShowMessage(String msg) {
 		showMessagePageToMainWindow(msg);
+	}
+
+	@Override
+	public void showArticleClicked(StudyTradeArticle article) {
+		onButtonShowArticleClicked(article);
+	}
+	
+	@Override
+	public void filterArticleByCondClicked(int category) {
+		onButtonFilterCondClicked(category);
+	}
+
+	@Override
+	public void filterArticleByPlaceClicked(int place) {
+		onButtonFilterPlaceClicked(place);
 	}
 }

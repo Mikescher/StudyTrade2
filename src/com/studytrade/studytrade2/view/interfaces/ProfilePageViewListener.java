@@ -12,6 +12,8 @@ public interface ProfilePageViewListener {
 	public void onShowMessage(String msg);
 	public void buttonProfileClicked();
 	public void onAddArticle();
+	public void filterArticleByCondClicked(int category);
+	public void filterArticleByPlaceClicked(int place);
 	
 	public void messageClicked(StudyTradeMessage msg);
 	public void articleClicked(StudyTradeArticle article);

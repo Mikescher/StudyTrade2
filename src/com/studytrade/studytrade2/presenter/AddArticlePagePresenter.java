@@ -89,4 +89,19 @@ public class AddArticlePagePresenter extends CustomPresenter implements AddArtic
 		
 
 	}
+
+	@Override
+	public void showArticleClicked(StudyTradeArticle article) {
+		onButtonShowArticleClicked(article);
+	}
+	
+	@Override
+	public void filterArticleByCondClicked(int category) {
+		onButtonFilterCondClicked(category);
+	}
+
+	@Override
+	public void filterArticleByPlaceClicked(int place) {
+		onButtonFilterPlaceClicked(place);
+	}
 }

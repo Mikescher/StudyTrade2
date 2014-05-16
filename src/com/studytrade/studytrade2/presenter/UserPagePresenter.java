@@ -89,4 +89,14 @@ public class UserPagePresenter extends CustomPresenter implements UserPageViewLi
 	public void articleClicked(StudyTradeArticle article) {
 		new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), article));
 	}
+	
+	@Override
+	public void filterArticleByCondClicked(int category) {
+		onButtonFilterCondClicked(category);
+	}
+
+	@Override
+	public void filterArticleByPlaceClicked(int place) {
+		onButtonFilterPlaceClicked(place);
+	}
 }

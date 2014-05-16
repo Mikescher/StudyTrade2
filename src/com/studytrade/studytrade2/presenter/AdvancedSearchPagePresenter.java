@@ -2,8 +2,6 @@ package com.studytrade.studytrade2.presenter;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 import com.studytrade.studytrade2.Studytrade2UI;
@@ -79,59 +77,24 @@ public class AdvancedSearchPagePresenter extends CustomPresenter implements Adva
 	public void advancedSearch(String name, String direction, Float minPrice, Float maxPrice, String description, String place, String condition) {
 		List<StudyTradeArticle> results = Model.getSearchResults(name);
 		
-		List<StudyTradeArticle> tmp = new ArrayList<>();
-		
-		if (! direction.isEmpty()) {
-			for (StudyTradeArticle sta : results) {
-				if (sta.Owner.Studydirection.toLowerCase().equals(direction.toLowerCase())) {
-					tmp.add(sta);
-				}
-			}
-			
-			results = tmp;
-		}
-		
-		if (minPrice != null && maxPrice != null) {
-			for (StudyTradeArticle sta : results) {
-				if (sta.Price.compareTo(new BigDecimal(minPrice)) > 0 && sta.Price.compareTo(new BigDecimal(maxPrice)) < 0) {
-					tmp.add(sta);
-				}
-			}
-			
-			results = tmp;
-		}
-		
-		if (! description.isEmpty()) {
-			for (StudyTradeArticle sta : results) {
-				if (sta.Description.toLowerCase().contains(description.toLowerCase())) {
-					tmp.add(sta);
-				}
-			}
-			
-			results = tmp;
-		}
-		
-		if (! place.isEmpty()) {
-			for (StudyTradeArticle sta : results) {
-				if (sta.Place.toLowerCase().equals(place.toLowerCase())) {
-					tmp.add(sta);
-				}
-			}
-			
-			results = tmp;
-		}
-		
-		if (! condition.isEmpty()) {
-			for (StudyTradeArticle sta : results) {
-				if (sta.getConditionString().toLowerCase().equals(condition.toLowerCase())) {
-					tmp.add(sta);
-				}
-			}
-			
-			results = tmp;
-		}
+		results = Model.filterSearchResults(direction, minPrice, maxPrice, description, place, condition, results);
 		
 		SearchResultPageViewImpl view = new SearchResultPageViewImpl(Model.getLoggedInUser(), name, results);
 		new SearchResultPagePresenter(UI, Model, view);
+	}
+
+	@Override
+	public void showArticleClicked(StudyTradeArticle article) {
+		onButtonShowArticleClicked(article);
+	}
+	
+	@Override
+	public void filterArticleByCondClicked(int category) {
+		onButtonFilterCondClicked(category);
+	}
+
+	@Override
+	public void filterArticleByPlaceClicked(int place) {
+		onButtonFilterPlaceClicked(place);
 	}
 }

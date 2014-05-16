@@ -3,6 +3,7 @@ package com.studytrade.studytrade2.view.implementations;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeDefinitions;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.AdvancedSearchPageView;
@@ -10,6 +11,7 @@ import com.studytrade.studytrade2.view.interfaces.AdvancedSearchPageViewListener
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -17,7 +19,6 @@ import com.vaadin.ui.Layout;
 import com.vaadin.ui.NativeSelect;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Button.ClickEvent;
 
 public class AdvancedSearchPageViewImpl extends CustomStudyTradeComponent implements AdvancedSearchPageView {
 	private static final long serialVersionUID = -2103599367448946610L;
@@ -234,5 +235,23 @@ public class AdvancedSearchPageViewImpl extends CustomStudyTradeComponent implem
 	protected void onBtnAddArticleClicked() {
 		for (AdvancedSearchPageViewListener l : listeners)
 			l.onAddArticle();
+	}
+
+	@Override
+	protected void onArticleClicked(StudyTradeArticle artc) {
+		for (AdvancedSearchPageViewListener l : listeners)
+			l.showArticleClicked(artc);
+	}
+
+	@Override
+	protected void onFilterCategorieClicked(int cat) {
+		for (AdvancedSearchPageViewListener l : listeners)
+			l.filterArticleByCondClicked(cat);
+	}
+
+	@Override
+	protected void onFilterPlacesClicked(int plc) {
+		for (AdvancedSearchPageViewListener l : listeners)
+			l.filterArticleByPlaceClicked(plc);
 	}
 }

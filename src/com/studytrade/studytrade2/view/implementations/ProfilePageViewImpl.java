@@ -169,7 +169,8 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 			l.editArticle(article);
 	}
 
-	private void onArticleClicked(StudyTradeArticle a) {
+	@Override
+	protected void onArticleClicked(StudyTradeArticle a) {
 		for (ProfilePageViewListener l : listeners)
 			l.articleClicked(a);
 	}
@@ -230,5 +231,17 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 	protected void onBtnAddArticleClicked() {
 		for (ProfilePageViewListener l : listeners)
 			l.onAddArticle();
+	}
+
+	@Override
+	protected void onFilterCategorieClicked(int cat) {
+		for (ProfilePageViewListener l : listeners)
+			l.filterArticleByCondClicked(cat);
+	}
+
+	@Override
+	protected void onFilterPlacesClicked(int plc) {
+		for (ProfilePageViewListener l : listeners)
+			l.filterArticleByPlaceClicked(plc);
 	}
 }

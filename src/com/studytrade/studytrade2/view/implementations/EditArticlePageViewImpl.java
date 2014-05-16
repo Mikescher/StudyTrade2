@@ -205,4 +205,22 @@ public class EditArticlePageViewImpl extends CustomStudyTradeComponent implement
 	public StudyTradeArticle getArticle() {
 		return article;
 	}
+
+	@Override
+	protected void onArticleClicked(StudyTradeArticle artc) {
+		for (EditArticlePageViewListener l : listeners)
+			l.showArticleClicked(artc);
+	}
+
+	@Override
+	protected void onFilterCategorieClicked(int cat) {
+		for (EditArticlePageViewListener l : listeners)
+			l.filterArticleByCondClicked(cat);
+	}
+
+	@Override
+	protected void onFilterPlacesClicked(int plc) {
+		for (EditArticlePageViewListener l : listeners)
+			l.filterArticleByPlaceClicked(plc);
+	}
 }

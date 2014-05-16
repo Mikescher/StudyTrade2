@@ -2,14 +2,18 @@ package com.studytrade.studytrade2.presenter;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import logging.STLog;
 
 import com.studytrade.studytrade2.Studytrade2UI;
 import com.studytrade.studytrade2.model.LoginProblem;
+import com.studytrade.studytrade2.model.StudyTradeArticle;
+import com.studytrade.studytrade2.model.StudyTradeDefinitions;
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.view.implementations.AddArticlePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.AdvancedSearchPageViewImpl;
+import com.studytrade.studytrade2.view.implementations.ArticlePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.MainPageViewImpl;
 import com.studytrade.studytrade2.view.implementations.MessagePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.RegisterPageViewImpl;
@@ -90,5 +94,23 @@ public abstract class CustomPresenter {
 
 	protected void onButtonAddArticleClicked() {
 		new AddArticlePagePresenter(UI, Model, new AddArticlePageViewImpl(Model.getLoggedInUser()));
+	}
+	
+	protected void onButtonShowArticleClicked(StudyTradeArticle article) {
+		new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), article));
+	}
+
+	protected void onButtonFilterCondClicked(int category) {
+		List<StudyTradeArticle> results = Model.getSearchResults("");
+		results = Model.filterSearchResults("", null, null, "", "", StudyTradeDefinitions.CONDITIONS[category], results);
+		
+		new SearchResultPagePresenter(UI, Model, new SearchResultPageViewImpl(Model.getLoggedInUser(), "", results));
+	}
+	
+	protected void onButtonFilterPlaceClicked(int place) {
+		List<StudyTradeArticle> results = Model.getSearchResults("");
+		results = Model.filterSearchResults("", null, null, "", StudyTradeDefinitions.PLACES[place], "", results);
+		
+		new SearchResultPagePresenter(UI, Model, new SearchResultPageViewImpl(Model.getLoggedInUser(), "", results));
 	}
 }

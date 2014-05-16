@@ -12,6 +12,8 @@ public interface UserPageViewListener {
 	public void onShowMessage(String msg);
 	public void buttonProfileClicked();
 	public void onAddArticle();
+	public void filterArticleByCondClicked(int category);
+	public void filterArticleByPlaceClicked(int place);
 	
 	public void sendUserMessageClickded(StudyTradeUser sender, StudyTradeUser target, String header, String text);
 	public void articleClicked(StudyTradeArticle article);

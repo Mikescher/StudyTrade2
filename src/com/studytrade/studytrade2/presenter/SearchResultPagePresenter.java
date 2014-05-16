@@ -76,4 +76,14 @@ public class SearchResultPagePresenter extends CustomPresenter implements Search
 	public void ArticleClicked(StudyTradeArticle article) {
 		new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), article));
 	}
+	
+	@Override
+	public void filterArticleByCondClicked(int category) {
+		onButtonFilterCondClicked(category);
+	}
+
+	@Override
+	public void filterArticleByPlaceClicked(int place) {
+		onButtonFilterPlaceClicked(place);
+	}
 }

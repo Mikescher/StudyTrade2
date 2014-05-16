@@ -106,7 +106,8 @@ public class UserPageViewImpl extends CustomStudyTradeComponent implements UserP
 		return mainLayout;
 	}
 
-	private void onArticleClicked(StudyTradeArticle a) {
+	@Override
+	protected void onArticleClicked(StudyTradeArticle a) {
 		for (UserPageViewListener l : listeners)
 			l.articleClicked(a);
 	}
@@ -172,5 +173,17 @@ public class UserPageViewImpl extends CustomStudyTradeComponent implements UserP
 	protected void onBtnAddArticleClicked() {
 		for (UserPageViewListener l : listeners)
 			l.onAddArticle();
+	}
+
+	@Override
+	protected void onFilterCategorieClicked(int cat) {
+		for (UserPageViewListener l : listeners)
+			l.filterArticleByCondClicked(cat);
+	}
+
+	@Override
+	protected void onFilterPlacesClicked(int plc) {
+		for (UserPageViewListener l : listeners)
+			l.filterArticleByPlaceClicked(plc);
 	}
 }

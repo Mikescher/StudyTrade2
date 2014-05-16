@@ -3,6 +3,7 @@ package com.studytrade.studytrade2.view.implementations;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeDefinitions;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.AddArticlePageView;
@@ -174,5 +175,23 @@ public class AddArticlePageViewImpl extends CustomStudyTradeComponent implements
 	protected void onBtnAddArticleClicked() {
 		for (AddArticlePageViewListener l : listeners)
 			l.onAddArticle();
+	}
+
+	@Override
+	protected void onArticleClicked(StudyTradeArticle artc) {
+		for (AddArticlePageViewListener l : listeners)
+			l.showArticleClicked(artc);
+	}
+
+	@Override
+	protected void onFilterCategorieClicked(int cat) {
+		for (AddArticlePageViewListener l : listeners)
+			l.filterArticleByCondClicked(cat);
+	}
+
+	@Override
+	protected void onFilterPlacesClicked(int plc) {
+		for (AddArticlePageViewListener l : listeners)
+			l.filterArticleByPlaceClicked(plc);
 	}
 }

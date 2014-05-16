@@ -43,6 +43,61 @@ public class StudyTradeModel {
 		
 		return result;
 	}
+	
+	public List<StudyTradeArticle> filterSearchResults(String direction, Float minPrice, Float maxPrice, String description, String place, String condition, List<StudyTradeArticle> results) {
+		List<StudyTradeArticle> tmp = new ArrayList<>();
+		
+		if (! direction.isEmpty()) {
+			for (StudyTradeArticle sta : results) {
+				if (sta.Owner.Studydirection.toLowerCase().equals(direction.toLowerCase())) {
+					tmp.add(sta);
+				}
+			}
+			
+			results = tmp;
+		}
+		
+		if (minPrice != null && maxPrice != null) {
+			for (StudyTradeArticle sta : results) {
+				if (sta.Price.compareTo(new BigDecimal(minPrice)) > 0 && sta.Price.compareTo(new BigDecimal(maxPrice)) < 0) {
+					tmp.add(sta);
+				}
+			}
+			
+			results = tmp;
+		}
+		
+		if (! description.isEmpty()) {
+			for (StudyTradeArticle sta : results) {
+				if (sta.Description.toLowerCase().contains(description.toLowerCase())) {
+					tmp.add(sta);
+				}
+			}
+			
+			results = tmp;
+		}
+		
+		if (! place.isEmpty()) {
+			for (StudyTradeArticle sta : results) {
+				if (sta.Place.toLowerCase().equals(place.toLowerCase())) {
+					tmp.add(sta);
+				}
+			}
+			
+			results = tmp;
+		}
+		
+		if (! condition.isEmpty()) {
+			for (StudyTradeArticle sta : results) {
+				if (sta.getConditionString().toLowerCase().equals(condition.toLowerCase())) {
+					tmp.add(sta);
+				}
+			}
+			
+			results = tmp;
+		}
+		return results;
+	}
 
 	public boolean isLoggedIn() {
 		return CurrentUser != null;

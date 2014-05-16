@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.view.implementations.RegisterPageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.RegisterPageView;
@@ -78,5 +79,20 @@ public class RegisterPagePresenter extends CustomPresenter implements RegisterPa
 		
 		//TODO Send Email
 		showMessagePageToMainWindow("You have succesfully registered yourself. \r\n You should recieve a validation email shortly.");
+	}
+
+	@Override
+	public void showArticleClicked(StudyTradeArticle article) {
+		onButtonShowArticleClicked(article);
+	}
+	
+	@Override
+	public void filterArticleByCondClicked(int category) {
+		onButtonFilterCondClicked(category);
+	}
+
+	@Override
+	public void filterArticleByPlaceClicked(int place) {
+		onButtonFilterPlaceClicked(place);
 	}
 }

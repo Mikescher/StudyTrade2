@@ -3,6 +3,7 @@ package com.studytrade.studytrade2.view.implementations;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeUser;
 import com.studytrade.studytrade2.view.interfaces.MainPageView;
 import com.studytrade.studytrade2.view.interfaces.MainPageViewListener;
@@ -100,5 +101,23 @@ public class MainPageViewImpl extends CustomStudyTradeComponent implements MainP
 	protected void onBtnAddArticleClicked() {
 		for (MainPageViewListener l : listeners)
 			l.onAddArticle();
+	}
+
+	@Override
+	protected void onArticleClicked(StudyTradeArticle artc) {
+		for (MainPageViewListener l : listeners)
+			l.showArticleClicked(artc);
+	}
+
+	@Override
+	protected void onFilterCategorieClicked(int cat) {
+		for (MainPageViewListener l : listeners)
+			l.filterArticleByCondClicked(cat);
+	}
+
+	@Override
+	protected void onFilterPlacesClicked(int plc) {
+		for (MainPageViewListener l : listeners)
+			l.filterArticleByPlaceClicked(plc);
 	}
 }
