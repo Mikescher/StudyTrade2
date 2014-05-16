@@ -30,7 +30,7 @@ public class EditArticlePageViewImpl extends CustomStudyTradeComponent implement
 	private TextField edName;
 	private TextField edPrice;
 	private NativeSelect edCondition;
-	private TextField edPlace;
+	private NativeSelect cbxPlace;
 	private TextArea edDescription;
 	private Label lblPriceNonInt;
 	
@@ -80,9 +80,10 @@ public class EditArticlePageViewImpl extends CustomStudyTradeComponent implement
 		edCondition.setCaption("Condition");
 		edCondition.setValue(StudyTradeDefinitions.CONDITIONS[article.Condition]);
 		
-		edPlace = new TextField();
-		edPlace.setCaption("Place");
-		edPlace.setValue(article.Place);
+		cbxPlace = new NativeSelect();
+		StudyTradeDefinitions.addSelectItems_Places(cbxPlace);
+		cbxPlace.setCaption("Place");
+		cbxPlace.setValue(article.Place);
 		
 		edDescription = new TextArea();
 		edDescription.setCaption("Description");
@@ -96,7 +97,7 @@ public class EditArticlePageViewImpl extends CustomStudyTradeComponent implement
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				onBtnUpdateClicked(edName.getValue(), edPrice.getValue(), (String)edCondition.getValue(), edPlace.getValue(), edDescription.getValue());
+				onBtnUpdateClicked(edName.getValue(), edPrice.getValue(), (String)edCondition.getValue(), cbxPlace.getItemCaption(cbxPlace.getValue()), edDescription.getValue());
 			}
 		});
 		
@@ -114,7 +115,7 @@ public class EditArticlePageViewImpl extends CustomStudyTradeComponent implement
 		mainLayout.addComponent(edName);
 		mainLayout.addComponent(edPrice);
 		mainLayout.addComponent(edCondition);
-		mainLayout.addComponent(edPlace);
+		mainLayout.addComponent(cbxPlace);
 		mainLayout.addComponent(edDescription);
 		layout_btn_bottom.addComponent(btnUpdate);
 		layout_btn_bottom.addComponent(btnDelete);

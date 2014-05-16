@@ -54,7 +54,8 @@ public class AddArticleTest {
 		selenium.type("selendebug_addartg_ed_price", "--NONINT--");
 		Select selectObject = new Select(driver.findElement(By.id("selendebug_addartg_cbx_condition")).findElement(By.className("v-select-select")));
 		selectObject.selectByIndex(1);
-		selenium.type("selendebug_addartg_ed_place", "Karlsruhe_test_selenium");
+		Select selectObject2 = new Select(driver.findElement(By.id("selendebug_addartg_ed_place")).findElement(By.className("v-select-select")));
+		selectObject2.selectByIndex(1);
 		selenium.type("selendebug_addartg_ed_desc", "This is a automatic generated selenium test");
 		
 		selenium.click("selendebug_addartg_btn_send");
@@ -71,7 +72,6 @@ public class AddArticleTest {
 		
 		Assert.assertTrue(selenium.isTextPresent("TestArticle"));
 		Assert.assertTrue(selenium.isTextPresent("99"));
-		Assert.assertTrue(selenium.isTextPresent("Karlsruhe_test_selenium"));
 		Assert.assertTrue(selenium.isTextPresent("This is a automatic generated selenium test"));
 		
 		//#####################
