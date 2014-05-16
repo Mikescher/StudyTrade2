@@ -111,12 +111,15 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 	}
 	
 	private Layout build_user_login_bar_top() {
-		VerticalLayout result_layout = new VerticalLayout();
+		HorizontalLayout result_layout = new HorizontalLayout();
 		result_layout.setStyleName("commonpage_user_bar_top");
 		result_layout.setWidth("100%");
 		result_layout.setHeight("40px");
 		
-		
+		Resource res = new ThemeResource("img/logo.png");
+		Image image = new Image(null, res);
+		result_layout.addComponent(image);
+		result_layout.setComponentAlignment(image, Alignment.MIDDLE_LEFT);
 		
 		HorizontalLayout inner_right_layout = new HorizontalLayout();
 		{
@@ -180,6 +183,7 @@ public abstract class CustomStudyTradeComponent extends CustomComponent {
 		HorizontalLayout result_layout = new HorizontalLayout();
 		result_layout.setStyleName("commonpage_user_bar_top");
 		result_layout.setWidth("100%");
+		result_layout.setHeight("40px");
 		
 		Resource res = new ThemeResource("img/logo.png");
 		Image image = new Image(null, res);
