@@ -4,11 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.factories.PageFactory;
 import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
-import com.studytrade.studytrade2.view.implementations.ArticlePageViewImpl;
-import com.studytrade.studytrade2.view.implementations.EditArticlePageViewImpl;
-import com.studytrade.studytrade2.view.implementations.ProfilePageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.EditArticlePageView;
 import com.studytrade.studytrade2.view.interfaces.EditArticlePageViewListener;
 import com.vaadin.ui.Component;
@@ -33,7 +31,7 @@ public class EditArticlePagePresenter extends CustomPresenter implements EditArt
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new EditArticlePagePresenter(UI, Model, new EditArticlePageViewImpl(Model.getLoggedInUser(), view.getArticle()));
+				PageFactory.createEditArticlePage(EditArticlePagePresenter.this, view.getArticle());
 			}
 		});
 	}
@@ -80,7 +78,7 @@ public class EditArticlePagePresenter extends CustomPresenter implements EditArt
 		showMessagePage("Article deleted", new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new ProfilePagePresenter(UI, Model, new ProfilePageViewImpl(Model.getLoggedInUser()));
+				PageFactory.createProfilePage(EditArticlePagePresenter.this);
 			}
 		});
 	}
@@ -92,7 +90,7 @@ public class EditArticlePagePresenter extends CustomPresenter implements EditArt
 		showMessagePage("Article updated", new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), newarticle));
+				PageFactory.createArticlePage(EditArticlePagePresenter.this, newarticle);
 			}
 		});
 	}

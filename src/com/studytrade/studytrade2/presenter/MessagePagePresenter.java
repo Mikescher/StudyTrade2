@@ -4,9 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.factories.PageFactory;
 import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
-import com.studytrade.studytrade2.view.implementations.MessagePageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.MessagePageView;
 import com.studytrade.studytrade2.view.interfaces.MessagePageViewListener;
 import com.vaadin.ui.Component;
@@ -31,7 +31,7 @@ public class MessagePagePresenter extends CustomPresenter implements MessagePage
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new MessagePagePresenter(UI, Model, new MessagePageViewImpl(Model.getLoggedInUser(), view.getMessage(), view.getAction()));
+				PageFactory.createMessagePage(MessagePagePresenter.this, view.getMessage(), view.getAction());
 			}
 		});
 	}

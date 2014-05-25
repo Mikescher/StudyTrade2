@@ -4,10 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.factories.PageFactory;
 import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
-import com.studytrade.studytrade2.view.implementations.AddArticlePageViewImpl;
-import com.studytrade.studytrade2.view.implementations.ArticlePageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.AddArticlePageView;
 import com.studytrade.studytrade2.view.interfaces.AddArticlePageViewListener;
 import com.vaadin.ui.Component;
@@ -32,7 +31,7 @@ public class AddArticlePagePresenter extends CustomPresenter implements AddArtic
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new AddArticlePagePresenter(UI, Model, new AddArticlePageViewImpl(Model.getLoggedInUser()));
+				PageFactory.createAddArticlePage(AddArticlePagePresenter.this);
 			}
 		});
 	}
@@ -82,7 +81,7 @@ public class AddArticlePagePresenter extends CustomPresenter implements AddArtic
 			showMessagePage("You have succesfully added a article", new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), starr));
+					PageFactory.createArticlePage(AddArticlePagePresenter.this, starr);
 				}
 			});
 		}

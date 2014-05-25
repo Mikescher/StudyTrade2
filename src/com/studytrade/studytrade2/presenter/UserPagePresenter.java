@@ -4,11 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.factories.PageFactory;
 import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.model.StudyTradeUser;
-import com.studytrade.studytrade2.view.implementations.ArticlePageViewImpl;
-import com.studytrade.studytrade2.view.implementations.UserPageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.UserPageView;
 import com.studytrade.studytrade2.view.interfaces.UserPageViewListener;
 import com.vaadin.ui.Component;
@@ -33,7 +32,7 @@ public class UserPagePresenter extends CustomPresenter implements UserPageViewLi
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLoggedInUser(), view.getDisplayUser()));
+				PageFactory.createUserPage(UserPagePresenter.this, view.getDisplayUser());
 			}
 		});
 	}
@@ -80,14 +79,14 @@ public class UserPagePresenter extends CustomPresenter implements UserPageViewLi
 		showMessagePage("Message to " + target.Nickname + " send", new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLoggedInUser(), view.getDisplayUser()));
+				PageFactory.createUserPage(UserPagePresenter.this, view.getDisplayUser());
 			}
 		});
 	}
 
 	@Override
 	public void articleClicked(StudyTradeArticle article) {
-		new ArticlePagePresenter(UI, Model, new ArticlePageViewImpl(Model.getLoggedInUser(), article));
+		PageFactory.createArticlePage(this, article);
 	}
 	
 	@Override

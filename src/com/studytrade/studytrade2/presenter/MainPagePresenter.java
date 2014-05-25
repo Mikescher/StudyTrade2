@@ -4,9 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.factories.PageFactory;
 import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
-import com.studytrade.studytrade2.view.implementations.MainPageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.MainPageView;
 import com.studytrade.studytrade2.view.interfaces.MainPageViewListener;
 import com.vaadin.ui.Component;
@@ -31,7 +31,7 @@ public class MainPagePresenter extends CustomPresenter implements MainPageViewLi
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new MainPagePresenter(UI, Model, new MainPageViewImpl(Model.getLoggedInUser()));
+				PageFactory.createMainPage(MainPagePresenter.this);
 			}
 		});
 	}

@@ -5,10 +5,9 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.factories.PageFactory;
 import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
-import com.studytrade.studytrade2.view.implementations.AdvancedSearchPageViewImpl;
-import com.studytrade.studytrade2.view.implementations.SearchResultPageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.AdvancedSearchPageView;
 import com.studytrade.studytrade2.view.interfaces.AdvancedSearchPageViewListener;
 import com.vaadin.ui.Component;
@@ -33,7 +32,7 @@ public class AdvancedSearchPagePresenter extends CustomPresenter implements Adva
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new AdvancedSearchPagePresenter(UI, Model, new AdvancedSearchPageViewImpl(Model.getLoggedInUser()));
+				PageFactory.createAdvancedSearchPage(AdvancedSearchPagePresenter.this);
 			}
 		});
 	}
@@ -76,11 +75,9 @@ public class AdvancedSearchPagePresenter extends CustomPresenter implements Adva
 	@Override
 	public void advancedSearch(String name, String direction, Float minPrice, Float maxPrice, String description, String place, String condition) {
 		List<StudyTradeArticle> results = Model.getSearchResults(name);
-		
 		results = Model.filterSearchResults(direction, minPrice, maxPrice, description, place, condition, results);
 		
-		SearchResultPageViewImpl view = new SearchResultPageViewImpl(Model.getLoggedInUser(), name, results);
-		new SearchResultPagePresenter(UI, Model, view);
+		PageFactory.createSearchResultPage(this, name, results);
 	}
 
 	@Override

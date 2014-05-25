@@ -4,11 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.studytrade.studytrade2.Studytrade2UI;
+import com.studytrade.studytrade2.factories.PageFactory;
 import com.studytrade.studytrade2.model.StudyTradeArticle;
 import com.studytrade.studytrade2.model.StudyTradeModel;
 import com.studytrade.studytrade2.model.StudyTradeUser;
-import com.studytrade.studytrade2.view.implementations.UserMessagePageViewImpl;
-import com.studytrade.studytrade2.view.implementations.UserPageViewImpl;
 import com.studytrade.studytrade2.view.interfaces.UserMessagePageView;
 import com.studytrade.studytrade2.view.interfaces.UserMessagePageViewListener;
 import com.vaadin.ui.Component;
@@ -33,7 +32,7 @@ public class UserMessagePagePresenter extends CustomPresenter implements UserMes
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new UserMessagePagePresenter(UI, Model, new UserMessagePageViewImpl(Model.getLoggedInUser(), view.getMessage(), view.getOKEvent()));
+				PageFactory.createUserMessagePage(UserMessagePagePresenter.this, view.getMessage(), view.getOKEvent());
 			}
 		});
 	}
@@ -75,7 +74,7 @@ public class UserMessagePagePresenter extends CustomPresenter implements UserMes
 
 	@Override
 	public void userClicked(StudyTradeUser target) {
-		new UserPagePresenter(UI, Model, new UserPageViewImpl(Model.getLoggedInUser(), target));
+		PageFactory.createUserPage(this, target);
 	}
 
 	@Override
