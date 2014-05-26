@@ -27,6 +27,7 @@ public class StudyTradeStatements {
 	public PreparedStatement Statement_ArticleByOwner;
 	public PreparedStatement Statement_DeleteArticle;
 	public PreparedStatement Statement_UpdateArticle;
+	public PreparedStatement Statement_UpdateUser;
 	
 	public StudyTradeStatements(Connection conn) {
 		prepare(conn);
@@ -51,6 +52,7 @@ public class StudyTradeStatements {
 			Statement_ArticleByOwner = c.prepareStatement(loadResource("/Statement_ArticleByOwner.sql"));
 			Statement_DeleteArticle = c.prepareStatement(loadResource("/Statement_DeleteArticle.sql"));
 			Statement_UpdateArticle = c.prepareStatement(loadResource("/Statement_UpdateArticle.sql"));
+			Statement_UpdateUser = c.prepareStatement(loadResource("/Statement_UpdateUser.sql"));
 		} catch (SQLException e) {
 			STLog.log(e);
 		}

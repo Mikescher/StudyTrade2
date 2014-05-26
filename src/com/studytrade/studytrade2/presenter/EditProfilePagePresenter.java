@@ -6,16 +6,16 @@ import java.awt.event.ActionListener;
 import com.studytrade.studytrade2.Studytrade2UI;
 import com.studytrade.studytrade2.factories.PageFactory;
 import com.studytrade.studytrade2.model.StudyTradeArticle;
-import com.studytrade.studytrade2.model.StudyTradeMessage;
 import com.studytrade.studytrade2.model.StudyTradeModel;
-import com.studytrade.studytrade2.view.interfaces.ProfilePageView;
-import com.studytrade.studytrade2.view.interfaces.ProfilePageViewListener;
+import com.studytrade.studytrade2.model.StudyTradeUser;
+import com.studytrade.studytrade2.view.interfaces.EditProfilePageView;
+import com.studytrade.studytrade2.view.interfaces.EditProfilePageViewListener;
 import com.vaadin.ui.Component;
 
-public class ProfilePagePresenter extends CustomPresenter implements ProfilePageViewListener {
-    private ProfilePageView  view;
+public class EditProfilePagePresenter extends CustomPresenter implements EditProfilePageViewListener {
+    private EditProfilePageView  view;
     
-    public ProfilePagePresenter(Studytrade2UI ui, StudyTradeModel m, ProfilePageView  v) {
+    public EditProfilePagePresenter(Studytrade2UI ui, StudyTradeModel m, EditProfilePageView  v) {
     	super(ui, m);
     	
         this.view  = v;
@@ -32,7 +32,7 @@ public class ProfilePagePresenter extends CustomPresenter implements ProfilePage
 		onLoginClicked(username, password, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PageFactory.createProfilePage(ProfilePagePresenter.this);
+				PageFactory.createEditProfilePage(EditProfilePagePresenter.this);
 			}
 		});
 	}
@@ -73,23 +73,8 @@ public class ProfilePagePresenter extends CustomPresenter implements ProfilePage
 	}
 
 	@Override
-	public void messageClicked(StudyTradeMessage msg) {
-		PageFactory.createUserMessagePage(this, msg, new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				PageFactory.createProfilePage(ProfilePagePresenter.this);
-			}
-		});
-	}
-
-	@Override
-	public void articleClicked(StudyTradeArticle article) {
-		PageFactory.createArticlePage(this, article);
-	}
-
-	@Override
-	public void editArticle(StudyTradeArticle article) {
-		PageFactory.createEditArticlePage(this, article);
+	public void showArticleClicked(StudyTradeArticle article) {
+		onButtonShowArticleClicked(article);
 	}
 	
 	@Override
@@ -103,7 +88,16 @@ public class ProfilePagePresenter extends CustomPresenter implements ProfilePage
 	}
 
 	@Override
-	public void editProfile() {
-		PageFactory.createEditProfilePage(this);
+	public void doEditClicked(String forename, String lastname, String city, String university, String direction, String mail) {
+		StudyTradeUser usr = Model.updateUser(Model.getLoggedInUser(), forename, lastname, city, university, direction, mail);
+		
+		if (usr == null) {
+			showMessagePageToMainWindow("Internal Error while Updating Profile ...");
+			return;
+		}
+		
+		Model.setLoggedInUser(usr);
+		
+		PageFactory.createProfilePage(this);
 	}
 }

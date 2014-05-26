@@ -56,7 +56,7 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				// TODO Add Edit Profile Page
+				onEditProfileClicked();
 			}
 		});
 		
@@ -162,6 +162,11 @@ public class ProfilePageViewImpl extends CustomStudyTradeComponent implements Pr
 		}
 				
 		return mainLayout;
+	}
+
+	protected void onEditProfileClicked() {
+		for (ProfilePageViewListener l : listeners)
+			l.editProfile();
 	}
 
 	private void onEditArticleClicked(StudyTradeArticle article) {

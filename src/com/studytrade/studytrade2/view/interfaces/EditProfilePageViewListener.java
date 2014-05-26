@@ -1,9 +1,8 @@
 package com.studytrade.studytrade2.view.interfaces;
 
 import com.studytrade.studytrade2.model.StudyTradeArticle;
-import com.studytrade.studytrade2.model.StudyTradeMessage;
 
-public interface ProfilePageViewListener {
+public interface EditProfilePageViewListener {
 	public void loginClicked(String username, String password);
 	public void registerClicked();
 	public void searchClicked(String searchstring);
@@ -14,9 +13,7 @@ public interface ProfilePageViewListener {
 	public void onAddArticle();
 	public void filterArticleByCondClicked(int category);
 	public void filterArticleByPlaceClicked(int place);
-	
-	public void messageClicked(StudyTradeMessage msg);
-	public void articleClicked(StudyTradeArticle article);
-	public void editArticle(StudyTradeArticle article);
-	public void editProfile();
+
+	public void showArticleClicked(StudyTradeArticle article);
+	public void doEditClicked(String forename, String lastname, String city, String university, String direction, String mail);
 }

@@ -345,4 +345,41 @@ public class StudyTradeModel {
 		
 		return na;
 	}
+
+	public StudyTradeUser updateUser(StudyTradeUser usr, String forename, String lastname, String city, String university, String direction, String mail) {
+		StudyTradeUser nu = new StudyTradeUser(this, 
+				usr.ID, 
+				usr.Nickname, 
+				mail, 
+				forename, 
+				lastname, 
+				city, 
+				university, 
+				direction, 
+				usr.Passwordhash,
+				usr.Activated);
+		
+		try {
+			DBConnection.PrepStatements.Statement_UpdateUser.setString(1, nu.Forename);
+			DBConnection.PrepStatements.Statement_UpdateUser.setString(2, nu.Lastname);
+			DBConnection.PrepStatements.Statement_UpdateUser.setString(3, nu.City);
+			DBConnection.PrepStatements.Statement_UpdateUser.setString(4, nu.University);
+			DBConnection.PrepStatements.Statement_UpdateUser.setString(5, nu.Studydirection);
+			DBConnection.PrepStatements.Statement_UpdateUser.setString(6, nu.Email);
+			DBConnection.PrepStatements.Statement_UpdateUser.setInt(7, nu.ID);
+			
+			DBConnection.PrepStatements.Statement_UpdateUser.execute();
+		} catch (SQLException e) {
+			STLog.log(e);
+			return null;
+		}
+		
+		return nu;
+	}
+
+	public void setLoggedInUser(StudyTradeUser usr) {
+		if (usr != null) {
+			CurrentUser = usr;
+		}
+	}
 }

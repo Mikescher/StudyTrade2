@@ -18,6 +18,7 @@ import com.studytrade.studytrade2.presenter.RegisterPagePresenter;
 import com.studytrade.studytrade2.presenter.SearchResultPagePresenter;
 import com.studytrade.studytrade2.presenter.UserMessagePagePresenter;
 import com.studytrade.studytrade2.presenter.UserPagePresenter;
+import com.studytrade.studytrade2.presenter.EditProfilePagePresenter;
 import com.studytrade.studytrade2.view.implementations.AddArticlePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.AdvancedSearchPageViewImpl;
 import com.studytrade.studytrade2.view.implementations.ArticlePageViewImpl;
@@ -29,6 +30,7 @@ import com.studytrade.studytrade2.view.implementations.RegisterPageViewImpl;
 import com.studytrade.studytrade2.view.implementations.SearchResultPageViewImpl;
 import com.studytrade.studytrade2.view.implementations.UserMessagePageViewImpl;
 import com.studytrade.studytrade2.view.implementations.UserPageViewImpl;
+import com.studytrade.studytrade2.view.implementations.EditProfilePageViewImpl;
 
 public class PageFactory {
 
@@ -76,5 +78,9 @@ public class PageFactory {
 
 	public static UserPagePresenter createUserPage(CustomPresenter sender, StudyTradeUser usr) {
 		return new UserPagePresenter(sender.UI, sender.Model, new UserPageViewImpl(sender.Model.getLoggedInUser(), usr));
+	}
+
+	public static EditProfilePagePresenter createEditProfilePage(CustomPresenter sender) {
+		return new EditProfilePagePresenter(sender.UI, sender.Model, new EditProfilePageViewImpl(sender.Model.getLoggedInUser()));
 	}
 }
