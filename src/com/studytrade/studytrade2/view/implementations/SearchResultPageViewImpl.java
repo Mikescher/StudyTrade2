@@ -9,6 +9,7 @@ import com.studytrade.studytrade2.view.interfaces.SearchResultPageView;
 import com.studytrade.studytrade2.view.interfaces.SearchResultPageViewListener;
 import com.vaadin.event.MouseEvents.ClickEvent;
 import com.vaadin.event.MouseEvents.ClickListener;
+import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
 import com.vaadin.ui.Panel;
@@ -40,9 +41,8 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 
 	@Override
 	protected Layout buildLayout() {
-		// common part: create layout
 		VerticalLayout mainLayout = new VerticalLayout();
-		mainLayout.setImmediate(false);
+		mainLayout.addComponent(new Label("<b><u>SearchResults (" + Articles.size() + "):</u></b>", ContentMode.HTML));
 		
 		for (final StudyTradeArticle article : Articles) {
 			Panel p = new Panel();
@@ -51,10 +51,9 @@ public class SearchResultPageViewImpl extends CustomStudyTradeComponent implemen
 			
 			VerticalLayout l = new VerticalLayout();
 
-			l.addComponent(new Label("ID:" + article.ArticleID));
-			l.addComponent(new Label(article.Name));
-			l.addComponent(new Label(article.Description));
-			l.addComponent(new Label(article.Place));
+			l.addComponent(new Label("<b>" + article.Name+"</b>", ContentMode.HTML));
+			l.addComponent(new Label("<i>" + article.Description+"</i>", ContentMode.HTML));
+			l.addComponent(new Label("at: " + article.Place, ContentMode.HTML));
 			
 			p.setContent(l);
 			
