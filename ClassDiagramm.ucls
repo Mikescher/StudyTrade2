@@ -4,7 +4,7 @@
   <class id="1" language="java" name="com.studytrade.studytrade2.model.database.MyDatabaseConnection" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/model/database/MyDatabaseConnection.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="189" width="238" x="3114" y="2514"/>    
+    <position height="189" width="238" x="1793" y="2339"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -14,7 +14,7 @@
   <class id="2" language="java" name="com.studytrade.studytrade2.model.database.StudyTradeStatements" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/model/database/StudyTradeStatements.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="423" width="311" x="3114" y="2743"/>    
+    <position height="441" width="311" x="1793" y="2730"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -23,7 +23,7 @@
   </class>  
   <class id="3" language="java" name="com.studytrade.studytrade2.model.helper.HashHelper" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/model/helper/HashHelper.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="199" x="1028" y="37"/>    
+    <position height="135" width="199" x="1608" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -32,7 +32,7 @@
   </class>  
   <class id="4" language="java" name="com.studytrade.studytrade2.model.mail.SendMail" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/model/mail/SendMail.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="177" x="2863" y="37"/>    
+    <position height="99" width="177" x="3047" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -42,7 +42,7 @@
   <class id="5" language="java" name="com.studytrade.studytrade2.model.StudyTradeDefinitions" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/model/StudyTradeDefinitions.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="171" width="240" x="1652" y="37"/>    
+    <position height="171" width="240" x="2100" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -51,7 +51,7 @@
   </class>  
   <class id="6" language="java" name="com.studytrade.studytrade2.model.StudyTradeModel" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/model/StudyTradeModel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="423" width="408" x="3114" y="2051"/>    
+    <position height="477" width="537" x="1793" y="1822"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -60,7 +60,7 @@
   </class>  
   <class id="7" language="java" name="com.studytrade.studytrade2.model.StudyTradeMessage" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/model/StudyTradeMessage.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="261" width="417" x="3114" y="1359"/>    
+    <position height="261" width="417" x="1596" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -69,7 +69,7 @@
   </class>  
   <class id="8" language="java" name="com.studytrade.studytrade2.model.StudyTradeArticle" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/model/StudyTradeArticle.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="225" width="395" x="4685" y="1359"/>    
+    <position height="225" width="395" x="4777" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -78,7 +78,7 @@
   </class>  
   <enumeration id="9" language="java" name="com.studytrade.studytrade2.model.LoginProblem" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/model/LoginProblem.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="179" x="425" y="37"/>    
+    <position height="171" width="179" x="1137" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -87,7 +87,7 @@
   </enumeration>  
   <class id="10" language="java" name="com.studytrade.studytrade2.model.StudyTradeUser" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/model/StudyTradeUser.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="351" width="500" x="4685" y="1660"/>    
+    <position height="351" width="500" x="2746" y="2339"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -97,7 +97,7 @@
   <class id="11" language="java" name="com.studytrade.studytrade2.presenter.MessagePagePresenter" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/MessagePagePresenter.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="225" width="401" x="8231" y="734"/>    
+    <position height="279" width="401" x="6634" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -107,7 +107,7 @@
   <class id="12" language="java" name="com.studytrade.studytrade2.presenter.AdvancedSearchPagePresenter" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/AdvancedSearchPagePresenter.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="483" x="1039" y="734"/>    
+    <position height="297" width="483" x="1895" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -117,7 +117,7 @@
   <class id="13" language="java" name="com.studytrade.studytrade2.presenter.AddArticlePagePresenter" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/AddArticlePagePresenter.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="415" x="246" y="734"/>    
+    <position height="297" width="415" x="4327" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -127,7 +127,7 @@
   <class id="14" language="java" name="com.studytrade.studytrade2.presenter.SearchResultPagePresenter" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/SearchResultPagePresenter.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="443" x="4202" y="734"/>    
+    <position height="279" width="443" x="7878" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -137,7 +137,7 @@
   <class id="15" language="java" name="com.studytrade.studytrade2.presenter.EditArticlePagePresenter" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/EditArticlePagePresenter.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="261" width="409" x="7008" y="734"/>    
+    <position height="315" width="409" x="3520" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -147,7 +147,7 @@
   <class id="16" language="java" name="com.studytrade.studytrade2.presenter.UserPagePresenter" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/UserPagePresenter.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="261" width="409" x="7782" y="734"/>    
+    <position height="297" width="409" x="3071" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -157,7 +157,7 @@
   <class id="17" language="java" name="com.studytrade.studytrade2.presenter.UserMessagePagePresenter" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/UserMessagePagePresenter.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="447" x="3715" y="734"/>    
+    <position height="297" width="447" x="945" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -167,7 +167,7 @@
   <class id="18" language="java" name="com.studytrade.studytrade2.presenter.RegisterPagePresenter" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/RegisterPagePresenter.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="243" width="393" x="5141" y="734"/>    
+    <position height="297" width="393" x="8361" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -177,7 +177,7 @@
   <class id="19" language="java" name="com.studytrade.studytrade2.presenter.CustomPresenter" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/CustomPresenter.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="261" width="272" x="3467" y="37"/>    
+    <position height="315" width="281" x="3520" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -187,7 +187,7 @@
   <class id="20" language="java" name="com.studytrade.studytrade2.presenter.ProfilePagePresenter" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/ProfilePagePresenter.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="279" width="373" x="1890" y="734"/>    
+    <position height="333" width="373" x="245" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -197,7 +197,7 @@
   <class id="21" language="java" name="com.studytrade.studytrade2.presenter.MainPagePresenter" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/MainPagePresenter.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="225" width="357" x="2590" y="734"/>    
+    <position height="279" width="357" x="9114" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -207,7 +207,7 @@
   <class id="22" language="java" name="com.studytrade.studytrade2.presenter.ArticlePagePresenter" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/ArticlePagePresenter.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="243" width="375" x="6235" y="734"/>    
+    <position height="297" width="375" x="5461" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -217,7 +217,7 @@
   <class id="23" language="java" name="com.studytrade.studytrade2.view.implementations.UserPageViewImpl" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/UserPageViewImpl.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="405" width="285" x="7457" y="734"/>    
+    <position height="441" width="285" x="2746" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -228,7 +228,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/ArticlePageViewImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="351" width="301" x="5894" y="734"/>    
+    <position height="405" width="301" x="5120" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -239,7 +239,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/CustomStudyTradeComponent.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="657" width="259" x="5101" y="37"/>    
+    <position height="711" width="259" x="5143" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -250,7 +250,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/SearchResultPageViewImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="369" width="395" x="4685" y="734"/>    
+    <position height="405" width="395" x="7443" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -261,7 +261,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/MessagePageViewImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="405" width="328" x="8672" y="734"/>    
+    <position height="459" width="328" x="7075" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -271,7 +271,7 @@
   <class id="28" language="java" name="com.studytrade.studytrade2.view.implementations.MainPageViewImpl" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/MainPageViewImpl.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="333" width="225" x="2987" y="734"/>    
+    <position height="369" width="225" x="9511" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -282,7 +282,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/EditArticlePageViewImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="495" width="318" x="6650" y="734"/>    
+    <position height="549" width="318" x="3969" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -293,7 +293,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/RegisterPageViewImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="585" width="280" x="5574" y="734"/>    
+    <position height="639" width="280" x="8794" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -304,7 +304,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/ProfilePageViewImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="369" width="247" x="2303" y="734"/>    
+    <position height="423" width="247" x="658" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -315,7 +315,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/AdvancedSearchPageViewImpl.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="477" width="288" x="1562" y="734"/>    
+    <position height="531" width="288" x="2418" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -326,7 +326,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/AddArticlePageViewImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="441" width="298" x="701" y="734"/>    
+    <position height="495" width="298" x="4782" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -337,7 +337,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/UserMessagePageViewImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="387" width="423" x="3252" y="734"/>    
+    <position height="441" width="423" x="1432" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -348,7 +348,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/EditArticlePageViewListener.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="243" width="341" x="6941" y="1359"/>    
+    <position height="297" width="341" x="3792" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -359,7 +359,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/UserMessagePageViewListener.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="225" width="207" x="3881" y="1359"/>    
+    <position height="279" width="237" x="1319" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -370,7 +370,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/AddArticlePageViewListener.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="225" width="270" x="621" y="1359"/>    
+    <position height="279" width="270" x="4467" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -380,7 +380,7 @@
   <interface id="38" language="java" name="com.studytrade.studytrade2.view.interfaces.UserPageViewListener" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/UserPageViewListener.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="409" x="7753" y="1359"/>    
+    <position height="279" width="409" x="2786" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -391,7 +391,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/ProfilePageViewListener.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="261" width="235" x="1959" y="1359"/>    
+    <position height="315" width="235" x="588" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -401,7 +401,7 @@
   <interface id="40" language="java" name="com.studytrade.studytrade2.view.interfaces.UserMessagePageView" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/UserMessagePageView.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="270" x="3571" y="1359"/>    
+    <position height="135" width="270" x="1009" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -412,7 +412,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/MessagePageViewListener.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="207" width="196" x="8595" y="1359"/>    
+    <position height="261" width="237" x="6716" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -422,7 +422,7 @@
   <interface id="42" language="java" name="com.studytrade.studytrade2.view.interfaces.ProfilePageView" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/ProfilePageView.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="233" x="2234" y="1359"/>    
+    <position height="99" width="233" x="315" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -432,7 +432,7 @@
   <interface id="43" language="java" name="com.studytrade.studytrade2.view.interfaces.AddArticlePageView" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/AddArticlePageView.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="254" x="327" y="1359"/>    
+    <position height="99" width="254" x="4173" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -442,7 +442,7 @@
   <interface id="44" language="java" name="com.studytrade.studytrade2.view.interfaces.MessagePageView" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/MessagePageView.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="247" x="8308" y="1359"/>    
+    <position height="135" width="247" x="6993" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -453,7 +453,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/SearchResultPageViewListener.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="225" width="209" x="4436" y="1359"/>    
+    <position height="261" width="209" x="7878" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -463,7 +463,7 @@
   <interface id="46" language="java" name="com.studytrade.studytrade2.view.interfaces.MainPageView" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/MainPageView.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="225" x="2906" y="1359"/>    
+    <position height="99" width="225" x="9180" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -474,7 +474,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/RegisterPageViewListener.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="225" width="388" x="5141" y="1359"/>    
+    <position height="279" width="388" x="8366" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -485,7 +485,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/ArticlePageViewListener.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="225" width="209" x="6202" y="1359"/>    
+    <position height="279" width="237" x="5212" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -495,7 +495,7 @@
   <interface id="49" language="java" name="com.studytrade.studytrade2.view.interfaces.ArticlePageView" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/ArticlePageView.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="234" x="5928" y="1359"/>    
+    <position height="117" width="234" x="5489" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -505,7 +505,7 @@
   <interface id="50" language="java" name="com.studytrade.studytrade2.view.interfaces.UserPageView" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/UserPageView.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="226" x="7487" y="1359"/>    
+    <position height="117" width="226" x="3235" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -516,7 +516,7 @@
     project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/AdvancedSearchPageViewListener.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="225" width="344" x="1465" y="1359"/>    
+    <position height="279" width="344" x="2053" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -526,7 +526,7 @@
   <interface id="52" language="java" name="com.studytrade.studytrade2.view.interfaces.RegisterPageView" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/RegisterPageView.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="243" x="5569" y="1359"/>    
+    <position height="99" width="243" x="8794" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -536,7 +536,7 @@
   <interface id="53" language="java" name="com.studytrade.studytrade2.view.interfaces.EditArticlePageView" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/EditArticlePageView.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="251" x="6650" y="1359"/>    
+    <position height="117" width="251" x="3501" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -546,7 +546,7 @@
   <interface id="54" language="java" name="com.studytrade.studytrade2.view.interfaces.MainPageViewListener" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/MainPageViewListener.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="196" x="2670" y="1359"/>    
+    <position height="261" width="237" x="9445" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -556,7 +556,7 @@
   <interface id="55" language="java" name="com.studytrade.studytrade2.view.interfaces.SearchResultPageView" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/SearchResultPageView.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="268" x="4128" y="1359"/>    
+    <position height="135" width="268" x="7570" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -566,7 +566,7 @@
   <interface id="56" language="java" name="com.studytrade.studytrade2.view.interfaces.AdvancedSearchPageView" 
     project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/AdvancedSearchPageView.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="288" x="1137" y="1359"/>    
+    <position height="99" width="288" x="2437" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -575,7 +575,7 @@
   </interface>  
   <class id="57" language="java" name="com.studytrade.studytrade2.Studytrade2UI.Servlet" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/Studytrade2UI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="131" x="42" y="1359"/>    
+    <position height="99" width="131" x="41" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -584,7 +584,7 @@
   </class>  
   <class id="58" language="java" name="logging.STLog" project="StudyTrade2" file="/StudyTrade2/src/logging/STLog.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="118" x="2318" y="37"/>    
+    <position height="117" width="118" x="2634" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -593,511 +593,596 @@
   </class>  
   <class id="59" language="java" name="com.studytrade.studytrade2.Studytrade2UI" project="StudyTrade2" 
     file="/StudyTrade2/src/com/studytrade/studytrade2/Studytrade2UI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="143" x="42" y="734"/>    
+    <position height="117" width="143" x="41" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="60">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="46"/>  
-  </realization>  
-  <generalization id="61">    
-    <end type="SOURCE" refId="32"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <generalization id="62">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <association id="63">    
-    <bendpoint x="5110" y="734"/>    
-    <bendpoint x="5110" y="1359"/>    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="64" name="User"/>      
-      <multiplicity id="65" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="66">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <generalization id="67">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <realization id="68">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="41"/>  
-  </realization>  
-  <generalization id="69">    
-    <end type="SOURCE" refId="34"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <generalization id="70">    
-    <end type="SOURCE" refId="27"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <association id="71">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="72" name="view"/>      
-      <multiplicity id="73" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="52" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="74">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <association id="75">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="76" name="view"/>      
-      <multiplicity id="77" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="42" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="78">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <realization id="79">    
-    <end type="SOURCE" refId="33"/>    
-    <end type="TARGET" refId="43"/>  
-  </realization>  
-  <realization id="80">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="35"/>  
-  </realization>  
-  <realization id="81">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="53"/>  
-  </realization>  
-  <association id="82">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="83" name="Sender"/>      
-      <multiplicity id="84" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="85">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <association id="86">    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="87" name="Articles"/>      
-      <multiplicity id="88" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="89">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <realization id="90">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="48"/>  
-  </realization>  
-  <realization id="91">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="39"/>  
-  </realization>  
-  <association id="92">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="93" name="view"/>      
-      <multiplicity id="94" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="43" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="95">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="96" name="listeners"/>      
-      <multiplicity id="97" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="35" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="98">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="99" name="listeners"/>      
-      <multiplicity id="100" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="47" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="101">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <association id="102">    
-    <end type="SOURCE" refId="31" navigable="false">      
-      <attribute id="103" name="listeners"/>      
-      <multiplicity id="104" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="39" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="105">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="106" name="view"/>      
-      <multiplicity id="107" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="44" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="108">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="109" name="listeners"/>      
-      <multiplicity id="110" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="38" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="111">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="112" name="view"/>      
-      <multiplicity id="113" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="56" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="114">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <realization id="115">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="51"/>  
-  </realization>  
-  <generalization id="116">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <generalization id="117">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <realization id="118">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="47"/>  
-  </realization>  
-  <association id="119">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="120" name="view"/>      
-      <multiplicity id="121" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="46" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="122">    
-    <bendpoint x="3909" y="1660"/>    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="123" name="Model"/>      
-      <multiplicity id="124" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="125">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="126" name="listeners"/>      
-      <multiplicity id="127" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="41" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="128">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <association id="129">    
-    <bendpoint x="7312" y="1359"/>    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="130" name="displayUser"/>      
-      <multiplicity id="131" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="132">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="52"/>  
-  </realization>  
-  <association id="133">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="134" name="Owner"/>      
-      <multiplicity id="135" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="136">    
-    <end type="SOURCE" refId="59"/>    
-    <end type="TARGET" refId="57"/>  
-  </nesting>  
-  <association id="137">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="138" name="view"/>      
-      <multiplicity id="139" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="55" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="140">    
-    <end type="SOURCE" refId="28" navigable="false">      
-      <attribute id="141" name="listeners"/>      
-      <multiplicity id="142" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="54" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="143">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="144" name="CurrentUser"/>      
-      <multiplicity id="145" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="146">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <association id="147">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="148" name="Target"/>      
-      <multiplicity id="149" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="150">    
-    <end type="SOURCE" refId="34" navigable="false">      
-      <attribute id="151" name="listeners"/>      
-      <multiplicity id="152" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="36" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="153">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="154" name="article"/>      
-      <multiplicity id="155" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="156">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="157" name="view"/>      
-      <multiplicity id="158" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="53" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="159">    
+  <class id="60" language="java" name="com.studytrade.studytrade2.factories.PageFactory" project="StudyTrade2" 
+    file="/StudyTrade2/src/com/studytrade/studytrade2/factories/PageFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="555" x="291" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="61" language="java" name="com.studytrade.studytrade2.view.implementations.EditProfilePageViewImpl" 
+    project="StudyTrade2" 
+    file="/StudyTrade2/src/com/studytrade/studytrade2/view/implementations/EditProfilePageViewImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="531" width="250" x="6344" y="788"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="62" language="java" name="com.studytrade.studytrade2.presenter.EditProfilePagePresenter" 
+    project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/presenter/EditProfilePagePresenter.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="407" x="5897" y="788"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="63" language="java" name="com.studytrade.studytrade2.view.interfaces.EditProfilePageViewListener" 
+    project="StudyTrade2" 
+    file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/EditProfilePageViewListener.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="279" width="303" x="6001" y="1467"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="64" language="java" name="com.studytrade.studytrade2.view.interfaces.EditProfilePageView" 
+    project="StudyTrade2" file="/StudyTrade2/src/com/studytrade/studytrade2/view/interfaces/EditProfilePageView.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="250" x="6344" y="1467"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <association id="65">    
     <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="160" name="view"/>      
-      <multiplicity id="161" minimum="0" maximum="1"/>    
+      <attribute id="66" name="view"/>      
+      <multiplicity id="67" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="40" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="162">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="163" name="UI"/>      
-      <multiplicity id="164" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="59" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="165">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="166" name="view"/>      
-      <multiplicity id="167" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="49" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="168">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="169" name="view"/>      
-      <multiplicity id="170" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="50" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="171">    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="172" name="listeners"/>      
-      <multiplicity id="173" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="45" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="174">    
-    <bendpoint x="215" y="734"/>    
-    <bendpoint x="215" y="1359"/>    
-    <bendpoint x="215" y="1660"/>    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="175" name="Model"/>      
-      <multiplicity id="176" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="177">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="178" name="DBConnection"/>      
-      <multiplicity id="179" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="180">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="38"/>  
+  <realization id="68">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="55"/>  
   </realization>  
-  <association id="181">    
-    <end type="SOURCE" refId="33" navigable="false">      
-      <attribute id="182" name="listeners"/>      
-      <multiplicity id="183" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="37" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="184">    
-    <end type="SOURCE" refId="32"/>    
-    <end type="TARGET" refId="56"/>  
-  </realization>  
-  <association id="185">    
+  <association id="69">    
     <end type="SOURCE" refId="34" navigable="false">      
-      <attribute id="186" name="Message"/>      
-      <multiplicity id="187" minimum="0" maximum="1"/>    
+      <attribute id="70" name="Message"/>      
+      <multiplicity id="71" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="188">    
-    <end type="SOURCE" refId="33"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <generalization id="189">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="25"/>  
-  </generalization>  
-  <realization id="190">    
+  <association id="72">    
+    <bendpoint x="3770" y="1822"/>    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="73" name="Owner"/>      
+      <multiplicity id="74" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="75">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="52"/>  
+  </realization>  
+  <association id="76">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="77" name="view"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="53" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="79">    
     <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="45"/>  
   </realization>  
-  <realization id="191">    
-    <end type="SOURCE" refId="27"/>    
-    <end type="TARGET" refId="44"/>  
+  <generalization id="80">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <generalization id="81">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="82">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <generalization id="83">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="84">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="85">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="86" name="view"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="88">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="42"/>  
   </realization>  
-  <realization id="192">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="49"/>  
-  </realization>  
-  <association id="193">    
+  <association id="89">    
     <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="194" name="listeners"/>      
-      <multiplicity id="195" minimum="0" maximum="2147483647"/>    
+      <attribute id="90" name="listeners"/>      
+      <multiplicity id="91" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="48" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="196">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <realization id="197">    
+  <realization id="92">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="49"/>  
+  </realization>  
+  <realization id="93">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="35"/>  
+  </realization>  
+  <realization id="94">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="44"/>  
+  </realization>  
+  <realization id="95">    
     <end type="SOURCE" refId="21"/>    
     <end type="TARGET" refId="54"/>  
   </realization>  
-  <realization id="198">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="37"/>  
+  <generalization id="96">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <realization id="97">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="56"/>  
   </realization>  
-  <realization id="199">    
+  <association id="98">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="99" name="listeners"/>      
+      <multiplicity id="100" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="101">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="102" name="DBConnection"/>      
+      <multiplicity id="103" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="104">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="105" name="view"/>      
+      <multiplicity id="106" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="49" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="107">    
+    <bendpoint x="2381" y="1822"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="108" name="Target"/>      
+      <multiplicity id="109" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="110">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="48"/>  
+  </realization>  
+  <association id="111">    
+    <end type="SOURCE" refId="62" navigable="false">      
+      <attribute id="112" name="view"/>      
+      <multiplicity id="113" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="64" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="114">    
+    <end type="SOURCE" refId="61" navigable="false">      
+      <attribute id="115" name="listeners"/>      
+      <multiplicity id="116" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="63" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="117">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="118" name="listeners"/>      
+      <multiplicity id="119" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="120">    
     <end type="SOURCE" refId="23"/>    
     <end type="TARGET" refId="50"/>  
   </realization>  
-  <association id="200">    
-    <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="201" name="listeners"/>      
-      <multiplicity id="202" minimum="0" maximum="2147483647"/>    
+  <association id="121">    
+    <bendpoint x="5866" y="788"/>    
+    <bendpoint x="5866" y="1467"/>    
+    <bendpoint x="5866" y="1822"/>    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="122" name="User"/>      
+      <multiplicity id="123" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="51" navigable="true"/>    
+    <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="203">    
-    <end type="SOURCE" refId="26"/>    
+  <association id="124">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="125" name="listeners"/>      
+      <multiplicity id="126" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="127">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="128" name="CurrentUser"/>      
+      <multiplicity id="129" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="130">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <association id="131">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="132" name="view"/>      
+      <multiplicity id="133" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="43" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="134">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="135" name="view"/>      
+      <multiplicity id="136" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="137">    
+    <end type="SOURCE" refId="24"/>    
     <end type="TARGET" refId="25"/>  
   </generalization>  
-  <realization id="204">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="36"/>  
+  <realization id="138">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="39"/>  
   </realization>  
-  <realization id="205">    
+  <realization id="139">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="37"/>  
+  </realization>  
+  <association id="140">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="141" name="Articles"/>      
+      <multiplicity id="142" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="143">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="43"/>  
+  </realization>  
+  <realization id="144">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="47"/>  
+  </realization>  
+  <generalization id="145">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <generalization id="146">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="147">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <realization id="148">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="38"/>  
+  </realization>  
+  <association id="149">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="150" name="view"/>      
+      <multiplicity id="151" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="152">    
+    <end type="SOURCE" refId="59"/>    
+    <end type="TARGET" refId="57"/>  
+  </nesting>  
+  <generalization id="153">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="154">    
+    <bendpoint x="214" y="788"/>    
+    <bendpoint x="214" y="1467"/>    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="155" name="Model"/>      
+      <multiplicity id="156" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="157">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="158">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="159" name="Model"/>      
+      <multiplicity id="160" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="161">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="162" name="Model"/>      
+      <multiplicity id="163" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="164">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="46"/>  
+  </realization>  
+  <generalization id="165">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="166">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="167" name="article"/>      
+      <multiplicity id="168" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="169">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="170" name="listeners"/>      
+      <multiplicity id="171" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="172">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <realization id="173">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="53"/>  
+  </realization>  
+  <realization id="174">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="41"/>  
+  </realization>  
+  <association id="175">    
+    <bendpoint x="2360" y="1822"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="176" name="Sender"/>      
+      <multiplicity id="177" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="178">    
+    <end type="SOURCE" refId="62"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <realization id="179">    
     <end type="SOURCE" refId="34"/>    
     <end type="TARGET" refId="40"/>  
   </realization>  
-  <association id="206">    
+  <generalization id="180">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="181">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="182" name="listeners"/>      
+      <multiplicity id="183" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="184">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="185" name="view"/>      
+      <multiplicity id="186" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="56" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="187">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="188" name="view"/>      
+      <multiplicity id="189" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="55" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="190">    
+    <end type="SOURCE" refId="62"/>    
+    <end type="TARGET" refId="63"/>  
+  </realization>  
+  <association id="191">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="192" name="article"/>      
+      <multiplicity id="193" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="194">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="207" name="PrepStatements"/>      
-      <multiplicity id="208" minimum="0" maximum="1"/>    
+      <attribute id="195" name="PrepStatements"/>      
+      <multiplicity id="196" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="209">    
-    <bendpoint x="3123" y="1660"/>    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="210" name="Model"/>      
-      <multiplicity id="211" minimum="0" maximum="1"/>    
+  <realization id="197">    
+    <end type="SOURCE" refId="61"/>    
+    <end type="TARGET" refId="64"/>  
+  </realization>  
+  <association id="198">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="199" name="listeners"/>      
+      <multiplicity id="200" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="39" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="212">    
-    <end type="SOURCE" refId="21"/>    
+  <association id="201">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="202" name="listeners"/>      
+      <multiplicity id="203" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="204">    
+    <end type="SOURCE" refId="17"/>    
     <end type="TARGET" refId="19"/>  
   </generalization>  
-  <realization id="213">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="55"/>  
-  </realization>  
+  <generalization id="205">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="206">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <association id="207">    
+    <bendpoint x="2755" y="1467"/>    
+    <bendpoint x="2755" y="1822"/>    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="208" name="displayUser"/>      
+      <multiplicity id="209" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="210">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <association id="211">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="212" name="view"/>      
+      <multiplicity id="213" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <realization id="214">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="42"/>  
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="51"/>  
   </realization>  
-  <association id="215">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="216" name="Model"/>      
-      <multiplicity id="217" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="218">    
-    <end type="SOURCE" refId="14"/>    
+  <generalization id="215">    
+    <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="19"/>  
   </generalization>  
-  <association id="219">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="220" name="article"/>      
-      <multiplicity id="221" minimum="0" maximum="1"/>    
+  <association id="216">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="217" name="listeners"/>      
+      <multiplicity id="218" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="51" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="219">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="220" name="listeners"/>      
+      <multiplicity id="221" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="222">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="36"/>  
+  </realization>  
+  <association id="223">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="224" name="UI"/>      
+      <multiplicity id="225" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="59" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="226">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="227" name="listeners"/>      
+      <multiplicity id="228" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="229">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <association id="230">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="231" name="view"/>      
+      <multiplicity id="232" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="233">    
+    <end type="SOURCE" refId="61"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="234">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="235" name="Model"/>      
+      <multiplicity id="236" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
